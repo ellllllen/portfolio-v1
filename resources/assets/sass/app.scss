@@ -11,27 +11,26 @@ body {
   background-color: #E3E3E3;
   letter-spacing: 0.02em;
   overflow-y: scroll;
-  line-height: 1.5em;
 }
 
 .container {
   display: flex;
   align-content: center;
-  min-height: 600px;
+  min-height: 1000px;
 }
 
 section.left {
   flex: 1;
   text-align: center;
   background-color: #000000;
+  padding: 50px 30px;
 }
 
 section.right {
-  flex: 3;
+  flex: 6;
 }
 
 div.left-top {
-  padding: 50px 10px;
   color: #FFFFFF;
 }
 
@@ -48,6 +47,7 @@ div.left-desc {
 
 div.content {
   padding: 0 20px 20px 20px;
+  line-height: 1.5em;
 }
 
 div.main-title {

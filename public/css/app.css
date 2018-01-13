@@ -70,7 +70,6 @@ body {
   background-color: #E3E3E3;
   letter-spacing: 0.02em;
   overflow-y: scroll;
-  line-height: 1.5em;
 }
 
 .container {
@@ -79,15 +78,16 @@ body {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
-  min-height: 600px;
+  min-height: 1000px;
 }
 
 section.left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5;
   text-align: center;
   background-color: #000000;
+  padding: 50px 30px;
 }
 
 section.right {
@@ -97,7 +97,6 @@ section.right {
 }
 
 div.left-top {
-  padding: 50px 10px;
   color: #FFFFFF;
 }
 
@@ -114,6 +113,7 @@ div.left-desc {
 
 div.content {
   padding: 0 20px 20px 20px;
+  line-height: 1.5em;
 }
 
 div.main-title {

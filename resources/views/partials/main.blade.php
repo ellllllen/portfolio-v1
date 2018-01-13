@@ -9,7 +9,7 @@
     <section class="left">
         <div class="left-top">
             <div class="left-title">Ellen Merchant</div>
-            <div class="left-desc">Qualified web developer with over<br>7 years industry experience</div>
+            <div class="left-desc">Qualified web developer with over<br>{{ \Carbon\Carbon::now('Y')->diffInYears(\Carbon\Carbon::createFromDate("2010", "06")) }} years industry experience</div>
         </div>
     </section>
     <section class="right">
