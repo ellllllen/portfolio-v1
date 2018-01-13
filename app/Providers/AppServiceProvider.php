@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,15 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $navigation = collect([
-            ['title' => 'About Me', 'route' => 'home'],
-            ['title' => 'Curriculum Vitae', 'route' => 'cv'],
-            ['title' => 'Knowledge Base', 'route' => 'blog']
-        ]);
-
-        view()->composer('*', function ($view) use ($navigation) {
-            $view->with('navigation', $navigation);
-        });
+        $this->createNavigation();
     }
 
     /**
@@ -32,5 +25,33 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    private function createNavigation()
+    {
+        $navigation = collect([
+            'home' => 'About Me',
+            'cv' => 'Curriculum Vitae',
+            'blog' => 'Knowledge Base'
+        ]);
+
+        $this->composerNavigation($navigation);
+        $this->composerActiveNavigation($navigation);
+    }
+
+    private function composerNavigation(Collection $navigation)
+    {
+        view()->composer('*', function ($view) use ($navigation) {
+            $view->with('navigation', $navigation);
+        });
+    }
+
+    private function composerActiveNavigation(Collection $navigation)
+    {
+        $navigation->each(function ($item, $key) {
+            view()->composer($key, function ($view) use ($key) {
+                $view->with('activeNav', $key);
+            });
+        });
     }
 }

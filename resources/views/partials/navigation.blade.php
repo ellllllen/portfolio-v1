@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        @foreach($navigation as $key => $nav)
-            <li class="{{ $activeNav == $key ? 'active-menu' : ''}}">
-                <a href="{{ route($nav['route']) }}">{{ $nav['title'] }}</a>
+        @foreach($navigation as $route => $title)
+            <li class="{{ $activeNav && $activeNav == $route ? 'active-menu' : ''}}">
+                <a href="{{ route($route) }}">{{ $title }}</a>
             </li>
         @endforeach
     </ul>

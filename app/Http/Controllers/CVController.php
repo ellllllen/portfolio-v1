@@ -7,7 +7,7 @@ class CVController extends Controller
      */
     public function index()
     {
-        return view('cv')->with('activeNav', 1);
+        return view('cv');
     }
 
     /**
