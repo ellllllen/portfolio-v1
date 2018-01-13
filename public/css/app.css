@@ -1,134 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400);body {
-  margin: 0;
-  font-family: "Lato";
-  font-size: 0.9em;
-  background-color: #E3E3E3;
-  letter-spacing: 0.02em;
-  overflow-y: scroll;
-  line-height: 1.5em;
-}
-
-section.left {
-  float: left;
-  width: 25%;
-  text-align: center;
-}
-
-div.left-top {
-  padding: 50px 10px;
-  background-color: #000000;
-  color: #FFFFFF;
-}
-
-div.left-block {
-  height: 10px;
-  background-color: #F84761;
-  -webkit-transform: rotate(345deg);
-          transform: rotate(345deg);
-}
-
-div.left-title {
-  margin-bottom: 10px;
-  font-size: 2.5em;
-  font-weight: 700;
-}
-
-div.left-desc {
-  font-style: italic;
-  font-size: 1.2em;
-}
-
-section.right {
-  float: right;
-  width: 75%;
-  min-height: 600px;
-}
-
-nav {
-  background-color: #439DFD;
-  padding: 20px;
-  text-align: center;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  list-style-type: none;
-  display: inline-block;
-}
-
-nav a {
-  color: #FFFFFF;
-  display: block;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  margin: 0 20px;
-  border-radius: 6px;
-}
-
-nav a:hover,
-nav li.active-menu a:hover {
-  color: #000;
-  background-color: #F84761;
-  text-decoration: none;
-}
-
-nav li.active-menu a {
-  background-color: #000000;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-div.content {
-  padding: 0 20px 20px 20px;
-}
-
-div.main-title {
-  padding: 20px 0 20px 0;
-  font-size: 1.6em;
-  color: #F84761;
-  font-weight: 700;
-}
-
-div.main-desc {
-  padding: 0 10px 10px 10px;
-  font-style: italic;
-}
-
-div.button-container {
-  margin: 10px 0;
-  text-align: center;
-}
-
-div.about-me {
+@import url(https://fonts.googleapis.com/css?family=Lato:400);div.about-me {
   text-align: justify;
-}
-
-div.button-container a {
-  padding: 10px;
-  border-radius: 6px;
-  margin: 10px 1% 10px 1%;
-  display: inline-block;
-  text-align: center;
-  background-color: #439DFD;
-  color: #FFFFFF;
-  min-height: 20px;
-  text-transform: uppercase;
-}
-
-div.button-container a:hover {
-  background-color: #F84761;
-  text-decoration: none;
-  color: #000000;
 }
 
 div.cv-section {
@@ -154,5 +25,137 @@ div.cv-employ-title {
 div.cv-employ-subtitle {
   font-style: italic;
   margin-bottom: 5px;
+}
+
+nav {
+  background-color: #439DFD;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+nav a {
+  color: #FFFFFF;
+  display: block;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+nav a:hover,
+nav li.active-menu a:hover {
+  color: #FFFFFF;
+  background-color: #F84761;
+  text-decoration: none;
+}
+
+nav li.active-menu a {
+  background-color: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato";
+  font-size: 0.9em;
+  background-color: #E3E3E3;
+  letter-spacing: 0.02em;
+  overflow-y: scroll;
+  line-height: 1.5em;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  min-height: 600px;
+}
+
+section.left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  background-color: #000000;
+}
+
+section.right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+div.left-top {
+  padding: 50px 10px;
+  color: #FFFFFF;
+}
+
+div.left-title {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+div.left-desc {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+div.content {
+  padding: 0 20px 20px 20px;
+}
+
+div.main-title {
+  padding: 20px 0 20px 0;
+  font-size: 1.6em;
+  color: #F84761;
+  font-weight: 700;
+}
+
+div.main-desc {
+  padding: 0 10px 10px 10px;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div.button-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+div.button-container a {
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 1% 10px 1%;
+  display: inline-block;
+  text-align: center;
+  background-color: #439DFD;
+  color: #FFFFFF;
+  min-height: 20px;
+  text-transform: uppercase;
+}
+
+div.button-container a:hover {
+  background-color: #F84761;
+  text-decoration: none;
+  color: #000000;
 }
 

@@ -1,0 +1,36 @@
+
+nav {
+  background-color: #439DFD;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+nav a {
+  color: #FFFFFF;
+  display: block;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+nav a:hover,
+nav li.active-menu a:hover {
+  color: #FFFFFF;
+  background-color: #F84761;
+  text-decoration: none;
+}
+
+nav li.active-menu a {
+  background-color: #000000;
+}
