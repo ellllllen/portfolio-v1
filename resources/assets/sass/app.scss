@@ -1,8 +1,10 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Lato:400");
+
+@import "variables";
 @import "about_me";
 @import "cv";
 @import "nav";
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400");
 
 body {
   margin: 0;
@@ -53,7 +55,7 @@ div.content {
 div.main-title {
   padding: 20px 0 20px 0;
   font-size: 1.6em;
-  color: #F84761;
+  color: $pink;
   font-weight: 700;
 }
 
@@ -80,16 +82,15 @@ div.button-container {
     margin: 10px 1% 10px 1%;
     display: inline-block;
     text-align: center;
-    background-color: #439DFD;
+    background-color: #000;
     color: #FFFFFF;
     min-height: 20px;
     text-transform: uppercase;
 
   }
   a:hover {
-    background-color: #F84761;
+    background-color: $pink;
     text-decoration: none;
-    color: #000000;
   }
 }
 
