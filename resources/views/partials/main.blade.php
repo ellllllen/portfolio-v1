@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Ellen Merchant</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
-    <link href="css/ellen.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
