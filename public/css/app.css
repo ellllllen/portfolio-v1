@@ -11,6 +11,7 @@ div.cv-title {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 1.2em;
+  text-transform: uppercase;
 }
 
 div.cv-employ {
