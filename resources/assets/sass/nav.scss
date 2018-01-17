@@ -1,6 +1,6 @@
 
 nav {
-  background-color: #439DFD;
+  background-color: $blue;
   padding: 20px;
   text-align: center;
 }
@@ -27,7 +27,7 @@ nav a {
 nav a:hover,
 nav li.active-menu a:hover {
   color: #FFFFFF;
-  background-color: #F84761;
+  background-color: $pink;
   text-decoration: none;
 }
 

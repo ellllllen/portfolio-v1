@@ -2,8 +2,11 @@
 
 class BlogController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        return view('blog')->with('activeNav', 2);
+        return view('blog');
     }
 } 

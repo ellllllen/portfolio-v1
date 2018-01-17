@@ -12,6 +12,11 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-Route::get('/cv', ['as' => 'cv', 'uses' => 'CVController@index']);
+Route::prefix('/cv')->group(function ()
+{
+    Route::get('/', ['as' => 'cv', 'uses' => 'CVController@index']);
+    Route::get('/word', ['as' => 'cv.word', 'uses' => 'CVController@downloadWordVersion']);
+    Route::get('/pdf', ['as' => 'cv.pdf', 'uses' => 'CVController@downloadPdfVersion']);
+});
+
 Route::get('/blog', ['as' => 'blog', 'uses' => 'BlogController@index']);
-Route::get('/contact', ['as' => 'contact', 'uses' => 'ContactController@index']);
