@@ -10,7 +10,7 @@
         the team successful, this includes implementing the Laravel framework, which has vastly improved productivity
         and I also feel I was instrumental in training a strong team of developers. I recently got promoted to Business
         Continuity Manager where I have been responsible for passing the ISO 22301 accreditation. I believe my assets
-        also include time management, problem solving, being self-motivated and dependable.
+        also include problem solving, mentoring, time management and being reliable.
     </div>
     <div class="cv-section">
         <div class="cv-title">Specialist Skills</div>
@@ -40,22 +40,24 @@
             During my time at Mainstream I have gained a lot of experience creating high quality public and internal web
             portals as well as developing backend micro services and RESTful APIs. I have developed various systems
             while working at Mainstream, including developing new products to sell to our customers and automating in
-            house procedures.
-            <br>
-            My job also involves managing a large workload and leading other members of the team, which gave me
-            increased responsibility. In addition, I also design the systems using an Agile project lifecycle, this
-            includes database design, designing the front end and writing specifications and requirements.
-            Within the first year of working at the company I had established the company’s Intranet, which improved the
-            day to day working of the company for all members of staff. More recently I have developed a public web
+            house procedures. Within the first year of working at the company I had established the company’s Intranet,
+            which improved the day to day working for all members of staff. More recently I have developed a public web
             portal for Mainstream customers where they configure and monitor the different products and services they
             have with the company.
             <br>
-            I have also enhanced my skills in DevOps and networking, which involved deploying and maintaining Linux
-            CentOS servers with XenServer. With my expanded role I became instrumental in ensuring connectivity,
-            security and performance of these servers.
+            Although the company was fully established when I joined, my team was treated as a start up. Therefore, I
+            have been able to influence high level decisions such as programming techniques and tools and vastly
+            expanding the company data centre infrastructure, showing I am motivated and proactive. My role also
+            involves managing projects and mentoring other members of the team, which has given me increased
+            responsibility and management skills.
+            <br>
             Since learning and implementing the Laravel framework three years ago, I feel my skills in Object Orientated
             coding and test driven development (TDD) have greatly improved. I have also enhanced my skills over the last
-            three years in VueJS, Gulp and SaSS.
+            three years in VueJS, Gulp and SaSS. Additionally, I have established my skills in DevOps and networking,
+            which involved deploying and maintaining Linux CentOS servers with XenServer. With my expanded role I became
+            instrumental in ensuring connectivity, security and performance of these servers and the underlying data
+            centres.
+            <br>
             In recent months I have been training in Android programming. I now add and enhance features on an existing
             Android application. This shows I have the ability to adapt to new challenges and that I have a strong
             programming foundation.
@@ -63,8 +65,9 @@
             Last year I earned the role of Business Continuity Manager, which involved gaining the standard of ISO
             22301:2012 in Business Continuity. I achieved this standard by using my vast knowledge of the company and
             the underlying infrastructure. This new role involved identifying risks, developing new policies and
-            procedures and then implementing them across the entire company. This shows an ability to manage a large
-            workload as well as being able to interact with personnel outside my own team.
+            procedures and then implementing them across the entire company. This shows an ability to multi-task as well
+            as being detail orientated.
+
         </div>
         <div class="cv-employ">
             <div class="cv-employ-title">Axiell - Ferndown, Dorset</div>
@@ -73,8 +76,8 @@
             was then extended to 52 weeks after the company acknowledged the high quality work I was producing. My core
             duty was to create well designed maintainable interface using HTML and CSS. The project also required
             frequent validation, accessibility and usability testing, which I volunteered to take on and ultimately
-            became my responsibility. Working for the company involved managing a large workload, good communication and
-            team work in addition to excellent technical skills in HTML and CSS.
+            became my responsibility. Working for the company involved managing a large workload, good communication
+            skills and team work in addition to excellent technical skills in HTML and CSS.
         </div>
         <div class="cv-employ">
             <div class="cv-employ-title">Pall - Ilfracombe, Devon</div>
