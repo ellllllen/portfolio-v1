@@ -34,7 +34,7 @@
         <div class="cv-title">Employment History</div>
         <div class="cv-employ">
             <div class="cv-employ-title">Mainstream Digital - Cirencester, Gloucestershire</div>
-            <div class="cv-employ-subtitle">Developer ( June 2010 to present), Business Continuity Manager ( June 2017
+            <div class="cv-employ-subtitle">Developer (June 2010 to present), Business Continuity Manager (June 2017
                 to present)
             </div>
             During my time at Mainstream I have gained a lot of experience creating high quality public and internal web

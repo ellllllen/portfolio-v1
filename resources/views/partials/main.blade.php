@@ -3,6 +3,7 @@
 <head>
     <title>Ellen Merchant</title>
     <link href="css/app.css" rel="stylesheet" type="text/css">
+    @yield('js')
 </head>
 <body>
 <div class="container">

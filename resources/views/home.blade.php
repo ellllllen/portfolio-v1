@@ -18,4 +18,5 @@
     <div class="button-container">
         <a href="{{ route('cv') }}">View my full CV</a>
     </div>
+    @include('code_school.content')
 @endsection
