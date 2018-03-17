@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $navigation = collect([
             'home' => 'About Me',
             'cv' => 'Curriculum Vitae',
+            'resources' => 'Resources',
             'blog' => 'Knowledge Base'
         ]);
 

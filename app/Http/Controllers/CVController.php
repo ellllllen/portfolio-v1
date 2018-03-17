@@ -13,14 +13,6 @@ class CVController extends Controller
     /**
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    public function downloadWordVersion()
-    {
-        return response()->download('storage/cv.docx');
-    }
-
-    /**
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
     public function downloadPdfVersion()
     {
         return response()->download('storage/cv.pdf');

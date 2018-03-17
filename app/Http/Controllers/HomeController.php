@@ -1,14 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Resources\GetResources;
-
 class HomeController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(GetResources $getResources)
+    public function index()
     {
-        return view('home')->with('resources', $getResources->get());
+        return view('home');
     }
 } 
