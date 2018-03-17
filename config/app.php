@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \Ellllllen\ApiWrapper\ApiWrapperServiceProvider::class,
 
         /*
          * Application Service Providers...

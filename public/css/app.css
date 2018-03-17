@@ -2,6 +2,30 @@
   text-align: justify;
 }
 
+.code-school-container h4 {
+  text-align: center;
+}
+
+.badges-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.badge {
+  margin: 0 20px 20px 20px;
+  text-align: center;
+}
+
+.badge img {
+  width: 175px;
+}
+
 div.cv-section {
   margin-bottom: 40px;
   text-align: justify;
@@ -68,7 +92,6 @@ body {
   margin: 0;
   font-family: "Lato";
   font-size: 0.9em;
-  background-color: #E3E3E3;
   letter-spacing: 0.02em;
   overflow-y: scroll;
 }
