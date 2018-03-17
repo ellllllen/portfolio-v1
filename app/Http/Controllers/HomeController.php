@@ -1,14 +1,14 @@
 <?php namespace App\Http\Controllers;
 
-use Ellllllen\ApiWrapper\Connect;
+use App\Resources\GetResources;
 
 class HomeController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Connect $connect)
+    public function index(GetResources $getResources)
     {
-        return view('home')->with('codeSchool', json_decode($connect->doRequest()));
+        return view('home')->with('resources', $getResources->get());
     }
 } 
