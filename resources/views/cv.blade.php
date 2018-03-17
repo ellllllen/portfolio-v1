@@ -122,7 +122,6 @@
         References are available upon request.
     </div>
     <div class="button-container">
-        <a href="{{ route('cv.word') }}">Download Word Version</a>
         <a href="{{ route('cv.pdf') }}">Download PDF Version</a>
     </div>
 @endsection

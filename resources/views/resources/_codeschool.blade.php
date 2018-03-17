@@ -2,7 +2,7 @@
 <div class="badges-container">
     @if($resource->data->courses)
         @foreach($resource->data->courses->completed + $resource->data->courses->in_progress as $course)
-            @include('training._badge', ['url' => $course->url, 'badgeImage' => $course->badge])
+            @include('resources._badge', ['url' => $course->url, 'badgeImage' => $course->badge])
         @endforeach
     @endif
 </div>
@@ -10,7 +10,7 @@
 <div class="badges-container">
     @if($resource->data->badges)
         @foreach($resource->data->badges as $badge)
-            @include('training._badge', ['url' => $badge->course_url, 'badgeImage' => $badge->badge])
+            @include('resources._badge', ['url' => $badge->course_url, 'badgeImage' => $badge->badge])
         @endforeach
     @endif
 </div>

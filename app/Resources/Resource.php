@@ -24,6 +24,6 @@ class Resource
     {
         $name = strtolower(str_replace(' ', '', $this->name));
 
-        return "training._{$name}";
+        return "resources._{$name}";
     }
 }
