@@ -1,7 +1,6 @@
 
 nav {
   background-color: $blue;
-  padding: 20px;
   text-align: center;
 }
 
@@ -15,9 +14,8 @@ nav li {
   display: inline-block;
 }
 
-nav a {
+.navbar-light .navbar-nav .nav-link {
   color: #FFFFFF;
-  display: block;
   padding: 10px 20px;
   font-size: 1.1em;
   margin: 0 20px;
@@ -25,12 +23,13 @@ nav a {
 }
 
 nav a:hover,
-nav li.active-menu a:hover {
+nav li.active a:hover {
   color: #FFFFFF;
   background-color: $pink;
   text-decoration: none;
 }
 
-nav li.active-menu a {
+nav li.active a {
   background-color: #000000;
+  color: #FFFFFF;
 }

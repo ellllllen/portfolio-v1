@@ -122,6 +122,6 @@
         References are available upon request.
     </div>
     <div class="button-container">
-        <a href="{{ route('cv.pdf') }}">Download PDF Version</a>
+        <a class="btn btn-primary" href="{{ route('cv.pdf') }}">Download PDF Version</a>
     </div>
 @endsection

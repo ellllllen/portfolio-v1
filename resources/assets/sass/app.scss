@@ -1,113 +1,29 @@
-
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import url("https://fonts.googleapis.com/css?family=Lato:400");
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body {
+  font-family: "Lato";
+  font-size: 0.9em;
 }
 
-//@import "about_me";
-//@import "cv";
-//@import "nav";
-//@import "resources";
-//
-//@import url("https://fonts.googleapis.com/css?family=Lato:400");
-//
-//body {
-//  margin: 0;
-//  font-family: "Lato";
-//  font-size: 0.9em;
-//  letter-spacing: 0.02em;
-//  overflow-y: scroll;
-//}
-//
-//.container {
-//  display: flex;
-//  align-content: center;
-//  min-height: 1000px;
-//}
-//
-//section.left {
-//  flex: 1;
-//  text-align: center;
-//  background-color: #000000;
-//  padding: 50px 30px;
-//}
-//
-//section.right {
-//  flex: 6;
-//}
-//
-//div.left-top {
-//  color: #FFFFFF;
-//}
-//
-//div.left-title {
-//  margin-bottom: 20px;
-//  font-size: 2.5em;
-//  font-weight: 700;
-//}
-//
-//div.left-desc {
-//  font-style: italic;
-//  font-size: 1.2em;
-//}
-//
-//div.content {
-//  padding: 0 20px 20px 20px;
-//  line-height: 1.5em;
-//}
-//
-//div.main-title {
-//  padding: 20px 0 10px 0;
-//  font-size: 1.6em;
-//  color: $pink;
-//  font-weight: 700;
-//}
-//
-//.subtitle {
-//  margin-bottom: 5px;
-//  font-size: 1.3em;
-//}
-//
-//div.main-desc {
-//  padding: 0 10px 10px 10px;
-//  font-style: italic;
-//}
-//
-//a {
-//  text-decoration: none;
-//}
-//
-//a:hover {
-//  text-decoration: underline;
-//}
-//
-//div.button-container {
-//  margin: 10px 0;
-//  text-align: center;
-//
-//  a {
-//    padding: 10px;
-//    border-radius: 6px;
-//    margin: 10px 1% 10px 1%;
-//    display: inline-block;
-//    text-align: center;
-//    background-color: #000;
-//    color: #FFFFFF;
-//    min-height: 20px;
-//    text-transform: uppercase;
-//
-//  }
-//  a:hover {
-//    background-color: $pink;
-//    text-decoration: none;
-//  }
-//}
+.ellen-theme {
+
+  @import "about_me";
+  @import "cv";
+  @import "nav";
+  @import "resources";
+
+  .main-title {
+    margin-bottom: 10px;
+    font-size: 1.6em;
+    color: $pink;
+    font-weight: 700;
+  }
+
+  .button-container {
+    margin: 10px 0;
+    text-align: center;
+  }
+}

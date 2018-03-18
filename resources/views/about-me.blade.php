@@ -16,6 +16,6 @@
     </div>
     <br><br>
     <div class="button-container">
-        <a href="{{ route('cv') }}">View my full CV</a>
+        <a class="btn btn-primary" href="{{ route('cv') }}">View my full CV</a>
     </div>
 @endsection
