@@ -5,21 +5,19 @@
         <div class="resources-container">
             <div>
                 I try to improve my knowledge and keep up to date with technologies whenever possible. These are a few
-                examples I would recommend:
+                examples I would recommend:<br><br>
             </div>
             @foreach($resources as $resource)
                 <div class="resource">
-                    <h3>
+                    <div class="subtitle">
                         <a href="{{ $resource->url }}" target="_blank">
                             {{ $resource->name }}
                         </a>
-                    </h3>
+                    </div>
                     <div>
                         {{ $resource->description }}
                     </div>
-                    @if($resource->data)
-                        @include($resource->getBladeTemplate());
-                    @endif
+                    @includeWhen($resource->data, $resource->getBladeTemplate())
                 </div>
             @endforeach
         </div>
