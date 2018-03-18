@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Ellllllen\Http\Controllers;
 
-use App\Resources\GetResources;
+use Ellllllen\Resources\GetResources;
 
 class ResourcesController extends Controller
 {

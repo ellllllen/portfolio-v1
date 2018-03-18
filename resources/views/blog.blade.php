@@ -1,5 +1,4 @@
-@extends('partials/main', ['mainTitle' => 'Knowledge Base'])
-
+@extends('layouts.app', ['mainTitle' => 'Knowledge Base'])
 
 @section('content')
     <canvas id="myCanvas"></canvas>

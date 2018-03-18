@@ -1,4 +1,4 @@
-@extends('partials/main', ['mainTitle' => 'Curriculum Vitae'])
+@extends('layouts.app', ['mainTitle' => 'Curriculum Vitae'])
 
 @section('content')
     <div class="cv-section">

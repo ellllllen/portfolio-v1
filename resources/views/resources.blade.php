@@ -1,4 +1,4 @@
-@extends('partials.main', ['mainTitle' => 'Resources'])
+@extends('layouts.app', ['mainTitle' => 'Resources'])
 
 @section('content')
     @if($resources->count() > 0)
