@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Resources;
+namespace Ellllllen\Resources;
 
 class Resource
 {

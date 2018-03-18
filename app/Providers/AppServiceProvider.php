@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Ellllllen\Providers;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     private function createNavigation()
     {
         $navigation = collect([
-            'home' => 'About Me',
+            'about-me' => 'About Me',
             'cv' => 'Curriculum Vitae',
             'resources' => 'Resources',
             'blog' => 'Knowledge Base'

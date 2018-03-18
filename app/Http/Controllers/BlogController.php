@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Ellllllen\Http\Controllers;
+
 
 class BlogController extends Controller
 {
