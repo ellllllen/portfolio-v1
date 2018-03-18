@@ -1,5 +1,8 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 @import "variables";
+@import '~bootstrap/scss/bootstrap';
 @import "about_me";
 @import "cv";
 @import "nav";
@@ -53,10 +56,15 @@ div.content {
 }
 
 div.main-title {
-  padding: 20px 0 20px 0;
+  padding: 20px 0 10px 0;
   font-size: 1.6em;
   color: $pink;
   font-weight: 700;
+}
+
+.subtitle {
+  margin-bottom: 5px;
+  font-size: 1.3em;
 }
 
 div.main-desc {

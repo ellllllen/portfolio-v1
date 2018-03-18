@@ -19,7 +19,7 @@
     <section class="right">
         @include('partials.navigation')
         <div class="content">
-            <div class="main-title">{{ $mainTitle }}</div>
+            <div class="main-title">{{ $mainTitle }}</div class="main-title">
             @yield('content')
         </div>
     </section>
