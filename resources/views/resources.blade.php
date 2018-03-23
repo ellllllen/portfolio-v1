@@ -9,12 +9,12 @@
             </div>
             @foreach($resources as $resource)
                 <div class="resource">
-                    <h5>
+                    <h6>
                         <a href="{{ $resource->url }}" target="_blank">
                             {{ $resource->name }}
                         </a>
-                    </h5>
-                    <div>
+                    </h6>
+                    <div class="pb-3">
                         {{ $resource->description }}
                     </div>
                     @includeWhen($resource->data, $resource->getBladeTemplate())

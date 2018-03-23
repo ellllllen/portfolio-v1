@@ -7,26 +7,24 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @include('partials.favicon')
+    @include('partials._favicon')
 </head>
 <body>
 <div id="app" class="ellen-theme">
-    <div class="row justify-content-md-center  container-fluid">
-        <div class="col-sm-2 bg-black text-center text-white mh-100">
-            <div class="py-4 px-2">
-                <div class="lead">Ellen Merchant</div>
-                <em>Qualified web developer with
-                    over<br>{{ \Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2010", "06")) }} years
-                    industry experience</em>
-            </div>
+    <div class="container-fluid">
+        <div class="text-center px-3 pt-3">
+            @include('partials._header')
         </div>
-        <div class="col-sm-10 p-0">
-            @include('partials.navigation')
-            <main class="p-3 container-fluid">
-                <h4 class="pink">{{ $mainTitle ?? '' }}</h4>
-                @yield('content')
-            </main>
-        </div>
+        <nav class="navbar navbar-expand-md navbar-light justify-content-md-center">
+            @include('partials._navigation')
+        </nav>
+        <main class="p-3">
+            <h4 class="pink">{{ $mainTitle ?? '' }}</h4>
+            @yield('content')
+        </main>
+        <footer class="px-3 pb-3">
+            @include('partials._footer')
+        </footer>
     </div>
 </div>
 <script src="{{ asset('js/app.js') }}"></script>
