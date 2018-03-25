@@ -1,0 +1,43 @@
+.welcome {
+  .col {
+    height: 200px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+
+      span {
+        display: none;
+        font-size: 2.0em;
+        color: #FFFFFF;
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .col:hover {
+    opacity: 0.8;
+  }
+
+  .about-me {
+    background-image: url('../../../public/images/about-me.jpg');
+    background-position: bottom right;
+  }
+
+  .cv {
+    background-image: url('../../../public/images/cv.png');
+    background-position: bottom right;
+  }
+
+  .resources {
+    background-image: url('../../../public/images/resources.png');
+    background-position: bottom left;
+  }
+}

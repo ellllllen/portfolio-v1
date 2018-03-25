@@ -1,14 +1,23 @@
 
-nav {
+nav.navbar-light {
   text-align: center;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  .active .nav-link {
+    color: $pink;
+  }
+
+  .nav-link:hover {
+    color: $pink;
+  }
+
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  list-style-type: none;
-  display: inline-block;
-}
