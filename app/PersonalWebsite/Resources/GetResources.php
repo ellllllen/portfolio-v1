@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellllllen\Resources;
+namespace Ellllllen\PersonalWebsite\Resources;
 
 use Ellllllen\ApiWrapper\Connect;
 use Illuminate\Pagination\LengthAwarePaginator;

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKnowledgeTagsTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKnowledgeTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('knowledge_tags', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tag');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateKnowledgeTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('knowledge_tags');
+        Schema::dropIfExists('tags');
     }
 }

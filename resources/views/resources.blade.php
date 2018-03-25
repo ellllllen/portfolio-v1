@@ -4,7 +4,7 @@
     @if($resources->count() > 0)
         <div class="resources-container">
             <div>
-                I try to improve my knowledge and keep up to date with technologies whenever possible. These are a few
+                I try to improve my knowledge and keep up to date with the latest technologies whenever possible. These are a few
                 examples I would recommend:<br><br>
             </div>
             @foreach($resources as $resource)

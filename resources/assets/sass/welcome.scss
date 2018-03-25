@@ -1,6 +1,8 @@
 .welcome {
   .col {
     height: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
 
     a {
       display: flex;
@@ -28,7 +30,7 @@
 
   .about-me {
     background-image: url('../../../public/images/about-me.jpg');
-    background-position: bottom right;
+    background-position: top center;
   }
 
   .cv {

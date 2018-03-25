@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="app" class="ellen-theme">
-    <div class="container-fluid">
+    <div class="container">
         <div class="text-center px-3 pt-3">
             @include('partials._header')
         </div>

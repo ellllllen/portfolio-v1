@@ -3,22 +3,35 @@
 @section('content')
     <div class="container welcome">
         <div class="row">
-            <div class="col p-0 about-me">
+            <div class="col col-md-4 p-0 about-me">
                 <a href="{{ route('about-me') }}">
                     <span>About Me</span>
                 </a>
             </div>
-            <div class="col p-0 cv">
+            <div class="col col-md-4 p-0 cv">
                 <a href="{{ route('cv') }}">
                     <span>CV</span>
                 </a>
             </div>
-            <div class="col p-0 resources">
+            <div class="col col-md-4 p-0 resources">
                 <a href="{{ route('resources') }}">
                     <span>Resources</span>
                 </a>
             </div>
         </div>
+        @if($articles->count() > 0)
+            @foreach ($articles->chunk(3) as $chunk)
+                <div class="row">
+                    @foreach ($chunk as $article)
+                        <div class="col col-md-4 p-0" style="background-image: url({{ $article->getBackgroundImage() }})">
+                            <a href="{{ route('articles.show', ['blog' => $article->id]) }}">
+                                <span>Knowledge Base:<br>{{ $article->title }}</span>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        @endif
     </div>
 @endsection
 

@@ -2,7 +2,7 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Ellllllen\Resources\GetResources;
+use Ellllllen\PersonalWebsite\Resources\GetResources;
 
 class ResourcesController extends Controller
 {

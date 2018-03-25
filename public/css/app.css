@@ -10084,6 +10084,8 @@ body {
 
 .ellen-theme .welcome .col {
   height: 200px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .ellen-theme .welcome .col a {
@@ -10116,8 +10118,8 @@ body {
 }
 
 .ellen-theme .welcome .about-me {
-  background-image: url(/images/about-me.jpg?8321f1cf28def41c824130e7f457eb8b);
-  background-position: bottom right;
+  background-image: url(/images/about-me.jpg?3b3078a6ab1d8d15c32bb5db2d1dbd2c);
+  background-position: top center;
 }
 
 .ellen-theme .welcome .cv {
