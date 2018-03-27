@@ -3,17 +3,18 @@
 namespace Ellllllen\Http\Controllers;
 
 use Ellllllen\PersonalWebsite\Articles\Articles;
+use Ellllllen\PersonalWebsite\Articles\GetArticles;
 
 class WelcomeController extends Controller
 {
     /**
      * Show the application dashboard.
      *
-     * @param Articles $articles
+     * @param GetArticles $getArticles
      * @return \Illuminate\Http\Response
      */
-    public function index(Articles $articles)
+    public function index(GetArticles $getArticles)
     {
-        return view('welcome')->with('articles', $articles->get());
+        return view('welcome')->with('articles', $getArticles->get());
     }
 }

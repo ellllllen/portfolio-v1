@@ -23,7 +23,7 @@ Route::prefix('/cv')->group(function () {
     Route::get('/pdf', ['as' => 'cv.pdf', 'uses' => 'CVController@downloadPdfVersion']);
 });
 
-Route::get('/resources', ['as' => 'resources', 'uses' => 'ResourcesController@index']);
+Route::get('/resources', 'ResourcesController@index')->name('resources');
 
-Route::resource('articles', 'ArticleController');
+Route::resource('/articles', 'ArticleController');
 

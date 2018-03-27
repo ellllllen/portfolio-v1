@@ -2,20 +2,28 @@
 
 namespace Ellllllen\PersonalWebsite\Articles;
 
+use Illuminate\Filesystem\FilesystemManager;
+
 class GetArticles
 {
     /**
      * @var Articles
      */
     private $articles;
+    /**
+     * @var FilesystemManager
+     */
+    private $filesystemManager;
 
     /**
      * GetArticles constructor.
      * @param Articles $articles
+     * @param FilesystemManager $filesystemManager
      */
-    public function __construct(Articles $articles)
+    public function __construct(Articles $articles, FilesystemManager $filesystemManager)
     {
         $this->articles = $articles;
+        $this->filesystemManager = $filesystemManager;
     }
 
     /**
@@ -24,5 +32,21 @@ class GetArticles
     public function paginate()
     {
         return $this->articles->paginate();
+    }
+
+    /**
+     * @return \Illuminate\Support\Collection|null
+     */
+    public function get()
+    {
+        $articles = $this->articles->get();
+
+        //filter out articles that don't have valid images to display
+        return $articles->filter(function (Article $value, $key) {
+            if ($this->filesystemManager->exists($value->getImageFullPath())) {
+                return true;
+            }
+            return false;
+        });
     }
 }

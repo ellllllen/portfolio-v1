@@ -1,8 +1,13 @@
-<?php namespace Ellllllen\Http\Controllers;
+<?php
 
+namespace Ellllllen\Http\Controllers;
 
 use Ellllllen\PersonalWebsite\Articles\Article;
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\PersonalWebsite\Articles\ManageArticles;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+
 
 class ArticleController extends Controller
 {
@@ -10,14 +15,26 @@ class ArticleController extends Controller
      * @var GetArticles
      */
     private $getArticles;
+    /**
+     * @var Request
+     */
+    private $request;
+    /**
+     * @var ManageArticles
+     */
+    private $manageArticles;
 
     /**
      * BlogController constructor.
      * @param GetArticles $getArticles
+     * @param Request $request
+     * @param ManageArticles $manageArticles
      */
-    public function __construct(GetArticles $getArticles)
+    public function __construct(GetArticles $getArticles, Request $request, ManageArticles $manageArticles)
     {
         $this->getArticles = $getArticles;
+        $this->request = $request;
+        $this->manageArticles = $manageArticles;
     }
 
     /**
@@ -28,11 +45,32 @@ class ArticleController extends Controller
         return view('articles.index')->with('articles', $this->getArticles->paginate());
     }
 
-    public function show($articleID)
+    /**
+     * @param int $articleID
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show(int $articleID)
     {
         $article = Article::findOrFail($articleID);
 
-        return view($article->view ? "articles.{$article->view}" : "articles.show")
-            ->with('article', $article);
+        return view(View::exists($article->view) ? "articles.{$article->view}" : "articles.show", compact('article'));
     }
-} 
+
+    public function create()
+    {
+        return view('articles.create');
+    }
+
+    public function store()
+    {
+        $this->validate($this->request, [
+            'title' => ['required', 'unique:articles,title'],
+            'section' => 'required',
+            'image' => ['required', 'image']
+        ]);
+
+        $this->manageArticles->store($this->request->all());
+
+        return redirect()->route('home');
+    }
+}

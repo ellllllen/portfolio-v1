@@ -8,6 +8,11 @@ class Article extends Model
 {
     public function getBackgroundImage(): string
     {
-        return "/images/blog/{$this->image}";
+        return "/storage/images/{$this->image}";
+    }
+
+    public function getImageFullPath(): string
+    {
+        return "/public/images/{$this->image}";
     }
 }

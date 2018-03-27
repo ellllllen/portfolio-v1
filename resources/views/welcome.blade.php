@@ -24,7 +24,7 @@
                 <div class="row">
                     @foreach ($chunk as $article)
                         <div class="col col-md-4 p-0" style="background-image: url({{ $article->getBackgroundImage() }})">
-                            <a href="{{ route('articles.show', ['blog' => $article->id]) }}">
+                            <a href="{{ route('articles.show', ['id' => $article->id]) }}">
                                 <span>Knowledge Base:<br>{{ $article->title }}</span>
                             </a>
                         </div>

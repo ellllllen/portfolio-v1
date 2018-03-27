@@ -8,6 +8,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('partials._favicon')
+    <link href="{{ asset('alloy-editor/assets/alloy-editor-ocean-min.css') }}" rel="stylesheet">
+    <script src="{{ asset('alloy-editor/alloy-editor-all-min.js') }}"></script>
 </head>
 <body>
 <div id="app" class="ellen-theme">
