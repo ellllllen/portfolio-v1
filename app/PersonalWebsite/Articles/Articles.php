@@ -11,7 +11,7 @@ class Articles
      * @param int $perPage
      * @return LengthAwarePaginator|null
      */
-    public function paginate(int $perPage = 20)
+    public function paginate(int $perPage = 2)
     {
         return Article::paginate($perPage);
     }

@@ -1,4 +1,4 @@
-<div class="badge">
+<div class="badge m-1">
     @if($url)
         <a target="_blank" href="{{ $url }}">
             <img src="{{ $badgeImage }}"/>

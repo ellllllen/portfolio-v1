@@ -10011,6 +10011,10 @@ body {
   text-align: justify;
 }
 
+.ellen-theme .articles .img-thumbnail {
+  width: 150px;
+}
+
 .ellen-theme div.cv-section {
   margin-bottom: 40px;
   text-align: justify;
@@ -10056,26 +10060,6 @@ body {
 
 .ellen-theme nav.navbar-light .nav-link:hover {
   color: #F84761;
-}
-
-.ellen-theme .resource {
-  margin-bottom: 20px;
-}
-
-.ellen-theme .badges-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.ellen-theme .badge {
-  margin: 0 10px 10px 10px;
-  text-align: center;
 }
 
 .ellen-theme .badge img {

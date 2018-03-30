@@ -23,7 +23,7 @@
             @foreach ($articles->chunk(3) as $chunk)
                 <div class="row">
                     @foreach ($chunk as $article)
-                        <div class="col col-md-4 p-0" style="background-image: url({{ $article->getBackgroundImage() }})">
+                        <div class="col col-md-4 p-0" style="background-image: url({{ $article->getPublicImage() }})">
                             <a href="{{ route('articles.show', ['id' => $article->id]) }}">
                                 <span>Knowledge Base:<br>{{ $article->title }}</span>
                             </a>

@@ -3,7 +3,6 @@
 namespace Ellllllen\PersonalWebsite\Resources;
 
 use Ellllllen\ApiWrapper\Connect;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class GetResources
 {

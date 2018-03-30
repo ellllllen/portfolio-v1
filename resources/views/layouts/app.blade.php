@@ -21,7 +21,7 @@
             @include('partials._navigation')
         </nav>
         <main class="p-3">
-            <h4 class="pink">{{ $mainTitle ?? '' }}</h4>
+            <h2 class="pink">{{ $mainTitle ?? '' }}</h2>
             @yield('content')
         </main>
         <footer class="px-3 pb-3">

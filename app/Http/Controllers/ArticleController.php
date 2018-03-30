@@ -73,4 +73,29 @@ class ArticleController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function destroy(int $articleID)
+    {
+        $article = Article::findOrFail($articleID);
+
+        $this->manageArticles->destroy($article);
+
+        return redirect()->route('articles.index');
+    }
+
+    public function edit(int $articleID)
+    {
+        $article = Article::findOrFail($articleID);
+
+        return view('articles.edit', compact('article'));
+    }
+
+    public function update(int $articleID)
+    {
+        $article = Article::findOrFail($articleID);
+
+        $this->manageArticles->update($this->request->all(), $article);
+
+        return redirect()->route('articles.show', ['id' => $article->id]);
+    }
 }
