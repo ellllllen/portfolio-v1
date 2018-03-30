@@ -3,6 +3,7 @@
 namespace Ellllllen\PersonalWebsite\Articles;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\View;
 
 class Article extends Model
 {
@@ -24,5 +25,15 @@ class Article extends Model
         $length = 200;
 
         return strlen($section) > $length ? substr($section, 0, $length) . '...' : $section;
+    }
+
+    public function hasView(): bool
+    {
+        return View::exists($this->getFullView());
+    }
+
+    public function getFullView(): string
+    {
+        return "articles.{$this->view}";
     }
 }

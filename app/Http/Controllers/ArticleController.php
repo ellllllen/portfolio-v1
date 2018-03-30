@@ -53,7 +53,7 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($articleID);
 
-        return view(View::exists($article->view) ? "articles.{$article->view}" : "articles.show", compact('article'));
+        return view("articles.show", compact('article'));
     }
 
     public function create()
