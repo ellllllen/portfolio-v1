@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400);.pink {
-  color: #F84761;
+@import url(https://fonts.googleapis.com/css?family=Lato:400|Indie+Flower);.pink {
+  color: #ca3469;
 }
 
 .bg-black {
@@ -17,7 +17,7 @@
   --blue: #477cf8;
   --indigo: #6610f2;
   --purple: #6f42c1;
-  --pink: #F84761;
+  --pink: #ca3469;
   --red: #dc3545;
   --orange: #fd7e14;
   --yellow: #f8ec47;
@@ -558,7 +558,7 @@ samp {
 
 code {
   font-size: 87.5%;
-  color: #F84761;
+  color: #ca3469;
   word-break: break-word;
 }
 
@@ -10002,9 +10002,20 @@ a.text-dark:focus {
   }
 }
 
+body,
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Lato";
   font-size: 0.9em;
+  color: #333333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ca3469), color-stop(#d16098), to(#333));
+  background-image: linear-gradient(to bottom, #ca3469, #d16098, #333);
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .ellen-theme div.about-me {
@@ -10055,11 +10066,11 @@ body {
 }
 
 .ellen-theme nav.navbar-light .active .nav-link {
-  color: #F84761;
+  color: #ca3469;
 }
 
 .ellen-theme nav.navbar-light .nav-link:hover {
-  color: #F84761;
+  color: #ca3469;
 }
 
 .ellen-theme .badge img {
@@ -10090,7 +10101,11 @@ body {
 .ellen-theme .welcome .col a span {
   display: none;
   font-size: 2.0em;
-  color: #FFFFFF;
+  color: #ca3469;
+  background-color: #000000;
+  padding: 5px 0;
+  width: 100%;
+  font-family: 'Indie Flower', cursive;
 }
 
 .ellen-theme .welcome .col a:hover {
@@ -10102,24 +10117,37 @@ body {
 }
 
 .ellen-theme .welcome .about-me {
-  background-image: url(/images/about-me.jpg?3b3078a6ab1d8d15c32bb5db2d1dbd2c);
-  background-position: top center;
+  background-image: url("/images/about-me.jpg");
+  background-position: center center;
 }
 
 .ellen-theme .welcome .cv {
-  background-image: url(/images/cv.png?9205111f5379872c3f642bbb02711fed);
+  background-image: url("/images/cv.png");
   background-position: bottom right;
 }
 
 .ellen-theme .welcome .resources {
-  background-image: url(/images/resources.png?87de08fd58bee936ed29ae12ed565106);
+  background-image: url("/images/resources.png");
   background-position: bottom left;
+}
+
+.ellen-theme .outer-container {
+  background-color: #FFFFFF;
+}
+
+.ellen-theme .title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 4.0rem;
+}
+
+.ellen-theme .subtitle {
+  color: #ca3469;
 }
 
 .ellen-theme .main-title {
   margin-bottom: 10px;
   font-size: 1.6em;
-  color: #F84761;
+  color: #ca3469;
   font-weight: 700;
 }
 

@@ -22,7 +22,7 @@ class Article extends Model
     public function presentShortenedSection(): string
     {
         $section = strip_tags($this->section);
-        $length = 200;
+        $length = 500;
 
         return strlen($section) > $length ? substr($section, 0, $length) . '...' : $section;
     }

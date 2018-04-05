@@ -2,9 +2,9 @@
 
 @section('content')
     @auth
-        <div class="btn-group mb-3">
+        <div class="d-flex mb-3 justify-content-end">
             <a href="{{ route('articles.edit', ['id' => $article->id]) }}"
-               class="btn btn-warning">Edit</a>
+               class="btn btn-warning mr-2">Edit</a>
             <form action="{{ route('articles.destroy', ['id' => $article->id]) }}" method="POST">
                 @csrf
                 @method('DELETE')

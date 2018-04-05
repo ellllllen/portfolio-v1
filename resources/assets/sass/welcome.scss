@@ -15,7 +15,11 @@
       span {
         display: none;
         font-size: 2.0em;
-        color: #FFFFFF;
+        color: $pink;
+        background-color: #000000;
+        padding: 5px 0;
+        width: 100%;
+        font-family: 'Indie Flower', cursive;
       }
     }
 
@@ -29,17 +33,17 @@
   }
 
   .about-me {
-    background-image: url('../../../public/images/about-me.jpg');
-    background-position: top center;
+    background-image: url('/images/about-me.jpg');
+    background-position: center center;
   }
 
   .cv {
-    background-image: url('../../../public/images/cv.png');
+    background-image: url('/images/cv.png');
     background-position: bottom right;
   }
 
   .resources {
-    background-image: url('../../../public/images/resources.png');
+    background-image: url('/images/resources.png');
     background-position: bottom left;
   }
 }

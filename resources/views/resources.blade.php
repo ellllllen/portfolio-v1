@@ -9,11 +9,11 @@
             </div>
             @foreach($resources as $resource)
                 <div class="mb-2">
-                    <h4>
+                    <h5>
                         <a href="{{ $resource->url }}" target="_blank">
                             {{ $resource->name }}
                         </a>
-                    </h4>
+                    </h5>
                     <div class="mb-3">
                         {{ $resource->description }}
                     </div>

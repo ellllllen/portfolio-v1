@@ -1,11 +1,20 @@
 @import "variables";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import url("https://fonts.googleapis.com/css?family=Lato:400");
+@import url("https://fonts.googleapis.com/css?family=Lato:400|Indie+Flower");
+
+body, html {
+  height: 100%;
+}
 
 body {
   font-family: "Lato";
   font-size: 0.9em;
+  color: #333333;
+  background-image: linear-gradient(to bottom, $pink, $light-pink, #333);
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .ellen-theme {
@@ -16,6 +25,19 @@ body {
   @import "nav";
   @import "resources";
   @import "welcome";
+
+  .outer-container {
+    background-color: #FFFFFF;
+  }
+
+  .title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 4.0rem;
+  }
+
+  .subtitle {
+    color: $pink;
+  }
 
   .main-title {
     margin-bottom: 10px;

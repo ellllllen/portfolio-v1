@@ -12,19 +12,19 @@
     <script src="{{ asset('alloy-editor/alloy-editor-all-min.js') }}"></script>
 </head>
 <body>
-<div id="app" class="ellen-theme">
-    <div class="container">
-        <div class="text-center px-3 pt-3">
+<div id="app" class="ellen-theme mb-5">
+    <div class="container rounded-bottom outer-container">
+        <header class="text-center p-3">
             @include('partials._header')
-        </div>
-        <nav class="navbar navbar-expand-md navbar-light justify-content-md-center">
+        </header>
+        <nav class="navbar navbar-expand-md navbar-light justify-content-md-center border-bottom">
             @include('partials._navigation')
         </nav>
         <main class="p-3">
             <h2 class="pink">{{ $mainTitle ?? '' }}</h2>
             @yield('content')
         </main>
-        <footer class="px-3 pb-3">
+        <footer class="px-3 pb-3 pt-5">
             @include('partials._footer')
         </footer>
     </div>
