@@ -11,9 +11,10 @@ class Articles
      * @param int $perPage
      * @return LengthAwarePaginator|null
      */
-    public function paginate(int $perPage = 2)
+    public function paginate(int $perPage = 5)
     {
-        return Article::paginate($perPage);
+        return Article::orderBy('created_at', 'desc')
+            ->paginate($perPage);
     }
 
     /**
@@ -21,6 +22,7 @@ class Articles
      */
     public function get()
     {
-        return Article::get();
+        return Article::orderBy('created_at', 'desc')
+            ->get();
     }
 }

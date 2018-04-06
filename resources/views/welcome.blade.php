@@ -10,7 +10,7 @@
             </div>
             <div class="col col-md-4 p-0 cv">
                 <a href="{{ route('cv') }}">
-                    <span>CV</span>
+                    <span>Curriculum Vitae</span>
                 </a>
             </div>
             <div class="col col-md-4 p-0 resources">
