@@ -16,7 +16,7 @@
                                  alt="{{ $article->title }}">
                             {{ $article->title }}
                         </h1>
-                        <p>{!! $article->presentShortenedSection() !!}</p>
+                        <p>{!! $article->present()->shortenedSection() !!}</p>
                         <div class="text-right">
                             <a class="btn btn-primary"
                                href="{{ route('articles.show', ['article' => $article->id]) }}"

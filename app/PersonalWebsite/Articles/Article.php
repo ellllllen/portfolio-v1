@@ -2,11 +2,16 @@
 
 namespace Ellllllen\PersonalWebsite\Articles;
 
+use Ellllllen\Presenter\PresenterInterface;
+use Ellllllen\Presenter\PresenterTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\View;
 
-class Article extends Model
+class Article extends Model implements PresenterInterface
 {
+    use PresenterTrait;
+
+    protected $presenter = ArticlePresenter::class;
+
     protected $fillable = ['title', 'image', 'section', 'view'];
 
     public function getPublicImage(): string
@@ -19,21 +24,13 @@ class Article extends Model
         return "/public/images/{$this->image}";
     }
 
-    public function presentShortenedSection(): string
-    {
-        $section = strip_tags($this->section);
-        $length = 500;
-
-        return strlen($section) > $length ? substr($section, 0, $length) . '...' : $section;
-    }
-
     public function hasView(): bool
     {
-        return View::exists($this->getFullView());
+        return view()->exists($this->getFullView());
     }
 
     public function getFullView(): string
     {
-        return "articles.{$this->view}";
+        return "articles.extra_content.{$this->view}";
     }
 }

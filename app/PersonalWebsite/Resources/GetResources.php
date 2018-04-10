@@ -32,6 +32,11 @@ class GetResources
             Resource::create('Codecademy', 'https://www.codecademy.com', 'Where I can learn to code interactively, for
                 free.'),
 
+            Resource::create('Khan Academy', 'https://www.khanacademy.org',
+                'This website not only does computer programming courses but lots of other subjects.'),
+            Resource::create('Udacity', 'https://www.khanacademy.org',
+                'This website not only does computer programming courses but lots of other subjects.'),
+
             Resource::create('Code School', 'https://codeschool.com/', 'Code School teaches web technologies in the
                 comfort of your browser with video lessons, coding challenges, and screencasts. These are the badges I have earned so far:',
                 json_decode($this->connect->doRequest())),
