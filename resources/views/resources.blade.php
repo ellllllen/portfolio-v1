@@ -10,14 +10,14 @@
             @foreach($resources as $resource)
                 <div class="mb-2">
                     <h5>
-                        <a href="{{ $resource->url }}" target="_blank">
-                            {{ $resource->name }}
+                        <a href="{{ $resource->getUrl() }}" target="_blank">
+                            {{ $resource->getName() }}
                         </a>
                     </h5>
                     <div class="mb-3">
-                        {{ $resource->description }}
+                        {{ $resource->getDescription() }}
                     </div>
-                    @includeWhen($resource->data, $resource->getBladeTemplate())
+                    @includeWhen($resource->getData(), $resource->getBladeTemplate())
                 </div>
             @endforeach
         </div>

@@ -2,22 +2,19 @@
 
 namespace Ellllllen\PersonalWebsite\Resources;
 
-class Resource
+class Resource implements ResourceInterface
 {
-    public $name;
-    public $url;
-    public $description;
-    public $data;
+    private $name;
+    private $url;
+    private $description;
+    private $data;
 
-    public static function create($name, $url, $description, $data = ""): Resource
+    public function __construct(string $name, string $url, string $description, $data = "")
     {
-        $resource = new Resource();
-        $resource->name = $name;
-        $resource->url = $url;
-        $resource->description = $description;
-        $resource->data = $data;
-
-        return $resource;
+        $this->name = $name;
+        $this->url = $url;
+        $this->description = $description;
+        $this->data = $data;
     }
 
     public function getBladeTemplate(): string
@@ -25,5 +22,34 @@ class Resource
         $name = strtolower(str_replace(' ', '', $this->name));
 
         return "resources._{$name}";
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 }

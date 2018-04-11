@@ -2,6 +2,8 @@
 
 namespace Ellllllen\Providers;
 
+use Ellllllen\PersonalWebsite\Resources\Resources;
+use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(ResourcesInterface::class, Resources::class);
     }
 
     private function createNavigation()

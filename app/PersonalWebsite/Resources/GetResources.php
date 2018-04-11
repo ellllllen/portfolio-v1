@@ -2,44 +2,26 @@
 
 namespace Ellllllen\PersonalWebsite\Resources;
 
-use Ellllllen\ApiWrapper\Connect;
+use Illuminate\Support\Collection;
 
 class GetResources
 {
     /**
-     * @var Connect
+     * @var ResourcesInterface
      */
-    private $connect;
+    private $resources;
 
     /**
      * GetResources constructor.
-     * @param Connect $connect
+     * @param ResourcesInterface $resources
      */
-    public function __construct(Connect $connect)
+    public function __construct(ResourcesInterface $resources)
     {
-        $this->connect = $connect;
+        $this->resources = $resources;
     }
 
-    public function get()
+    public function get(): Collection
     {
-        return collect([
-            Resource::create('Laracasts', 'https://www.laracasts.com/', 'Laracasts allows me to learn visually and
-                follow along with the lessons. It also offers more tutorials than Laravel and PHP.'),
-
-            Resource::create('Laravel News', 'https://laravel-news.com/', 'The official Laravel news source. This site
-                contains a blog with the latest news, tutorials and packages from Laravel contributors.'),
-
-            Resource::create('Codecademy', 'https://www.codecademy.com', 'Where I can learn to code interactively, for
-                free.'),
-
-            Resource::create('Khan Academy', 'https://www.khanacademy.org',
-                'This website not only does computer programming courses but lots of other subjects.'),
-            Resource::create('Udacity', 'https://www.khanacademy.org',
-                'This website not only does computer programming courses but lots of other subjects.'),
-
-            Resource::create('Code School', 'https://codeschool.com/', 'Code School teaches web technologies in the
-                comfort of your browser with video lessons, coding challenges, and screencasts. These are the badges I have earned so far:',
-                json_decode($this->connect->doRequest())),
-        ]);
+        return $this->resources->all();
     }
 }
