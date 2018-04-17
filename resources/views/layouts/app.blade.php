@@ -11,8 +11,8 @@
     <link href="{{ asset('alloy-editor/assets/alloy-editor-ocean-min.css') }}" rel="stylesheet">
     <script src="{{ asset('alloy-editor/alloy-editor-all-min.js') }}"></script>
 </head>
-<body>
-<div id="app" class="ellen-theme mb-5">
+<body class="ellen-theme">
+<div id="app" class="mb-5">
     <div class="container rounded-bottom outer-container">
         <header class="text-center p-3">
             @include('partials._header')

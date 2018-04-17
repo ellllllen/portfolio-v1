@@ -11,13 +11,13 @@ body {
   font-family: "Lato";
   font-size: 0.9em;
   color: #333333;
+}
+
+.ellen-theme {
   background-image: linear-gradient(to bottom, $pink, $light-pink, #333);
   background-color: #333;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.ellen-theme {
 
   @import "about_me";
   @import "articles";
