@@ -9,7 +9,8 @@ class Books implements BooksInterface
     public function all(): Collection
     {
         return collect([
-            new Book('test', 'test'),
+            new Book("Evie's Book of Unusual Animals", 'evie'),
+            new Book("Pandy Goes Home", 'lexie'),
         ]);
     }
 }

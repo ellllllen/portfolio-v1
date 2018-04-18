@@ -2,30 +2,41 @@
 
 namespace Ellllllen\PersonalWebsite\Books;
 
+use Ellllllen\PersonalWebsite\Articles\Books\BookImages;
+
 class Book
 {
-    private $name;
-    private $filePath;
+    use BookImages;
 
-    public function __construct(string $name, string $filePath)
+    const BOOK_IMAGE_DIRECTORY = "images/books/";
+
+    private $title;
+    private $directory;
+
+    public function __construct(string $title, string $directory)
     {
-        $this->name = $name;
-        $this->filePath = $filePath;
+        $this->title = $title;
+        $this->directory = $directory;
     }
 
     /**
      * @return string
      */
-    public function getName(): string
+    public function getTitle(): string
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
      * @return string
      */
-    public function getFilePath(): string
+    public function getDirectory(): string
     {
-        return $this->filePath;
+        return $this->directory;
+    }
+
+    public function getImageFullDirectory(): string
+    {
+        return static::BOOK_IMAGE_DIRECTORY . $this->getDirectory();
     }
 }
