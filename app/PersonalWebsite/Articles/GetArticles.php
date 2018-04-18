@@ -49,4 +49,9 @@ class GetArticles
             return false;
         });
     }
+
+    public function findOrFail($articleID): Article
+    {
+        return Article::findOrFail($articleID);
+    }
 }

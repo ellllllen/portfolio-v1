@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model implements PresenterInterface
 {
     use PresenterTrait;
+    use SeparateControllerTrait;
 
     protected $presenter = ArticlePresenter::class;
 
@@ -22,15 +23,5 @@ class Article extends Model implements PresenterInterface
     public function getImageFullPath(): string
     {
         return "/public/images/{$this->image}";
-    }
-
-    public function hasView(): bool
-    {
-        return view()->exists($this->getFullView());
-    }
-
-    public function getFullView(): string
-    {
-        return "articles.extra_content.{$this->view}";
     }
 }

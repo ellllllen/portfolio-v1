@@ -2,7 +2,6 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Ellllllen\PersonalWebsite\Articles\Article;
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
 use Ellllllen\PersonalWebsite\Articles\ManageArticles;
 use Illuminate\Http\Request;
@@ -43,7 +42,11 @@ class ArticleController extends Controller
      */
     public function show(int $articleID)
     {
-        $article = Article::findOrFail($articleID);
+        $article = $this->getArticles->findOrFail($articleID);
+
+        if ($article->hasSeparateController()) {
+            return $article->loadSeparateController();
+        }
 
         return view('articles.show', compact('article'));
     }
@@ -68,7 +71,7 @@ class ArticleController extends Controller
 
     public function destroy(int $articleID)
     {
-        $article = Article::findOrFail($articleID);
+        $article = $this->getArticles->findOrFail($articleID);
 
         $this->manageArticles->destroy($article);
 
@@ -77,14 +80,14 @@ class ArticleController extends Controller
 
     public function edit(int $articleID)
     {
-        $article = Article::findOrFail($articleID);
+        $article = $this->getArticles->findOrFail($articleID);
 
         return view('articles.edit', compact('article'));
     }
 
     public function update(int $articleID)
     {
-        $article = Article::findOrFail($articleID);
+        $article = $this->getArticles->findOrFail($articleID);
 
         $this->validate($this->request, [
             'title' => ['required', "unique:articles,title,{$articleID},id"],

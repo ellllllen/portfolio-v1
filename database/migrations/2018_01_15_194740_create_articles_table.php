@@ -18,7 +18,6 @@ class CreateArticlesTable extends Migration
             $table->string('title')->unique();
             $table->text('section');
             $table->string('image');
-            $table->string('view')->nullable();
             $table->unsignedInteger('created_by');
             $table->timestamps();
 

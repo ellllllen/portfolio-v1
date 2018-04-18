@@ -26,10 +26,6 @@
             <input type="file" class="form-control-file" id="image" name="image">
             <img class="mt-2" src="{{ $article->getPublicImage() }}" />
         </div>
-        <div class="form-group">
-            <label for="view">View</label>
-            <input type="text" class="form-control" name="view" id="view" value="{{ $article->view }}">
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

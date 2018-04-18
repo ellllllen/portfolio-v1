@@ -24,10 +24,6 @@
             <label for="image">Image</label>
             <input type="file" class="form-control-file" id="image" name="image" required>
         </div>
-        <div class="form-group">
-            <label for="view">View</label>
-            <input type="text" class="form-control" name="view" id="view">
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

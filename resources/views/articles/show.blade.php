@@ -17,7 +17,6 @@
         <i>Created: {{ $article->created_at->format('Y-m-d') }} ({{ $article->created_at->diffForHumans() }})</i>
         {!! $article->section !!}
     </div>
-    @if($article->hasView())
-        @include($article->getFullView())
-    @endif
+
+    @yield('additional-content')
 @endsection

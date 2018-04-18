@@ -2,7 +2,7 @@
 
 namespace Ellllllen\PersonalWebsite\Resources;
 
-class Resource implements ResourceInterface
+class Resource
 {
     private $name;
     private $url;

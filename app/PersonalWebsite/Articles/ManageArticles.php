@@ -15,7 +15,6 @@ class ManageArticles
         $article->title = $fields['title'];
         $article->section = $fields['section'];
         $article->image = str_replace('public/images/', '', $path);
-        $article->view = $fields['view'] ?? null;
         $article->created_by = Auth::id();
         $article->save();
     }
@@ -38,7 +37,6 @@ class ManageArticles
 
         $article->title = $fields['title'];
         $article->section = $fields['section'];
-        $article->view = $fields['view'] ?? null;
         $article->save();
     }
 }

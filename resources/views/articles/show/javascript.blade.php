@@ -1,4 +1,8 @@
-<canvas id="myCanvas"></canvas>
+@extends('articles.show')
+
+@section('additional-content')
+    <canvas id="myCanvas"></canvas>
+@append
 
 @section('js')
     <script src="{{ asset('js/vendor/codecademy/alphabet.js') }}"></script>
@@ -13,4 +17,4 @@
             bounceBubbles();
         });
     </script>
-@endsection
+@append

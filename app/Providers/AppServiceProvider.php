@@ -2,6 +2,8 @@
 
 namespace Ellllllen\Providers;
 
+use Ellllllen\PersonalWebsite\Books\Books;
+use Ellllllen\PersonalWebsite\Books\BooksInterface;
 use Ellllllen\PersonalWebsite\Resources\Resources;
 use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
 use Illuminate\Support\Collection;
@@ -27,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(ResourcesInterface::class, Resources::class);
+        $this->app->bind(BooksInterface::class, Books::class);
     }
 
     private function createNavigation()
