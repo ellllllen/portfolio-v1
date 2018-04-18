@@ -1,12 +1,12 @@
 This is my personal website. http://ellenm.me
 
-##Usage
+## Usage
 
-###Articles
+### Articles
 If you are adding an article that needs additional logic you can send the request to a separate
 controller, which then sends the response back, in this instance it is a view (Illuminate\View\View).
 
-####Example
+#### Example
 If an article requires a collection of objects that need to be gathered, instead of putting that logic in the
 ArticleController@show method (which will be called every time you load an article, even when it doesn't need it) it
 will allow it to go to a different controller (where the gathering can be done) and return a view.
