@@ -15,17 +15,16 @@
         <div class="cv-title">Specialist Skills</div>
         <ul>
             <li>
-                {{ Carbon\CarbonInterval::year(\Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2008", "10"))) }}
-                : PHP 5/PHP 7, MySQL, HTML, CSS/SaSS
+                {{ date_diff_in_years("2008", "10") }}: PHP 5/PHP 7, MySQL, HTML, CSS/SaSS
             </li>
-            <li>{{ Carbon\CarbonInterval::year(\Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2010", "06"))) }}
-                years: Linux/LAMP Stack, JavaScript/JQuery/VueJS, Networking
+            <li>
+                {{ date_diff_in_years("2010", "06") }}: Linux/LAMP Stack, JavaScript/JQuery/VueJS, Networking
             </li>
-            <li>{{ Carbon\CarbonInterval::year(\Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2015", "01"))) }}
-                years: Laravel, Git
+            <li>
+                {{ date_diff_in_years("2015", "01") }}: Laravel, Git
             </li>
-            <li>{{ Carbon\CarbonInterval::year(\Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2015", "01"))) }}
-                year: PHPUnit
+            <li>
+                {{ date_diff_in_years("2017", "01") }}: PHPUnit
             </li>
         </ul>
     </div>
