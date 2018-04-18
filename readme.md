@@ -36,7 +36,7 @@ class BooksController extends ShowArticle
 3. Append the additional content within the view
 ```blade
 @section('additional-content')
-    <canvas id="myCanvas"></canvas>
+    {{ print_r($books) }}
 @append
 ```
 
