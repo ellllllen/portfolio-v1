@@ -31,27 +31,27 @@
     <div class="cv-section">
         <div class="cv-title">Employment History</div>
         <div class="cv-employ">
-            <div class="cv-employ-title">Mainstream Digital - Cirencester, Gloucestershire</div>
+            <div class="cv-employ-title">Current Employer - Cirencester, Gloucestershire</div>
             <div class="cv-employ-subtitle">Developer (June 2010 to March 2018), Business Continuity Manager (June 2017
                 to present), Software Team Lead (March 2018 to present)
             </div>
-            During my time at Mainstream I have gained a lot of experience creating high quality public and internal web
-            portals as well as developing backend micro services and RESTful APIs. I have developed various systems
-            while working at Mainstream, including developing new products to sell to our customers and automating in
-            house procedures. Within the first year of working at the Mainstream Digital I had established the company’s
+            During my time with this company I have gained a lot of experience creating high quality public and internal web
+            portals as well as developing backend micro services and RESTful APIs. I have developed various systems,
+            including developing new products to sell to our customers and automating in
+            house procedures. Within the first year of working at the company I had established the company’s
             Intranet, which improved the day to day working for all members of staff. More recently I have developed a
-            public web portal for Mainstream customers where they configure and monitor the different products and
+            public web portal for our customers where they configure and monitor the different products and
             services they have with the company.
             <br>
-            Although Mainstream was fully established when I joined, my team was treated as a start up. Therefore, I
+            Although the company was fully established when I joined, my team was treated as a start up. Therefore, I
             have been able to influence high level decisions such as programming techniques and tools and vastly
             expanding the company data centre infrastructure, showing I am motivated and proactive. My role also
             involves managing projects and mentoring other members of the team, which has given me increased
             responsibility and management skills.
             <br>
             Since learning and implementing the Laravel framework three years ago, I feel my skills in Object Orientated
-            coding and test driven development (TDD) have greatly improved. I have also enhanced my skills over the last
-            three years in VueJS and SaSS. Additionally, I have established my skills in DevOps and networking, which
+            coding and test driven development (TDD) have greatly improved. I have also enhanced my skills in VueJS and
+            SaSS. Additionally, I have established my skills in DevOps and networking, which
             involved deploying and maintaining Linux CentOS servers with XenServer. With my expanded role I became
             instrumental in ensuring connectivity, security and performance of these servers and the underlying data
             centres.
@@ -121,8 +121,5 @@
     <div class="cv-section">
         <div class="cv-title">References</div>
         References are available upon request.
-    </div>
-    <div class="button-container">
-        <a class="btn btn-primary" href="{{ route('cv.pdf') }}">Download PDF Version</a>
     </div>
 @endsection

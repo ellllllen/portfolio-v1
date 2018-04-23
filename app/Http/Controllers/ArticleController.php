@@ -3,6 +3,7 @@
 namespace Ellllllen\Http\Controllers;
 
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\PersonalWebsite\Articles\LogArticleClick;
 use Ellllllen\PersonalWebsite\Articles\ManageArticles;
 use Illuminate\Http\Request;
 
@@ -38,11 +39,14 @@ class ArticleController extends Controller
 
     /**
      * @param int $articleID
+     * @param LogArticleClick $logArticleClick
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(int $articleID)
+    public function show(int $articleID, LogArticleClick $logArticleClick)
     {
         $article = $this->getArticles->findOrFail($articleID);
+
+        $logArticleClick->storeLog($article, $this->request->ip());
 
         if ($article->hasSeparateController()) {
             return $article->loadSeparateController();
