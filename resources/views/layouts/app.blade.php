@@ -21,6 +21,10 @@
             @include('partials._navigation')
         </nav>
         <main class="p-3">
+            @if(Breadcrumbs::exists() && Route::current()->getName() != 'welcome')
+                {{ Breadcrumbs::render() }}
+            @endif
+
             <h2 class="pink">{{ $mainTitle ?? '' }}</h2>
             @yield('content')
         </main>

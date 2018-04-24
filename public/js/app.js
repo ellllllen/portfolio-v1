@@ -13906,7 +13906,6 @@ var app = new Vue({
         },
         toggleTaskComplete: function toggleTaskComplete(key) {
             this.tasks[key].completed = !this.tasks[key].completed;
-            this.$refs.text = 'Mark as complete';
         }
     },
     computed: {

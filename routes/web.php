@@ -27,3 +27,8 @@ Route::get('/resources', 'ResourcesController@index')->name('resources');
 
 Route::resource('/articles', 'ArticleController');
 
+Route::get('/test', function ()
+{
+   return view('articles.show.learn-vue');
+});
+
