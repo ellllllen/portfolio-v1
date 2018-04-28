@@ -103,4 +103,12 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.show', ['id' => $article->id]);
     }
+
+    public function report()
+    {
+    }
+
+    public function getClicks()
+    {
+    }
 }
