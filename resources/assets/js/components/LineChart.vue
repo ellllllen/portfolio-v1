@@ -34,11 +34,14 @@ export default {
         datasets: []
       };
 
+      var colour = "";
       $.each(response, function(key, value) {
+        colour = getRandomColor();
         data.datasets.push({
           label: key,
           fill: false,
-          backgroundColor: getRandomColor(),
+          backgroundColor: colour,
+          borderColor: colour,
           data: Object.keys(value).map(function(key) {
             return value[key];
           })
@@ -54,8 +57,7 @@ export default {
                 display: false
               },
               ticks: {
-                beginAtZero: true,
-                stepSize: 1
+                beginAtZero: true
               },
               scaleLabel: {
                 display: true,
