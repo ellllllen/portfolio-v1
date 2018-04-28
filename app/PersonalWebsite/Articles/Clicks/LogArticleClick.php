@@ -2,6 +2,8 @@
 
 namespace Ellllllen\PersonalWebsite\Articles\Clicks;
 
+use Ellllllen\PersonalWebsite\Articles\Article;
+
 class LogArticleClick
 {
     public function storeLog(Article $article, string $ip)

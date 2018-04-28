@@ -31,7 +31,5 @@
 @endsection
 
 @section('js')
-    <script>
-        AlloyEditor.editable("section");
-    </script>
+    <script src="{{ asset('js/editor.js') }}"></script>
 @endsection
