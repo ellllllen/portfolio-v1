@@ -4,7 +4,7 @@
     <div class="container">
         <ul class="list-group">
             <li class="list-group-item">
-                <a href="{{ route('articles.create') }}">Create an Article</a>
+                <a href="{{ route('articles.report') }}">Article Report</a>
             </li>
         </ul>
     </div>

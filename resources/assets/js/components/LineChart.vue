@@ -8,48 +8,54 @@ import Chart from "chart.js";
 export default {
   props: {
     url: "",
-    colours: {
-      type: Array,
-      default: function() {
-        return [
-          "#c81c70",
-          "#0091D3",
-          "#6B5AA9",
-          "#FFCC66",
-          "#009966",
-          "#ff9830",
-          "#F69D9D",
-          "#b2ebff",
-          "#96DE99",
-          "#333333"
-        ];
-      }
-    },
+    xLabel: "",
+    yLabel: "",
     width: {
       default: 1000
     },
     height: {
       default: 500
-    },
-    title: {
-      default: ""
-    },
-    xLabel: "",
-    yLabel: "",
-    yAxisMax: {
-      default: 0
     }
   },
   mounted: function() {
     var self = this;
+    var ctx = self.$el.getContext("2d");
+
     $.get(this.url).then(function(response) {
+      //global defaults
+      var chartDefault = Chart.defaults.global;
+      chartDefault.defaultFontFamily = "Lato";
+      chartDefault.defaultFontColor = "#333333";
+      chartDefault.defaultFontSize = 14;
+
+      //chart data
+      var data = {
+        labels: Object.keys(response[getSecondaryKey(response)]),
+        datasets: []
+      };
+
+      $.each(response, function(key, value) {
+        data.datasets.push({
+          label: key,
+          fill: false,
+          backgroundColor: getRandomColor(),
+          data: Object.keys(value).map(function(key) {
+            return value[key];
+          })
+        });
+      });
+
+      //chart options
       var options = {
         scales: {
           yAxes: [
             {
+              gridLines: {
+                display: false
+              },
               ticks: {
                 beginAtZero: true,
-                suggestedMax: self.yAxisMax
+                stepSize: 1
               },
               scaleLabel: {
                 display: true,
@@ -71,36 +77,8 @@ export default {
         }
       };
 
-      Chart.defaults.global.defaultFontFamily = "Tahoma";
-      Chart.defaults.global.responsive = false;
-      if (self.title.length != 0) {
-        Chart.defaults.global.title.display = true;
-        Chart.defaults.global.title.text = self.title;
-      }
-
-      var data = {
-        labels: Object.keys(response[getFirstKey(response)]),
-        datasets: []
-      };
-
-      var count = 0;
-      $.each(response, function(index, value) {
-        data.datasets.push({
-          label: index,
-          backgroundColor: self.colours[count],
-          borderColor: self.colours[count],
-          pointBackgroundColor: self.colours[count],
-          borderWidth: 2,
-          pointRadius: 2,
-          fill: false,
-          data: Object.keys(value).map(function(key) {
-            return value[key];
-          })
-        });
-        count++;
-      });
-
-      new Chart(self.$el.getContext("2d"), {
+      //render chart
+      new Chart(ctx, {
         type: "line",
         data: data,
         options: options
@@ -109,10 +87,19 @@ export default {
   }
 };
 
-function getFirstKey(response) {
+function getSecondaryKey(response) {
   for (var first in response) break;
 
   return first;
+}
+
+function getRandomColor() {
+  return (
+    "#" +
+    Math.random()
+      .toString(16)
+      .slice(-6)
+  );
 }
 </script>
 

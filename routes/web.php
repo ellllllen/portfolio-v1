@@ -25,8 +25,8 @@ Route::prefix('/cv')->group(function () {
 
 Route::get('/resources', 'ResourcesController@index')->name('resources');
 
-Route::get('/articles/report', 'ArticleController@report')->name('articles.report');
-Route::get('/article/get-clicks', 'ArticleController@getClicks')->name('articles.get-clicks');
+Route::get('/articles/report', 'ArticleController@report')->name('articles.report')->middleware('auth');
+Route::get('/article/get-clicks', 'ArticleController@getClicks')->name('articles.get-clicks')->middleware('auth');
 Route::resource('/articles', 'ArticleController');
 
 Route::get('/test', function () {

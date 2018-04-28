@@ -32,6 +32,7 @@ class Articles
     public function getWithClicks()
     {
         return Article::with('articleClicks')
+            ->whereNot('ip', env("MY_IP"))
             ->get();
     }
 }

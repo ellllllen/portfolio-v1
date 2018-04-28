@@ -32576,45 +32576,45 @@ __webpack_require__(149);
 
 window.Vue = __webpack_require__(171);
 
-Vue.component('line-chart', __webpack_require__(174));
+Vue.component("line-chart", __webpack_require__(174));
 
 var app = new Vue({
-    el: '#app',
-    data: {
-        message: "TYPE HERE!",
-        newName: "",
-        names: ['Ellen', 'Bob', 'Pandy', 'Wendy'],
-        isButtonClass: false,
-        tasks: [{ description: 'Do washing up', completed: false }, { description: 'Clear inbox', completed: false }, { description: 'Make dinner', completed: false }, { description: 'Cut the grass', completed: false }, { description: 'Clean room', completed: false }]
+  el: "#app",
+  data: {
+    message: "TYPE HERE!",
+    newName: "",
+    names: ["Ellen", "Bob", "Pandy", "Wendy"],
+    isButtonClass: false,
+    tasks: [{ description: "Do washing up", completed: false }, { description: "Clear inbox", completed: false }, { description: "Make dinner", completed: false }, { description: "Cut the grass", completed: false }, { description: "Clean room", completed: false }]
+  },
+  methods: {
+    addName: function addName() {
+      this.names.push(this.newName);
+      this.newName = "";
     },
-    methods: {
-        addName: function addName() {
-            this.names.push(this.newName);
-            this.newName = "";
-        },
-        changeButtonClass: function changeButtonClass() {
-            if (this.isButtonClass) {
-                this.isButtonClass = false;
-            } else {
-                this.isButtonClass = true;
-            }
-        },
-        toggleTaskComplete: function toggleTaskComplete(key) {
-            this.tasks[key].completed = !this.tasks[key].completed;
-        }
+    changeButtonClass: function changeButtonClass() {
+      if (this.isButtonClass) {
+        this.isButtonClass = false;
+      } else {
+        this.isButtonClass = true;
+      }
     },
-    computed: {
-        incompletedTasks: function incompletedTasks() {
-            return this.tasks.filter(function (task) {
-                return !task.completed;
-            });
-        },
-        completedTasks: function completedTasks() {
-            return this.tasks.filter(function (task) {
-                return task.completed;
-            });
-        }
+    toggleTaskComplete: function toggleTaskComplete(key) {
+      this.tasks[key].completed = !this.tasks[key].completed;
     }
+  },
+  computed: {
+    incompletedTasks: function incompletedTasks() {
+      return this.tasks.filter(function (task) {
+        return !task.completed;
+      });
+    },
+    completedTasks: function completedTasks() {
+      return this.tasks.filter(function (task) {
+        return task.completed;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -65971,36 +65971,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     url: "",
-    colours: {
-      type: Array,
-      default: function _default() {
-        return ["#c81c70", "#0091D3", "#6B5AA9", "#FFCC66", "#009966", "#ff9830", "#F69D9D", "#b2ebff", "#96DE99", "#333333"];
-      }
-    },
+    xLabel: "",
+    yLabel: "",
     width: {
       default: 1000
     },
     height: {
       default: 500
-    },
-    title: {
-      default: ""
-    },
-    xLabel: "",
-    yLabel: "",
-    yAxisMax: {
-      default: 0
     }
   },
   mounted: function mounted() {
     var self = this;
+    var ctx = self.$el.getContext("2d");
+
     $.get(this.url).then(function (response) {
+      //global defaults
+      var chartDefault = __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a.defaults.global;
+      chartDefault.defaultFontFamily = "Lato";
+      chartDefault.defaultFontColor = "#333333";
+      chartDefault.defaultFontSize = 14;
+
+      //chart data
+      var data = {
+        labels: Object.keys(response[getSecondaryKey(response)]),
+        datasets: []
+      };
+
+      $.each(response, function (key, value) {
+        data.datasets.push({
+          label: key,
+          fill: false,
+          backgroundColor: getRandomColor(),
+          data: Object.keys(value).map(function (key) {
+            return value[key];
+          })
+        });
+      });
+
+      //chart options
       var options = {
         scales: {
           yAxes: [{
+            gridLines: {
+              display: false
+            },
             ticks: {
               beginAtZero: true,
-              suggestedMax: self.yAxisMax
+              stepSize: 1
             },
             scaleLabel: {
               display: true,
@@ -66019,36 +66036,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       };
 
-      __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a.defaults.global.defaultFontFamily = "Tahoma";
-      __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a.defaults.global.responsive = false;
-      if (self.title.length != 0) {
-        __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a.defaults.global.title.display = true;
-        __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a.defaults.global.title.text = self.title;
-      }
-
-      var data = {
-        labels: Object.keys(response[getFirstKey(response)]),
-        datasets: []
-      };
-
-      var count = 0;
-      $.each(response, function (index, value) {
-        data.datasets.push({
-          label: index,
-          backgroundColor: self.colours[count],
-          borderColor: self.colours[count],
-          pointBackgroundColor: self.colours[count],
-          borderWidth: 2,
-          pointRadius: 2,
-          fill: false,
-          data: Object.keys(value).map(function (key) {
-            return value[key];
-          })
-        });
-        count++;
-      });
-
-      new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(self.$el.getContext("2d"), {
+      //render chart
+      new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
         type: "line",
         data: data,
         options: options
@@ -66057,10 +66046,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   }
 });
 
-function getFirstKey(response) {
+function getSecondaryKey(response) {
   for (var first in response) {
     break;
   }return first;
+}
+
+function getRandomColor() {
+  return "#" + Math.random().toString(16).slice(-6);
 }
 
 /***/ }),
