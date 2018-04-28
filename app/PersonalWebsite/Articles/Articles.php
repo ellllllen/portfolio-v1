@@ -25,4 +25,13 @@ class Articles
         return Article::orderBy('created_at', 'desc')
             ->get();
     }
+
+    /**
+     * @return Collection|null
+     */
+    public function getWithClicks()
+    {
+        return Article::with('articleClicks')
+            ->get();
+    }
 }

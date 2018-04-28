@@ -2,10 +2,12 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Ellllllen\PersonalWebsite\Articles\GetArticles;
-use Ellllllen\PersonalWebsite\Articles\LogArticleClick;
-use Ellllllen\PersonalWebsite\Articles\ManageArticles;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\PersonalWebsite\Articles\ManageArticles;
+use Ellllllen\PersonalWebsite\Articles\Clicks\GetArticleClicks;
+use Ellllllen\PersonalWebsite\Articles\Clicks\LogArticleClick;
 
 class ArticleController extends Controller
 {
@@ -109,7 +111,10 @@ class ArticleController extends Controller
         return view('articles.report');
     }
 
-    public function getClicks()
+    public function getClicks(GetArticleClicks $getArticleClicks)
     {
+        $articleClicks = $getArticleClicks->getChartData();
+        
+        return response()->json($articleClicks);
     }
 }

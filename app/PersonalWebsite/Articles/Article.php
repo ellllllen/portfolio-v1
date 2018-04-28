@@ -5,6 +5,7 @@ namespace Ellllllen\PersonalWebsite\Articles;
 use Ellllllen\Presenter\PresenterInterface;
 use Ellllllen\Presenter\PresenterTrait;
 use Illuminate\Database\Eloquent\Model;
+use Ellllllen\PersonalWebsite\Articles\Clicks\ArticleClick;
 
 class Article extends Model implements PresenterInterface
 {
@@ -14,6 +15,11 @@ class Article extends Model implements PresenterInterface
     protected $presenter = ArticlePresenter::class;
 
     protected $fillable = ['title', 'image', 'section', 'view'];
+
+    public function articleClicks()
+    {
+        return $this->hasMany(ArticleClick::class);
+    }
 
     public function getPublicImage(): string
     {

@@ -1,8 +1,7 @@
 @extends('layouts.app', ['mainTitle' => 'Article Report'])
 
 @section('content')
-    <canvas id="myChart"></canvas>
-@endsection
-
-@section('js')
+    <div class="text-center">
+        <line-chart url="{{ route('articles.get-clicks') }}" x-label="Number of Clicks" y-label="Date/Time" title="Number of Clicks on Articles"></line-chart>
+    </div>
 @endsection
