@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellllllen\PersonalWebsite\Articles;
+namespace Ellllllen\PersonalWebsite\Articles\Clicks;
 
 class LogArticleClick
 {
