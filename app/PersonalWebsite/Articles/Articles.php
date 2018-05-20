@@ -31,8 +31,10 @@ class Articles
      */
     public function getWithClicks()
     {
-        return Article::with(['articleClicks' => function ($query) {
-            $query->where('ip', '!=', env("MY_IP"));
-        }])->get();
+        return Article::with([
+            'articleClicks' => function ($query) {
+                $query->where('ip', '!=', env("MY_IP"));
+            }
+        ])->get();
     }
 }

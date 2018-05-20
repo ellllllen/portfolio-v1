@@ -8,10 +8,20 @@ use Illuminate\Support\Carbon;
 class GetArticleClicks
 {
     private $articles;
+    /**
+     * @var ArticleClicks
+     */
+    private $articleClicks;
 
-    public function __construct(Articles $articles)
+    /**
+     * GetArticleClicks constructor.
+     * @param Articles $articles
+     * @param ArticleClicks $articleClicks
+     */
+    public function __construct(Articles $articles, ArticleClicks $articleClicks)
     {
         $this->articles = $articles;
+        $this->articleClicks = $articleClicks;
     }
 
     public function getChartData()
@@ -22,7 +32,7 @@ class GetArticleClicks
 
         foreach ($articles as $article) {
             for ($m = 0; $m < 12; $m++) {
-                $clicks[$article->title][Carbon::now()->addMonths($m)->format('m-Y')] = 0;
+                $clicks[$article->title][Carbon::createFromDate(2018, 04)->addMonths($m)->format('m-Y')] = 0;
             }
 
             foreach ($article->articleClicks as $click) {
@@ -35,5 +45,13 @@ class GetArticleClicks
         }
 
         return $clicks;
+    }
+
+    /**
+     * @param int $perPage
+     */
+    public function paginate(int $perPage = 20)
+    {
+        return $this->articleClicks->paginate($perPage);
     }
 }
