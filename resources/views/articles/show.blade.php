@@ -15,6 +15,8 @@
     @endauth
     <div>
         <i>Created: {{ $article->created_at->format('Y-m-d') }} ({{ $article->created_at->diffForHumans() }})</i>
+        <br>
+        <i>Last Updated: {{ $article->updated_at->format('Y-m-d') }} ({{ $article->updated_at->diffForHumans() }})</i>
         {!! $article->section !!}
     </div>
 

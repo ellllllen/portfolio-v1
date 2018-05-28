@@ -9,6 +9,11 @@ require("./bootstrap");
 window.Vue = require("vue");
 
 Vue.component("line-chart", require("./components/LineChart.vue"));
+Vue.component('task-list', require("./components/TaskListComponent.vue"));
+Vue.component('task', {
+  template: '<li><slot></slot></li>'
+});
+Vue.component('message', require("./components/MessageComponent.vue"));
 
 const app = new Vue({
   el: "#app",

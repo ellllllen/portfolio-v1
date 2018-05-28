@@ -55,6 +55,24 @@
                     </ul>
                 </div>
             </div>
+        </div>        
+        <div class="card mb-4 mx-4">
+            <div class="card-body">
+                <h5 class="card-title">Episode 7 and 8: Components</h5>
+                <h6 class="card-subtitle mb-2 text-muted font-italic small">Completed: 2018-05-28</h6>
+                <div>
+                    <task-list></task-list>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4 mx-4">
+            <div class="card-body">
+                <h5 class="card-title">Episode 9: Practical Component Exercise #1: Message</h5>
+                <h6 class="card-subtitle mb-2 text-muted font-italic small">Completed: 2018-05-28</h6>
+                <div>
+                    <message title="Hello" body="Hello everyone!"></message>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
