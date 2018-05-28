@@ -16,7 +16,7 @@ class CreateArticleClicksTable extends Migration
         Schema::create('article_clicks', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('article_id');
-            $table->string('ip', 30);
+            $table->string('ip', 100);
             $table->timestamps();
 
             $table->foreign('article_id')->references('id')->on('articles');
