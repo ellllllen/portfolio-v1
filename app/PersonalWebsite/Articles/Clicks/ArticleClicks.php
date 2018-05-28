@@ -13,6 +13,7 @@ class ArticleClicks
     {
         return ArticleClick::with('article')
             ->where('ip', '!=', env("MY_IP"))
+            ->orderBy('created_at', 'desc')
             ->paginate($perPage);
     }
 }

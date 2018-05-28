@@ -10,6 +10,7 @@
         <table class="table table-bordered table-sm">
             <thead class="thead-dark">
             <tr>
+                <th>Date/Time</th>
                 <th>Article</th>
                 <th>IP</th>
             </tr>
@@ -17,6 +18,7 @@
             <tbody>
             @foreach($articleClicks as $articleClick)
                 <tr>
+                    <td>{{ $articleClick->created_at }} ({{ $articleClick->created_at->diffForHumans() }})</td>
                     <td>{{ $articleClick->article->title }}</td>
                     <td>{{ $articleClick->ip }}</td>
                 </tr>
