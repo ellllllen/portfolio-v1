@@ -14,6 +14,7 @@ Vue.component('task', {
   template: '<li><slot></slot></li>'
 });
 Vue.component('message', require("./components/MessageComponent.vue"));
+Vue.component('modal', require("./components/ModalComponent.vue"));
 
 const app = new Vue({
   el: "#app",
@@ -28,7 +29,8 @@ const app = new Vue({
       { description: "Make dinner", completed: false },
       { description: "Cut the grass", completed: false },
       { description: "Clean room", completed: false }
-    ]
+    ],
+    showModal: false,
   },
   methods: {
     addName() {

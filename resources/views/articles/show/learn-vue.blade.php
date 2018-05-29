@@ -74,5 +74,24 @@
                 </div>
             </div>
         </div>
+        <div class="card mb-4 mx-4">
+            <div class="card-body">
+                <h5 class="card-title">Episode 10: Practical Component Exercise #2: Modal</h5>
+                <h6 class="card-subtitle mb-2 text-muted font-italic small">Completed: 2018-05-29</h6>
+                <div>
+                    <button @click="showModal = true">Show Modal</button>
+                    <modal v-show="showModal" body="Hello popup" @close="showModal = false"></modal>
+                </div>
+            </div>
+        </div>        
+        <div class="card mb-4 mx-4">
+            <div class="card-body">
+                <h5 class="card-title">Episode 11: Practical Component Exercise #3: Tabs</h5>
+                <h6 class="card-subtitle mb-2 text-muted font-italic small">Completed: 2018-05-29</h6>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
