@@ -1,6 +1,9 @@
 @extends('layouts.app', ['mainTitle' => 'About Me'])
 
 @section('content')
+    @foreach($articles as $article)
+    {{ dd($article) }}
+    @endforeach
     <div class="about-me">
         Hi, I'm Ellen and I currently live in Cirencester, Gloucestershire working as a full time Developer.
         I graduated from Bournemouth University in 2010, gaining a 2:1 BSc (Hons) in Computing.

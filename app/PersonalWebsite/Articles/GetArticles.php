@@ -29,9 +29,9 @@ class GetArticles
     /**
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator|null
      */
-    public function paginate()
+    public function paginate($tag = null)
     {
-        return $this->articles->paginate();
+        return $this->articles->paginate($tag);
     }
 
     /**

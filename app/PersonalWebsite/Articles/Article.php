@@ -2,9 +2,10 @@
 
 namespace Ellllllen\PersonalWebsite\Articles;
 
-use Ellllllen\Presenter\PresenterInterface;
 use Ellllllen\Presenter\PresenterTrait;
 use Illuminate\Database\Eloquent\Model;
+use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
+use Ellllllen\Presenter\PresenterInterface;
 use Ellllllen\PersonalWebsite\Articles\Clicks\ArticleClick;
 
 class Article extends Model implements PresenterInterface
@@ -19,6 +20,11 @@ class Article extends Model implements PresenterInterface
     public function articleClicks()
     {
         return $this->hasMany(ArticleClick::class);
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'article_tag');
     }
 
     public function getPublicImage(): string

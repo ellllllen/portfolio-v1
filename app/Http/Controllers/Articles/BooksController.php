@@ -3,7 +3,6 @@
 namespace Ellllllen\Http\Controllers\Articles;
 
 use Ellllllen\PersonalWebsite\Articles\Article;
-use Ellllllen\PersonalWebsite\Books\GetBooks;
 use Illuminate\View\View;
 
 class BooksController extends ShowArticle

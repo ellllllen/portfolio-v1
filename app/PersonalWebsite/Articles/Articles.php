@@ -2,8 +2,8 @@
 
 namespace Ellllllen\PersonalWebsite\Articles;
 
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class Articles
 {
@@ -11,10 +11,16 @@ class Articles
      * @param int $perPage
      * @return LengthAwarePaginator|null
      */
-    public function paginate(int $perPage = 5)
+    public function paginate($tag = null, int $perPage = 5)
     {
-        return Article::orderBy('created_at', 'desc')
-            ->paginate($perPage);
+        $query = Article::orderBy('created_at', 'desc');
+
+        // if ($tag) {
+        //     $query->whereHas('tags', function ($q) use ($tag) {
+        //         $q->where('id', $tag->id);
+        //     });
+        // }
+        return $query->paginate($perPage);
     }
 
     /**
