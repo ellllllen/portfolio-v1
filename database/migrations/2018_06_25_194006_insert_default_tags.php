@@ -8,7 +8,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class InsertDefaultTags extends Migration
 {
-    private $defaultTags = ['about me', 'knowledge base'];
+    private $defaultTags = ['about me', 'notes', 'projects'];
 
     /**
      * Run the migrations.

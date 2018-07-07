@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             'about-me' => 'About Me',
             'cv' => 'Curriculum Vitae',
             'resources' => 'Resources',
-            'articles.index' => 'Knowledge Base'
+            'articles.index' => trans('articles.index.title'),
         ]);
 
         $this->composerNavigation($navigation);

@@ -20,7 +20,7 @@ Breadcrumbs::register('resources', function ($breadcrumbs) {
 
 Breadcrumbs::register('articles.index', function ($breadcrumbs) {
     $breadcrumbs->parent('welcome');
-    $breadcrumbs->push('Knowledge Base', route('articles.index'));
+    $breadcrumbs->push(trans('articles.index.title'), route('articles.index'));
 });
 
 Breadcrumbs::register('articles.show', function ($breadcrumbs, $articleID) {
