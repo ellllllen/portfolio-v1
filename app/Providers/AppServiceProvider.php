@@ -35,10 +35,10 @@ class AppServiceProvider extends ServiceProvider
     private function createNavigation()
     {
         $navigation = collect([
-            'welcome' => 'Home',
-            'about-me' => 'About Me',
-            'cv' => 'Curriculum Vitae',
-            'resources' => 'Resources',
+            'welcome' => trans('home.title'),
+            'about-me' => trans('about_me.title'),
+            'cv' => trans('cv.title'),
+            'resources' => trans('resources.title'),
             'articles.index' => trans('articles.index.title'),
         ]);
 

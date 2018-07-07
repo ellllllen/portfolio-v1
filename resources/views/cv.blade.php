@@ -1,4 +1,4 @@
-@extends('layouts.app', ['mainTitle' => 'Curriculum Vitae'])
+@extends('layouts.app', ['mainTitle' => trans('cv.title')])
 
 @section('content')
     <div class="cv-section">

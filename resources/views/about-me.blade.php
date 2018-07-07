@@ -1,4 +1,4 @@
-@extends('layouts.app', ['mainTitle' => 'About Me'])
+@extends('layouts.app', ['mainTitle' => trans('about_me.title')])
 
 @section('content')
     <div class="about-me">

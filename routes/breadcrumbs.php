@@ -1,21 +1,21 @@
 <?php
 Breadcrumbs::register('welcome', function ($breadcrumbs) {
-    $breadcrumbs->push('Home', route('welcome'));
+    $breadcrumbs->push(trans('home.title'), route('welcome'));
 });
 
 Breadcrumbs::register('about-me', function ($breadcrumbs) {
     $breadcrumbs->parent('welcome');
-    $breadcrumbs->push('About Me', route('about-me'));
+    $breadcrumbs->push(trans('about_me.title'), route('about-me'));
 });
 
 Breadcrumbs::register('cv', function ($breadcrumbs) {
     $breadcrumbs->parent('welcome');
-    $breadcrumbs->push('Curriculum Vitae', route('cv'));
+    $breadcrumbs->push(trans('cv.title'), route('cv'));
 });
 
 Breadcrumbs::register('resources', function ($breadcrumbs) {
     $breadcrumbs->parent('welcome');
-    $breadcrumbs->push('Resources', route('resources'));
+    $breadcrumbs->push(trans('resources.title'), route('resources'));
 });
 
 Breadcrumbs::register('articles.index', function ($breadcrumbs) {

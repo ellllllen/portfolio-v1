@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col col-md-4 p-0 about-me">
                 <a href="{{ route('about-me') }}">
-                    <span>About Me</span>
+                    <span>@lang('about_me.title')</span>
                 </a>
             </div>
             <div class="col col-md-4 p-0 cv">
@@ -19,19 +19,6 @@
                 </a>
             </div>
         </div>
-        @if($articles->count() > 0)
-            @foreach ($articles->chunk(3) as $chunk)
-                <div class="row">
-                    @foreach ($chunk as $article)
-                        <div class="col col-md-4 p-0" style="background-image: url({{ $article->getPublicImage() }})">
-                            <a href="{{ route('articles.show', ['id' => $article->id]) }}">
-                                <span>{{ $article->title }}</span>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            @endforeach
-        @endif
     </div>
 @endsection
 

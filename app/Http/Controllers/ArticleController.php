@@ -2,8 +2,6 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Carbon\Carbon;
-use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
 use Illuminate\Http\Request;
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
 use Ellllllen\PersonalWebsite\Articles\ManageArticles;
@@ -37,9 +35,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $tag = Tag::findOrFail(Tag::NOTES);
-
-        return view('articles.index')->with('articles', $this->getArticles->paginate($tag));
+        return view('articles.index')->with('articles', $this->getArticles->paginate());
     }
 
     /**
