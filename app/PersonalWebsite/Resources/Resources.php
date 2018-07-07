@@ -2,25 +2,10 @@
 
 namespace Ellllllen\PersonalWebsite\Resources;
 
-use Ellllllen\ApiWrapper\Connect;
 use Illuminate\Support\Collection;
 
 class Resources implements ResourcesInterface
 {
-    /**
-     * @var Connect
-     */
-    private $connect;
-
-    /**
-     * GetResources constructor.
-     * @param Connect $connect
-     */
-    public function __construct(Connect $connect)
-    {
-        $this->connect = $connect;
-    }
-
     public function all(): Collection
     {
         return collect([
@@ -37,9 +22,7 @@ class Resources implements ResourcesInterface
                 'This website offers loads of different programming courses. It\'s very professional and is
                 used by lots of big companies.'),
 
-            new Resource('Code School', 'https://codeschool.com/', 'Code School teaches web technologies in the
-                comfort of your browser with video lessons, coding challenges, and screencasts. These are the badges I have earned so far:',
-                json_decode($this->connect->doRequest())),
+            new Resource('Udemy', 'https://www.udemy.com/', 'Online courses taught by expert instructors.'),
         ]);
     }
 }
