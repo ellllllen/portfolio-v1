@@ -14,9 +14,12 @@
         </div>
     @endauth
     <div>
-        <i>Created: {{ $article->created_at->format('Y-m-d') }} ({{ $article->created_at->diffForHumans() }})</i>
-        <br>
-        <i>Last Updated: {{ $article->updated_at->format('Y-m-d') }} ({{ $article->updated_at->diffForHumans() }})</i>
+        <div class="mb-3">
+            <i>Created: {{ $article->created_at->format('Y-m-d') }} ({{ $article->created_at->diffForHumans() }})</i>
+            <br>
+            <i>Last Updated: {{ $article->updated_at->format('Y-m-d') }} ({{ $article->updated_at->diffForHumans() }}
+                )</i>
+        </div>
         {!! $article->section !!}
     </div>
 

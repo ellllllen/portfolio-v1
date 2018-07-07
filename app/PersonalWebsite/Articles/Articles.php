@@ -8,6 +8,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 class Articles
 {
     /**
+     * @param null $tag
      * @param int $perPage
      * @return LengthAwarePaginator|null
      */
@@ -15,11 +16,12 @@ class Articles
     {
         $query = Article::orderBy('created_at', 'desc');
 
-        // if ($tag) {
-        //     $query->whereHas('tags', function ($q) use ($tag) {
-        //         $q->where('id', $tag->id);
-        //     });
-        // }
+        if ($tag) {
+            $query->whereHas('tags', function ($q) use ($tag) {
+                $q->where('tags.id', $tag->id);
+            });
+        }
+
         return $query->paginate($perPage);
     }
 

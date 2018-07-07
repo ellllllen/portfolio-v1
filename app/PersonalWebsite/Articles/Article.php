@@ -24,7 +24,7 @@ class Article extends Model implements PresenterInterface
 
     public function tags()
     {
-        return $this->morphToMany(Tag::class, 'article_tag');
+        return $this->belongsToMany(Tag::class);
     }
 
     public function getPublicImage(): string

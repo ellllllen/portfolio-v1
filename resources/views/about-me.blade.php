@@ -1,9 +1,6 @@
 @extends('layouts.app', ['mainTitle' => 'About Me'])
 
 @section('content')
-    @foreach($articles as $article)
-    {{ dd($article) }}
-    @endforeach
     <div class="about-me">
         Hi, I'm Ellen and I currently live in Cirencester, Gloucestershire working as a full time Developer.
         I graduated from Bournemouth University in 2010, gaining a 2:1 BSc (Hons) in Computing.
@@ -21,4 +18,14 @@
     <div class="button-container">
         <a class="btn btn-primary" href="{{ route('cv') }}">View my full CV</a>
     </div>
+    @if($articles->total() > 0)
+        <div class="articles">
+            @foreach($articles as $article)
+                @include('articles._article')
+            @endforeach
+        </div>
+        <div class="text-center">
+            {{ $articles->links() }}
+        </div>
+    @endif
 @endsection
