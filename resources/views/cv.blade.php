@@ -5,7 +5,7 @@
         <div class="cv-title">Personal Statement</div>
         In 2010 I finished my degree in Computing gaining a 2:1 with Honours. Since I graduated I have been working for
         a Telecommunications company as part of the Development team. I was first brought on-board as a Developer to
-        utilise my skills in languages such as PHP, MySQL, HTML, CSS and JavaScript. However I was keen to expand my
+        utilise my skills in languages such as PHP, MySQL, HTML, CSS and JavaScript. However, I was keen to expand my
         abilities to other areas which included learning new skills in the DevOps role. I feel I am a big part of making
         the team successful, this includes implementing the Laravel framework, which has vastly improved productivity. I
         recently got promoted to Software Team Lead, where I manage, mentor and train a small team of Software
@@ -18,7 +18,7 @@
                 {{ date_diff_in_years("2008", "10") }}: PHP 5/PHP 7, MySQL, HTML, CSS/SaSS
             </li>
             <li>
-                {{ date_diff_in_years("2010", "06") }}: Linux/LAMP Stack, JavaScript/JQuery/VueJS, Networking
+                {{ date_diff_in_years("2010", "06") }}: Linux/LAMP Stack, JavaScript/JQuery/VueJS
             </li>
             <li>
                 {{ date_diff_in_years("2015", "01") }}: Laravel, Git
@@ -52,7 +52,7 @@
             Since learning and implementing the Laravel framework three years ago, I feel my skills in Object Orientated
             coding and test driven development (TDD) have greatly improved. I have also enhanced my skills in VueJS and
             SaSS. Additionally, I have established my skills in DevOps and networking, which
-            involved deploying and maintaining Linux CentOS servers with XenServer. With my expanded role I became
+            involved deploying and maintaining Linux CentOS servers. With my expanded role I became
             instrumental in ensuring connectivity, security and performance of these servers and the underlying data
             centres.
             <br>
@@ -60,15 +60,17 @@
             Android application. This shows I have the ability to adapt to new challenges and that I have a strong
             programming foundation.
             <br>
-            Last year I earned the role of Business Continuity Manager, this amounts to gaining the ISO 22301:2012 in
-            Business Continuity accreditation. This role involves identifying risks, developing new policies and
-            procedures and then implementing them across the entire company. This shows an ability to multi-task as well
-            as organised and detail oriented.
+            Last year I earned the role of Business Continuity Manager, it involves identifying risks, developing new
+            policies and procedures and then implementing them across the entire company. I gained the ISO 22301:2012
+            in Business Continuity accreditation for the company in May 2018. This shows an ability to multi-task as
+            well as being organised and detail oriented.
             <br>
             After being promoted to Software Team Lead I have implemented several improvements within the team,
-            including adopting the Scrum methodology, assuring SOLID principles are executed and prioritising projects
-            and tasks. I additionally ensure software is delivered at a high standard within tight deadlines, while
-            encouraging team members to keep abreast of the latest best practices and technologies.
+            including adopting the Kanban methodology, assuring SOLID principles are executed and prioritising projects
+            and tasks. A big part of the role is to mentor other team members and pass on my experience of delivering
+            high quality solutions. I additionally ensure software is achieved at a high standard within tight
+            deadlines, while encouraging team members to keep abreast of the latest best practices and technologies.
+            My role has given me increased responsibility and management skills.
         </div>
         <div class="cv-employ">
             <div class="cv-employ-title">Axiell - Ferndown, Dorset</div>
