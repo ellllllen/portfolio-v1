@@ -6,10 +6,9 @@ use Ellllllen\Presenter\Presenter;
 
 class ArticlePresenter extends Presenter
 {
-    public function shortenedSection(): string
+    public function shortenedSection(int $length = 500): string
     {
         $section = strip_tags($this->section);
-        $length = 500;
 
         return strlen($section) > $length ? substr($section, 0, $length) . '...' : $section;
     }

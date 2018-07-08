@@ -12,7 +12,7 @@ class Articles
      * @param int $perPage
      * @return LengthAwarePaginator|null
      */
-    public function paginate($tag = null, int $perPage = 5)
+    public function paginate($tag = null, int $perPage = 10)
     {
         $query = Article::orderBy('created_at', 'desc');
 
@@ -44,5 +44,13 @@ class Articles
                 $query->where('ip', '!=', env("MY_IP"));
             }
         ])->get();
+    }
+
+    public function getLatest(int $limit = 5)
+    {
+        return Article::orderBy('updated_at', 'desc')
+            ->limit($limit)
+            ->get();
+
     }
 }

@@ -10,7 +10,7 @@
             @foreach($resources as $resource)
                 <div class="mb-2">
                     <h5>
-                        <a href="{{ $resource->getUrl() }}" target="_blank">
+                        <a class="text-secondary" href="{{ $resource->getUrl() }}" target="_blank">
                             {{ $resource->getName() }}
                         </a>
                     </h5>

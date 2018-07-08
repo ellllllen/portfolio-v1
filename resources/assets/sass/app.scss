@@ -3,6 +3,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import url("https://fonts.googleapis.com/css?family=Lato:400|Indie+Flower");
 
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fa-solid.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fa-brands.scss";
+
 body, html {
   height: 100%;
 }

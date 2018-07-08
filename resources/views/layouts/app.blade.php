@@ -25,7 +25,7 @@
                 {{ Breadcrumbs::render() }}
             @endif
 
-            <h2 class="pink">{{ $mainTitle ?? '' }}</h2>
+            <h2 class="text-primary">{{ $mainTitle ?? '' }}</h2>
             @yield('content')
         </main>
         <footer class="px-3 pb-3 pt-5">

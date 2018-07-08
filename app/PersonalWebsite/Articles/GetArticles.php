@@ -37,9 +37,21 @@ class GetArticles
     /**
      * @return \Illuminate\Support\Collection|null
      */
-    public function get()
+    public function get($limit = null)
     {
-        $articles = $this->articles->get();
+        if ($limit) {
+            return $articles = $this->articles->getLatest($limit);
+        }
+
+        return $articles = $this->articles->get();
+    }
+
+    /**
+     * @return \Illuminate\Support\Collection|null
+     */
+    public function getWithImages($limit = null)
+    {
+        $articles = $this->get($limit);
 
         //filter out articles that don't have valid images to display
         return $articles->filter(function (Article $value, $key) {
