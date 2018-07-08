@@ -9,7 +9,7 @@
     @if($articles->total() > 0)
         <div class="articles">
             @foreach($articles as $article)
-                @include('articles._article')
+                @include('articles._article', ['haveReadMoreButton' => true])
             @endforeach
         </div>
         <div class="text-center">

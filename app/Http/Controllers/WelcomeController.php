@@ -14,6 +14,6 @@ class WelcomeController extends Controller
      */
     public function index(GetArticles $getArticles)
     {
-        return view('welcome')->with('articles', $getArticles->get(5));
+        return view('welcome')->with('articles', $getArticles->getWithImages(5));
     }
 }

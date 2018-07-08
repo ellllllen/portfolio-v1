@@ -29,7 +29,10 @@
                         @include('articles._article', ['length' => 200])
                     @endforeach
                     <div class="text-right">
-                        <a class="btn btn-primary" href="{{ route('articles.index') }}">View all my Articles</a>
+                        <a class="btn btn-primary" href="{{ route('articles.index') }}">
+                            View all my Articles
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

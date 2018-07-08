@@ -6,9 +6,9 @@ $pink: #ca3469;
 $primary: $pink;
 $secondary: $blue;
 
-.pink {
-  color: $pink;
-}
+$card-border-width: 0;
+$card-spacer-y: .25rem;
+$card-spacer-x: 0rem;
 
 .bg-black {
   background-color: #000000;
