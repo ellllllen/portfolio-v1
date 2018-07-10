@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="cv-section">
-        <div class="cv-title">Personal Statement</div>
+        <h5 class="text-secondary">Personal Statement</h5>
         In 2010 I finished my degree in Computing gaining a 2:1 with Honours. Since I graduated I have been working for
         a Telecommunications company as part of the Development team. I was first brought on-board as a Developer to
         utilise my skills in languages such as PHP, MySQL, HTML, CSS and JavaScript. However, I was keen to expand my
@@ -12,7 +12,7 @@
         Developers to ensure software is produced at a high quality using best practices.
     </div>
     <div class="cv-section">
-        <div class="cv-title">Specialist Skills</div>
+        <h5 class="text-secondary">Specialist Skills</h5>
         <ul>
             <li>
                 {{ date_diff_in_years("2008", "10") }}: PHP 5/PHP 7, MySQL, HTML, CSS/SaSS
@@ -29,7 +29,7 @@
         </ul>
     </div>
     <div class="cv-section">
-        <div class="cv-title">Employment History</div>
+        <h5 class="text-secondary">Employment History</h5>
         <div class="cv-employ">
             <div class="cv-employ-title">Current Employer - Cirencester, Gloucestershire</div>
             <div class="cv-employ-subtitle">Developer (June 2010 to March 2018), Business Continuity Manager (June 2017
@@ -97,7 +97,7 @@
         </div>
     </div>
     <div class="cv-section">
-        <div class="cv-title">Education</div>
+        <h5 class="text-secondary">Education</h5>
         <div class="cv-employ">
             <div class="cv-employ-title">Bournemouth University - Bournemouth, Dorset</div>
             <div class="cv-employ-subtitle">2:1 BSc (Hons) Computing</div>
@@ -121,7 +121,7 @@
         </div>
     </div>
     <div class="cv-section">
-        <div class="cv-title">References</div>
+        <h5 class="text-secondary">References</h5>
         References are available upon request.
     </div>
 @endsection

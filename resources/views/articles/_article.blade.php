@@ -5,13 +5,13 @@
                  alt="{{ $article->title }}">
         </a>
     </div>
-    <div class="col text-justify">
+    <div class="col">
         <h4>
             <a class="text-secondary" href="{{ route('articles.show', ['article' => $article->id]) }}">
                 {{ $article->title }}
             </a>
         </h4>
-        <p class="card-text">{!! $article->present()->shortenedSection() !!}</p>
+        <p class="card-text text-justify">{!! $article->present()->shortenedSection() !!}</p>
     </div>
     @if(isset($haveReadMoreButton) && $haveReadMoreButton)
         <div class="col-2 align-self-end">
