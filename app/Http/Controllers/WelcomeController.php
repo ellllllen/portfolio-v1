@@ -2,6 +2,7 @@
 
 namespace Ellllllen\Http\Controllers;
 
+use Ellllllen\PersonalWebsite\Activities\GetActivities;
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
 
 class WelcomeController extends Controller
@@ -12,8 +13,9 @@ class WelcomeController extends Controller
      * @param GetArticles $getArticles
      * @return \Illuminate\Http\Response
      */
-    public function index(GetArticles $getArticles)
+    public function index(GetArticles $getArticles, GetActivities $getActivities)
     {
-        return view('welcome')->with('articles', $getArticles->getWithImages(5));
+        return view('welcome')->with('articles', $getArticles->getWithImages(5))
+            ->with('activities', $getActivities->get(5));
     }
 }

@@ -3,7 +3,7 @@
 @section('additional-content')
     <div class="articles books">
     @foreach($books as $book)
-        <h3>{{ $book->getTitle() }}</h3>
+        <h3 class="text-secondary">{{ $book->getTitle() }}</h3>
         <div class="d-flex justify-content-center flex-wrap book">
             @foreach($book->getAllImages() as $image)
                 @if($book->doesImageExist($image))
