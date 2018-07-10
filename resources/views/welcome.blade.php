@@ -39,8 +39,8 @@
                 @endif
             </div>
             <div class="col-4">
-                <h3>My Activities</h3>
                 @if($activities->count() > 0)
+                    <h3>My Activities</h3>
                     @foreach($activities as $activity)
                         <div class="row mb-5">
                             <div class="col">
@@ -60,8 +60,6 @@
                             <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
-                @else
-                    Sorry, I haven't posted any articles yet
                 @endif
             </div>
         </div>
