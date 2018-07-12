@@ -18,18 +18,24 @@ class Activity
      * @var Carbon
      */
     private $startDate;
+    /**
+     * @var string
+     */
+    private $titleLink;
 
     /**
      * Activity constructor.
      * @param string $title
      * @param string $description
      * @param Carbon $startDate
+     * @param string $titleLink
      */
-    public function __construct(string $title, string $description, Carbon $startDate)
+    public function __construct(string $title, string $description, Carbon $startDate, string $titleLink = "")
     {
         $this->title = $title;
         $this->description = $description;
         $this->startDate = $startDate;
+        $this->titleLink = $titleLink;
     }
 
     /**
@@ -54,5 +60,21 @@ class Activity
     public function getStartDate(): Carbon
     {
         return $this->startDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitleLink(): string
+    {
+        return $this->titleLink ?? "";
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasTitleLink(): bool
+    {
+        return $this->titleLink ? true : false;
     }
 }

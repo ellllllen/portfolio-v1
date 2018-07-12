@@ -1,7 +1,7 @@
 <div class="row mb-5">
     <div class="col-2 align-self-center">
         <a href="{{ route('articles.show', ['article' => $article->id]) }}">
-            <img src="{{ $article->getPublicImage() }}" class="rounded img-thumbnail img-fluid"
+            <img src="{{ $article->getPublicImage() }}" class="img-fluid"
                  alt="{{ $article->title }}">
         </a>
     </div>

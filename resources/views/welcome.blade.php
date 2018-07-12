@@ -44,8 +44,16 @@
                     @foreach($activities as $activity)
                         <div class="row mb-5">
                             <div class="col">
-                                <h4 class="text-secondary">
-                                    {{ $activity->getTitle() }}
+                                <h4>
+                                    @if($activity->hasTitleLink())
+                                        <a class="text-secondary" href="{{ $activity->getTitleLink() }}" target="_blank">
+                                            {{ $activity->getTitle() }}
+                                        </a>
+                                    @else
+                                        <span class="text-secondary">
+                                        {{ $activity->getTitle() }}
+                                    </span>
+                                    @endif
                                 </h4>
                                 <p class="card-text text-justify">
                                     <i>{{ $activity->getStartDate()->format('Y-m-d') }}</i> -
