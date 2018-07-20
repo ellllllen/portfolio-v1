@@ -2,6 +2,8 @@
 
 namespace Ellllllen\Providers;
 
+use Ellllllen\PersonalWebsite\Activities\Activities;
+use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
 use Ellllllen\PersonalWebsite\Books\Books;
 use Ellllllen\PersonalWebsite\Books\BooksInterface;
 use Ellllllen\PersonalWebsite\Resources\Resources;
@@ -30,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ResourcesInterface::class, Resources::class);
         $this->app->bind(BooksInterface::class, Books::class);
+        $this->app->bind(ActivitiesInterface::class, Activities::class);
     }
 
     private function createNavigation()

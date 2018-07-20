@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use Carbon\Carbon;
-use Ellllllen\PersonalWebsite\Activities\Activities;
+use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
 use Ellllllen\PersonalWebsite\Activities\Activity;
 use Ellllllen\PersonalWebsite\Activities\GetActivities;
 use Illuminate\Support\Collection;
@@ -19,7 +19,7 @@ class GetActivitiesTest extends TestCase
     {
         parent::setUp();
 
-        $this->mockActivities = Mockery::mock(Activities::class);
+        $this->mockActivities = Mockery::mock(ActivitiesInterface::class);
 
         $this->testClass = new GetActivities($this->mockActivities);
     }

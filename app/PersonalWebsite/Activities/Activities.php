@@ -5,13 +5,13 @@ namespace Ellllllen\PersonalWebsite\Activities;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
-class Activities
+class Activities implements ActivitiesInterface
 {
     private $activities;
 
     public function __construct()
     {
-        $this->getActivities();
+        $this->activities = $this->getActivities();
     }
 
     /**
@@ -28,7 +28,7 @@ class Activities
      */
     private function getActivities()
     {
-        $this->activities = [
+        return [
             new Activity('Scalable Microservices with Kubernetes',
                 'Free Udacity Course, learning to containerise applications with Docker and Kubernetes.',
                 Carbon::createFromDate(2018, 07, 10),
@@ -39,9 +39,5 @@ class Activities
                 Carbon::createFromDate(2018, 07, 06),
                 'https://github.com/ellllllen/chatbot'),
         ];
-
-        return $this->activities;
     }
-
-
 }

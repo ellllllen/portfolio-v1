@@ -15,7 +15,7 @@ class GetActivities
      * GetActivities constructor.
      * @param Activities $activities
      */
-    public function __construct(Activities $activities)
+    public function __construct(ActivitiesInterface $activities)
     {
         $this->activities = $activities;
     }
