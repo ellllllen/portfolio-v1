@@ -46,6 +46,10 @@ class Articles
         ])->get();
     }
 
+    /**
+     * @param int $limit
+     * @return Collection|null
+     */
     public function getLatest(int $limit = 5)
     {
         return Article::orderBy('updated_at', 'desc')

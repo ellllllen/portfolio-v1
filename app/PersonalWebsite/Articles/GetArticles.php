@@ -62,6 +62,10 @@ class GetArticles
         });
     }
 
+    /**
+     * @param $articleID
+     * @return Article
+     */
     public function findOrFail($articleID): Article
     {
         return Article::findOrFail($articleID);
