@@ -2,6 +2,8 @@
 
 namespace Ellllllen\PersonalWebsite\Activities;
 
+use Illuminate\Support\Collection;
+
 class GetActivities
 {
     /**
@@ -18,7 +20,11 @@ class GetActivities
         $this->activities = $activities;
     }
 
-    public function get(int $limit = 5)
+    /**
+     * @param int $limit
+     * @return Collection
+     */
+    public function get(int $limit = 5): Collection
     {
         return $this->activities->get($limit);
     }

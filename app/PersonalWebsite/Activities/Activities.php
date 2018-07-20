@@ -3,6 +3,7 @@
 namespace Ellllllen\PersonalWebsite\Activities;
 
 use Carbon\Carbon;
+use Illuminate\Support\Collection;
 
 class Activities
 {
@@ -13,9 +14,13 @@ class Activities
         $this->getActivities();
     }
 
-    public function get(int $limit = 5)
+    /**
+     * @param int $limit
+     * @return Collection
+     */
+    public function get(int $limit = 5): Collection
     {
-        return collect($this->activities)->take($limit);
+        return (new Collection($this->activities))->take($limit);
     }
 
     /**
