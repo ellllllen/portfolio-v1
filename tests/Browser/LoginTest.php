@@ -3,11 +3,15 @@
 namespace Tests\Browser;
 
 use Ellllllen\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\Browser\Pages\LoginPage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 
 class LoginTest extends DuskTestCase
 {
+    use DatabaseMigrations;
+
     const TEST_PASSWORD = 'hello1234R4y56!hfdsj';
 
     /**
@@ -17,7 +21,7 @@ class LoginTest extends DuskTestCase
     public function testLoginPageLoads()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/login')
+            $browser->visit(new LoginPage)
                 ->assertSee('Login');
         });
     }
@@ -28,10 +32,10 @@ class LoginTest extends DuskTestCase
      */
     public function testThatUnknownEmailCannotLogin()
     {
-        $user = $this->createTestUser();
+        $this->createTestUser();
 
         $this->browse(function (Browser $browser) {
-            $browser->visit('/login')
+            $browser->visit(new LoginPage)
                 ->type('email', 'wrong@email.com')
                 ->type('password', static::TEST_PASSWORD)
                 ->press('Login')
@@ -50,7 +54,7 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) use ($user) {
             /** @var $user User */
-            $browser->visit('/login')
+            $browser->visit(new LoginPage)
                 ->type('email', $user->email)
                 ->type('password', 'wrong password')
                 ->press('Login')
@@ -69,7 +73,7 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) use ($user) {
             /** @var $user User */
-            $browser->visit('/login')
+            $browser->visit(new LoginPage)
                 ->type('email', $user->email)
                 ->type('password', static::TEST_PASSWORD)
                 ->press('Login')
