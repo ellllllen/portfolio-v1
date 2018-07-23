@@ -15,8 +15,8 @@ use Faker\Generator as Faker;
 
 $factory->define(\Ellllllen\PersonalWebsite\Articles\Article::class, function (Faker $faker) {
     return [
-        'title' => $faker->title,
-        'section' => $faker->text,
+        'title' => $faker->text(250),
+        'section' => $faker->paragraph,
         'image' => $faker->image('public/storage/images',400,300, null, false) ,
         'created_by' => function () {
             return factory(\Ellllllen\User::class)->create()->id;
