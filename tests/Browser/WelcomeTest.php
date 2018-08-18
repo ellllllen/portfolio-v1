@@ -2,7 +2,6 @@
 
 namespace Tests\Browser;
 
-use Carbon\Carbon;
 use Ellllllen\PersonalWebsite\Articles\Article;
 use Tests\Browser\Pages\WelcomePage;
 use Tests\DuskTestCase;
@@ -24,6 +23,20 @@ class WelcomeTest extends DuskTestCase
                 ->assertSee('Latest Articles');
         });
     }
+
+    /**
+     * @todo NOT TESTED DUE TO DUSK NOT RUNNING CORRECTLY
+     * @test
+     * @throws \Throwable
+     */
+//    public function testAboutPageImageLinkWorks()
+//    {
+//        $this->browse(function (Browser $browser) {
+//            $browser->visit(new WelcomePage)
+//                ->mouseover('.about-me a')
+//                ->assertSeeIn('.about-me a', trans('about_me.title'));
+//        });
+//    }
 
     /**
      * @test

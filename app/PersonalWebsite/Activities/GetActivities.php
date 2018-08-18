@@ -13,7 +13,7 @@ class GetActivities
 
     /**
      * GetActivities constructor.
-     * @param Activities $activities
+     * @param ActivitiesInterface $activities
      */
     public function __construct(ActivitiesInterface $activities)
     {

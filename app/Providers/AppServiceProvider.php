@@ -10,6 +10,7 @@ use Ellllllen\PersonalWebsite\Resources\Resources;
 use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
+
         $this->app->bind(ResourcesInterface::class, Resources::class);
         $this->app->bind(BooksInterface::class, Books::class);
         $this->app->bind(ActivitiesInterface::class, Activities::class);

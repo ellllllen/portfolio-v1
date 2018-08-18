@@ -27,7 +27,7 @@ class WelcomeTest extends TestCase
     public function testNoArticlesDisplaysMessage()
     {
         $response = $this->get('/');
-        $response->assertSee("Sorry, I haven't posted any articles yet");
+        $response->assertSee(trans('welcome.articles.empty_message'));
     }
 
     /**
@@ -41,7 +41,7 @@ class WelcomeTest extends TestCase
         $response = $this->get('/');
 
         $response->assertSee('Test Article')
-            ->assertDontSee("Sorry, I haven't posted any articles yet");
+            ->assertDontSee(trans('welcome.articles.empty_message'));
     }
 
     /**
@@ -52,12 +52,12 @@ class WelcomeTest extends TestCase
     {
         factory(Article::class, 1)->create([
             'title' => 'Test Article',
-            'image' => 'blahblahblah.jpg',
+            'image' => 'this_file_does_not_exist.jpg',
         ]);
 
         $response = $this->get('/');
         $response->assertDontSee('Test Article')
-            ->assertSee("Sorry, I haven't posted any articles yet");
+            ->assertSee(trans('welcome.articles.empty_message'));
     }
 
     /**
