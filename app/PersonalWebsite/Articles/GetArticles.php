@@ -27,6 +27,7 @@ class GetArticles
     }
 
     /**
+     * @param null $tag
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator|null
      */
     public function paginate($tag = null)
@@ -35,6 +36,7 @@ class GetArticles
     }
 
     /**
+     * @param null $limit
      * @return \Illuminate\Support\Collection|null
      */
     public function get($limit = null)
@@ -47,6 +49,7 @@ class GetArticles
     }
 
     /**
+     * @param null $limit
      * @return \Illuminate\Support\Collection|null
      */
     public function getWithImages($limit = null)
