@@ -33,8 +33,7 @@ class InsertDefaultTags extends Migration
      */
     public function down()
     {
-        $query = DB::table('tags')->where(function($q)
-        {
+        DB::table('tags')->where(function ($q) {
             foreach ($this->defaultTags as $tag) {
                 $q->orWhere('tag', $tag);
             }

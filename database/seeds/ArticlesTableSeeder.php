@@ -1,5 +1,7 @@
 <?php
 
+use Ellllllen\PersonalWebsite\Articles\Article;
+use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
 use Illuminate\Database\Seeder;
 
 class ArticlesTableSeeder extends Seeder
@@ -11,6 +13,11 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\Ellllllen\PersonalWebsite\Articles\Article::class, 50)->create();
+        factory(Article::class, 50)->create()
+            ->each(function ($article) {
+                $article->tags()->attach(factory(Tag::class)->make(), [
+                        'tag_id' => array_random(Tag::DEFAULT_TAGS)
+                ]);
+            });
     }
 }
