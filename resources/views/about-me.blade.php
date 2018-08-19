@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="text-justify">
-        @lang('about-me.desc', [
-            'developerTime' => \Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2010", "06"))
+        @lang('about_me.desc', [
+            'developerTime' => \Carbon\Carbon::now()->diffInYears(config('ellen.developerTime'))
         ])
         <a target="_blank" href="{{ config('ellen.github_link') }}">https://github.com/ellllllen</a>
     </div>
