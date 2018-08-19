@@ -79,7 +79,7 @@ return [
                         [
                             'name' => '2:1 BSc (Hons) Computing',
                             'content' => [
-                                '<u>Final Year Modules:</u>',
+                                'Final Year Modules:',
                                 'Web Systems',
                                 'Software Systems Modelling',
                                 'Digital Media and Games',
@@ -102,9 +102,9 @@ return [
                             ]
                         ],
                         [
-                            'name' => 'GCSE\'s',
+                            'name' => 'GCSEs',
                             'content' => [
-                                '10 GCSE\'s A - C including Maths, Science and English',
+                                '10 GCSEs A - C including Maths, Science and English',
                             ]
                         ]
                     ],
