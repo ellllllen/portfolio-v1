@@ -15,5 +15,9 @@
         <div class="text-center">
             {{ $articles->links() }}
         </div>
+    @else
+        <div class="alert alert-light" role="alert">
+            @lang('articles.no_results')
+        </div>
     @endif
 @endsection

@@ -24,9 +24,9 @@ class GetArticlesTest extends TestCase
     /**
      * @test
      */
-    public function it_paginates_articles()
+    public function testPaginatesArticles()
     {
-        $expected = new LengthAwarePaginator(null, 0, 10);
+        $expected = new LengthAwarePaginator(null, 0, 10, 1);
 
         $this->mockActivities->shouldReceive('paginate')
             ->with('tag')
