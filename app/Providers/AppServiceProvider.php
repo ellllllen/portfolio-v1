@@ -8,6 +8,7 @@ use Ellllllen\PersonalWebsite\Books\Books;
 use Ellllllen\PersonalWebsite\Books\BooksInterface;
 use Ellllllen\PersonalWebsite\Resources\Resources;
 use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
@@ -51,22 +52,20 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         $this->composerNavigation($navigation);
-        $this->composerActiveNavigation($navigation);
+        $this->composerActiveNavigation();
     }
 
     private function composerNavigation(Collection $navigation)
     {
-        view()->composer('*', function ($view) use ($navigation) {
+        view()->composer('partials._navigation', function ($view) use ($navigation) {
             $view->with('navigation', $navigation);
         });
     }
 
-    private function composerActiveNavigation(Collection $navigation)
+    private function composerActiveNavigation()
     {
-        $navigation->each(function ($item, $key) {
-            view()->composer($key, function ($view) use ($key) {
-                $view->with('activeNav', $key);
-            });
+        view()->composer('partials._navigation', function ($view) {
+            $view->with('activeNav', Route::currentRouteName());
         });
     }
 }
