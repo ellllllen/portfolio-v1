@@ -22,17 +22,15 @@ class WelcomeTest extends TestCase
 
     /**
      * @test
-     * @throws \Throwable
      */
     public function testNoArticlesDisplaysMessage()
     {
         $response = $this->get('/');
-        $response->assertSee(trans('welcome.articles.empty_message'));
+        $response->assertSee(trans('articles.no_results'));
     }
 
     /**
      * @test
-     * @throws \Throwable
      */
     public function testItDisplaysOneArticles()
     {
@@ -41,12 +39,11 @@ class WelcomeTest extends TestCase
         $response = $this->get('/');
 
         $response->assertSee('Test Article')
-            ->assertDontSee(trans('welcome.articles.empty_message'));
+            ->assertDontSee(trans('articles.no_results'));
     }
 
     /**
      * @test
-     * @throws \Throwable
      */
     public function testItDoesNotDisplayArticlesWithoutImageFile()
     {
@@ -57,12 +54,11 @@ class WelcomeTest extends TestCase
 
         $response = $this->get('/');
         $response->assertDontSee('Test Article')
-            ->assertSee(trans('welcome.articles.empty_message'));
+            ->assertSee(trans('articles.no_results'));
     }
 
     /**
      * @test
-     * @throws \Throwable
      */
     public function testOnlyShowsLatestArticles()
     {

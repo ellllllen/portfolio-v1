@@ -35,7 +35,7 @@
                         </a>
                     </div>
                 @else
-                    @lang('welcome.articles.empty_message')
+                    @lang('articles.no_results')
                 @endif
             </div>
             <div class="col-4">
