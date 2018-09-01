@@ -8,7 +8,7 @@ before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
-  - mkdir storage/app/public/images
+  - mkdir -p storage/app/public/images
   - php artisan key:generate
   - php artisan storage:link
   - chmod 777 -R storage
