@@ -1,5 +1,7 @@
 This is my personal website. http://ellenm.me
 
+[![Build Status](https://travis-ci.com/ellllllen/personal-website.svg?branch=master)](https://travis-ci.com/ellllllen/personal-website)
+
 ## Usage
 
 ### Articles
