@@ -8,6 +8,7 @@ before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
+  - php artisan key:generate
   - php artisan migrate
   - npm install
   - npm run production
