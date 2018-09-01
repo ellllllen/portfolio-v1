@@ -4,14 +4,14 @@ php:
   - 7.2
 
 before_script:
-  - chmod 777 -R storage
   - phpenv config-rm xdebug.ini
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
+  - mkdir storage/app/public/images
   - php artisan key:generate
   - php artisan storage:link
-  - chmod 777 -R public/storage
+  - chmod 777 -R storage
   - php artisan migrate
   - npm install
   - npm run production
