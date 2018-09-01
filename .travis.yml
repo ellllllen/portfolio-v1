@@ -5,6 +5,7 @@ php:
 
 before_script:
   - phpenv config-rm xdebug.ini
+  - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
   - mkdir -p storage/app/public/images
