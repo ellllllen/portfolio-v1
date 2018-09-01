@@ -8,8 +8,11 @@ use Ellllllen\PersonalWebsite\Books\Books;
 use Ellllllen\PersonalWebsite\Books\BooksInterface;
 use Ellllllen\PersonalWebsite\Resources\Resources;
 use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->createNavigation();
+
+        /**
+         * https://laravel-news.com/laravel-5-4-key-too-long-error
+         */
+        Schema::defaultStringLength(191);
     }
 
     /**
@@ -30,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
+
         $this->app->bind(ResourcesInterface::class, Resources::class);
         $this->app->bind(BooksInterface::class, Books::class);
         $this->app->bind(ActivitiesInterface::class, Activities::class);
@@ -46,22 +58,20 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         $this->composerNavigation($navigation);
-        $this->composerActiveNavigation($navigation);
+        $this->composerActiveNavigation();
     }
 
     private function composerNavigation(Collection $navigation)
     {
-        view()->composer('*', function ($view) use ($navigation) {
+        view()->composer('partials._navigation', function ($view) use ($navigation) {
             $view->with('navigation', $navigation);
         });
     }
 
-    private function composerActiveNavigation(Collection $navigation)
+    private function composerActiveNavigation()
     {
-        $navigation->each(function ($item, $key) {
-            view()->composer($key, function ($view) use ($key) {
-                $view->with('activeNav', $key);
-            });
+        view()->composer('partials._navigation', function ($view) {
+            $view->with('activeNav', Route::currentRouteName());
         });
     }
 }
