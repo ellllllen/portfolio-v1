@@ -14,6 +14,26 @@ class ArticlesTest extends TestCase
     /**
      * @test
      */
+    public function testPageLoads()
+    {
+        $response = $this->get('/articles');
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function testBreadcrumb()
+    {
+        $response = $this->get('/articles');
+
+        $response->assertSeeTextInOrder(['Home', 'Articles']);
+    }
+
+    /**
+     * @test
+     */
     public function testItDisplaysOneArticle()
     {
         factory(Article::class, 1)->create([
