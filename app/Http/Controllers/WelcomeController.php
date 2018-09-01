@@ -11,6 +11,7 @@ class WelcomeController extends Controller
      * Show the application dashboard.
      *
      * @param GetArticles $getArticles
+     * @param GetActivities $getActivities
      * @return \Illuminate\Http\Response
      */
     public function index(GetArticles $getArticles, GetActivities $getActivities)

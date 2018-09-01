@@ -2,17 +2,10 @@
 
 @section('content')
     <div class="text-justify">
-        Hi, I'm Ellen and I currently live in Cirencester, Gloucestershire working as a full time Developer.
-        I graduated from Bournemouth University in 2010, gaining a 2:1 BSc (Hons) in Computing.
-        I specialise in PHP, MySQL, HTML, CSS and JavaScript and have experience in developing using the
-        <a href="https://laravel.com">Laravel</a> framework.
-        I have been employed as a full time Developer for over
-        {{ \Carbon\Carbon::now()->diffInYears(\Carbon\Carbon::createFromDate("2010", "06")) }} years.
-        <br><br>
-        My hobbies include walking, photography, film and TV, music and Harry Potter.
-        <br><br>
-        Here is my GitHub for your perusal:
-        <a target="_blank" href="https://github.com/ellllllen">https://github.com/ellllllen</a>
+        @lang('about_me.desc', [
+            'developerTime' => \Carbon\Carbon::now()->diffInYears(config('ellen.developerTime'))
+        ])
+        <a target="_blank" href="{{ config('ellen.github_link') }}">https://github.com/ellllllen</a>
     </div>
     <div class="text-center mb-5">
         <a class="btn btn-primary" href="{{ route('cv') }}">View my full CV</a>

@@ -24,20 +24,19 @@ class Activities implements ActivitiesInterface
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     private function getActivities()
     {
-        return [
-            new Activity('Scalable Microservices with Kubernetes',
-                'Free Udacity Course, learning to containerise applications with Docker and Kubernetes.',
-                Carbon::createFromDate(2018, 07, 10),
-                'https://eu.udacity.com/course/scalable-microservices-with-kubernetes--ud615'),
-            new Activity('Chatbot',
-                'Started following a tutorial on how to build a chatbot in PHP using Laravel and Botman.
-                Check out my Github to follow my progress.',
-                Carbon::createFromDate(2018, 07, 06),
-                'https://github.com/ellllllen/chatbot'),
-        ];
+        $activities = [];
+
+        foreach (trans('activities') as $activity) {
+            if (isset($activity['display']) && $activity['display'] === 1) {
+                $activities[] = new Activity($activity['title'], $activity['description'],
+                    $activity['startDate'], $activity['titleLink']);
+            }
+        }
+
+        return $activities;
     }
 }

@@ -35,7 +35,7 @@
                         </a>
                     </div>
                 @else
-                    Sorry, I haven't posted any articles yet
+                    @lang('articles.no_results')
                 @endif
             </div>
             <div class="col-4">

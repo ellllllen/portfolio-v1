@@ -27,7 +27,7 @@ class GetActivitiesTest extends TestCase
     /**
      * @test
      */
-    public function it_gets_activities_with_a_limit()
+    public function testGetsActivitiesWithALimit()
     {
         $testActivities = $this->getTestActivities();
 
@@ -44,7 +44,7 @@ class GetActivitiesTest extends TestCase
     /**
      * @test
      */
-    public function it_gets_activities_without_a_limit()
+    public function testGetActivitiesWithoutALimit()
     {
         $testActivities = $this->getTestActivities();
 

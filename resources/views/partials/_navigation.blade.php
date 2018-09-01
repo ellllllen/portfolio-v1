@@ -10,9 +10,11 @@
             </li>
         @endforeach
         @guest
-            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            <li class="{{ isset($activeNav) && $activeNav == 'login' ? 'active' : ''}}">
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
         @else
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {{ isset($activeNav) && $activeNav == 'home' ? 'active' : ''}}">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -23,10 +25,9 @@
                     <a class="dropdown-item" href="{{ route('home') }}">
                         My Account
                     </a>
-                    
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
 
