@@ -32,4 +32,5 @@ after_success:
 - curl --ftp-create-dirs
   -T readme.md
   --key /tmp/sftp_rsa
-  sftp://${SFTP_USER}:${SFTP_PASSWORD}@${SFTP_HOST}
+  -U ${SFTP_USER}
+  sftp://${SFTP_HOST}:22
