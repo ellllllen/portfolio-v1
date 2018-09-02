@@ -9,7 +9,7 @@ dist: trusty
 addons:
   apt:
     packages:
-    - libssh
+    - libssh-dev
 php:
 - 7.2
 before_install:
