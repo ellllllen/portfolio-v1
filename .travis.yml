@@ -14,7 +14,7 @@ before_install:
 - composer self-update
 
 before_script:
-- cp .env.example .env
+- cp .env.travis .env
 - composer install --no-interaction
 - php artisan key:generate
 - mkdir -p storage/app/public/images
