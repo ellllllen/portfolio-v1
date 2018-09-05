@@ -47,3 +47,33 @@
     background-position: bottom left;
   }
 }
+
+.calendar {
+  background: #fcfcfc;
+  text-align: center;
+  .day {
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 2.0rem;
+    border-top: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+  }
+  .month {
+    background: $pink;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    padding: 2px 20px;
+    border: 1px solid #d2d2d2;
+    border-top: 3px solid #d2d2d2;
+  }
+}
