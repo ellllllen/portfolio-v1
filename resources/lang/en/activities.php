@@ -11,7 +11,7 @@ return [
     [
         'title' => 'Automated Testing',
         'description' => 'Researching and implementing automated testing. So writing loads unit,
-            feature and browser testing for this website.',
+            feature and browser tests for this website.',
         'startDate' => \Carbon\Carbon::createFromDate(2018, 07, 21),
         'titleLink' => 'https://github.com/ellllllen/personal-website',
         'display' => 1

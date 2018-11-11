@@ -9,7 +9,7 @@ dist: trusty
 addons:
   apt:
     packages:
-    - libssh-dev
+    - libcurl
 php:
 - 7.2
 before_install:
