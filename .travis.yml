@@ -6,10 +6,6 @@ env:
 language: php
 sudo: required
 dist: trusty
-addons:
-  apt:
-    packages:
-    - libcurl
 php:
 - 7.2
 before_install:
