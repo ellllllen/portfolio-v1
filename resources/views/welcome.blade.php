@@ -46,7 +46,8 @@
                             <div class="col">
                                 <h4>
                                     @if($activity->hasTitleLink())
-                                        <a class="text-secondary" href="{{ $activity->getTitleLink() }}" target="_blank">
+                                        <a class="text-secondary" href="{{ $activity->getTitleLink() }}"
+                                           target="_blank">
                                             {{ $activity->getTitle() }}
                                         </a>
                                     @else
@@ -55,10 +56,15 @@
                                     </span>
                                     @endif
                                 </h4>
-                                <p class="card-text text-justify">
-                                    <i>{{ $activity->getStartDate()->format('Y-m-d') }}</i> -
-                                    {!! $activity->getDescription() !!}
-                                </p>
+                                <div class="d-flex">
+                                    <div class="calendar mr-2 align-self-start">
+                                        <span class="day">{{ $activity->getStartDate()->format('d') }}</span>
+                                        <span class="month">{{ $activity->getStartDate()->format('M') }}</span>
+                                    </div>
+                                    <p class="card-text text-justify">
+                                        {!! $activity->getDescription() !!}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     @endforeach
