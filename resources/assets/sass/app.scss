@@ -1,12 +1,13 @@
 @import "variables";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400|Indie+Flower");
 
-@import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "./node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-@import "./node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
 
 body, html {
   height: 100%;

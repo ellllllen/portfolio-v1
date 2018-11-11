@@ -23,11 +23,21 @@ return [
             'content' => [
                 [
                     'name' => 'Current Employer',
+                    'location' => 'Bristol',
+                    'roles' => [
+                        ['title' => 'Software Developer - Web Services', 'date' => 'September 2018 to present'],
+                    ],
+                    'content' => [
+                        '',
+                    ]
+                ],
+                [
+                    'name' => 'Current Employer',
                     'location' => 'Cirencester, Gloucestershire',
                     'roles' => [
                         ['title' => 'Developer', 'date' => 'June 2010 to March 2018'],
                         ['title' => 'Business Continuity Manager', 'date' => 'June 2017 to present'],
-                        ['title' => 'Software Team Lead', 'date' => 'March 2018 to present'],
+                        ['title' => 'Software Team Lead', 'date' => 'March 2018 to September 2018'],
                     ],
                     'content' => [
                         'During my time at the company I have gained a lot of experience creating high quality public and internal web portals as well as developing backend micro services and RESTful APIs. I have developed various systems while working at the company, including developing new products to sell to our customers and automating in house procedures. Within the first year of working at the company I had established the company’s Intranet, which improved the day to day working for all members of staff. More recently I have developed a public web portal for our customers where they configure and monitor the different products and services they have with the company. Although the company was fully established when I joined, my team was treated as a start up, therefore, I have been able to influence high level decisions such as programming techniques and tools and vastly expanding the company data centre infrastructure, showing I am motivated and proactive.',

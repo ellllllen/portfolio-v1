@@ -13,16 +13,4 @@
         </h4>
         <p class="card-text text-justify">{!! $article->present()->shortenedSection() !!}</p>
     </div>
-    @if(isset($haveReadMoreButton) && $haveReadMoreButton)
-        <div class="col-2 align-self-end">
-            <div class="text-right">
-                <a class="btn btn-primary"
-                   href="{{ route('articles.show', ['article' => $article->id]) }}"
-                   role="button">
-                    <span class="mr-2">Read More</span>
-                    <i class="fas fa-arrow-circle-right"></i>
-                </a>
-            </div>
-        </div>
-    @endif
 </div>

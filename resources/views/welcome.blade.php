@@ -69,9 +69,9 @@
                         </div>
                     @endforeach
                     <div class="text-right">
-                        <a class="btn btn-primary" href="{{ route('about-me') }}">
+                        <a class="text-secondary" href="{{ route('about-me') }}">
                             Find out more about me
-                            <i class="fas fa-arrow-circle-right"></i>
+                            <i class="fas fa-arrow-circle-right pl-1"></i>
                         </a>
                     </div>
                 @endif

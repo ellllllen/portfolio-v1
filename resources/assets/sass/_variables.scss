@@ -6,6 +6,11 @@ $pink: #ca3469;
 $primary: $pink;
 $secondary: $blue;
 
+$theme-colors: (
+        "primary": $primary,
+        "danger": $secondary
+);
+
 $card-border-width: 0;
 $card-spacer-y: .25rem;
 $card-spacer-x: 0rem;
