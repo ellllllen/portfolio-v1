@@ -8,7 +8,7 @@
         <a target="_blank" href="{{ config('ellen.github_link') }}">https://github.com/ellllllen</a>
     </div>
     @if($articles->count() > 0)
-        <div>
+        <div class="articles">
             <h3 class="text-primary">Articles About Me</h3>
             <p>So sometimes I like to write a bit about non-techy things that I like or have done, these articles
                 appear here.</p>

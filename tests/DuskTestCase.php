@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Facebook\WebDriver\WebDriverDimension;
+use Laravel\Dusk\Browser;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -37,13 +38,25 @@ abstract class DuskTestCase extends BaseTestCase
 
         $driver = RemoteWebDriver::create(
             'http://localhost:9515', DesiredCapabilities::chrome()->setCapability(
-                ChromeOptions::CAPABILITY, $options
-            )
+            ChromeOptions::CAPABILITY, $options
+        )
         );
 
         $size = new WebDriverDimension(1280, 2000);
         $driver->manage()->window()->setSize($size);
 
         return $driver;
+    }
+
+    /**
+     * @param Browser $browser
+     * @return Browser
+     */
+    protected function createNewTab(Browser $browser): Browser
+    {
+        $window = collect($browser->driver->getWindowHandles())->last();
+        $browser->driver->switchTo()->window($window);
+
+        return $browser;
     }
 }

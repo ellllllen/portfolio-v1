@@ -22,16 +22,16 @@
     </div>
     <div>
         <div class="row mb-4">
-            <div class="col">
+            <div class="col articles">
                 <h3>Latest Articles</h3>
                 @if($articles->count() > 0)
                     @foreach($articles as $article)
                         @include('articles._article', ['length' => 200])
                     @endforeach
                     <div class="text-right">
-                        <a class="btn btn-primary" href="{{ route('articles.index') }}">
+                        <a class="text-secondary" href="{{ route('articles.index') }}">
                             View all my Articles
-                            <i class="fas fa-arrow-circle-right"></i>
+                            <i class="fas fa-arrow-circle-right pl-1"></i>
                         </a>
                     </div>
                 @else
