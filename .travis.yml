@@ -8,17 +8,18 @@ sudo: required
 dist: trusty
 php:
 - 7.2
+addons:
+  chrome: stable
 before_install:
 - composer self-update
 - npm i npm@latest -g
-before_script:
+install:
 - cp .env.travis .env
-- composer install --no-interaction
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- ./vendor/laravel/dusk/bin/chromedriver-linux &
-- php artisan serve &
+- travis_retry composer install --no-interaction --prefer-dist --no-suggest
 - php artisan key:generate
+before_script:
+- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+- php artisan serve &
 - mkdir -p storage/app/public/images
 - php artisan storage:link
 - chmod 777 -R storage
