@@ -9,7 +9,7 @@ dist: trusty
 php:
 - 7.2
 install:
-- travis_retry composer install --no-interaction
+- composer install --no-interaction
 - npm i npm@latest -g
 before_script:
 - export DISPLAY=:99.0
