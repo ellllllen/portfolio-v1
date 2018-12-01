@@ -39,7 +39,6 @@ class LoginTest extends DuskTestCase
                 ->type('email', 'wrong@email.com')
                 ->type('password', static::TEST_PASSWORD)
                 ->press('Login')
-                ->dump()
                 ->assertSee('These credentials do not match our records.')
                 ->assertUrlIs(env('APP_URL') . '/login');
         });
