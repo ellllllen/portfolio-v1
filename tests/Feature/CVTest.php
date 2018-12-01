@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CVTest extends TestCase
 {
@@ -126,7 +125,7 @@ class CVTest extends TestCase
      */
     private function getPersonalStatementContent(): array
     {
-        return array_merge([trans('cv.content.personal-statement.title')], trans('cv.content.personal-statement.content'));;
+        return array_merge([trans('cv.content.personal-statement.title')], trans('cv.content.personal-statement.content'));
     }
 
     /**
@@ -186,6 +185,6 @@ class CVTest extends TestCase
      */
     private function getReferencesContent(): array
     {
-        return array_merge([trans('cv.content.references.title')], trans('cv.content.references.content'));;
+        return array_merge([trans('cv.content.references.title')], trans('cv.content.references.content'));
     }
 }

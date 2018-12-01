@@ -1,8 +1,6 @@
 <?php
 
-namespace Ellllllen\PersonalWebsite\Books;
-
-use Ellllllen\PersonalWebsite\Articles\Books\BookImages;
+namespace Ellllllen\PersonalWebsite\Articles\Books;
 
 class Book
 {

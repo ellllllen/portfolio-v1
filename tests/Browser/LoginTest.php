@@ -12,7 +12,7 @@ class LoginTest extends DuskTestCase
 {
     use DatabaseMigrations;
 
-    const TEST_PASSWORD = 'hello1234R4y56!hfdsj';
+    const TEST_PASSWORD = 'hello1234R4y56!';
 
     /**
      * @test

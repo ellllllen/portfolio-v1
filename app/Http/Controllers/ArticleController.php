@@ -23,6 +23,12 @@ class ArticleController extends Controller
      */
     private $manageArticles;
 
+    /**
+     * ArticleController constructor.
+     * @param GetArticles $getArticles
+     * @param Request $request
+     * @param ManageArticles $manageArticles
+     */
     public function __construct(GetArticles $getArticles, Request $request, ManageArticles $manageArticles)
     {
         $this->getArticles = $getArticles;
@@ -56,11 +62,18 @@ class ArticleController extends Controller
         return view('articles.show', compact('article'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         return view('articles.create');
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function store()
     {
         $this->validate($this->request, [
@@ -74,6 +87,10 @@ class ArticleController extends Controller
         return redirect()->route('home');
     }
 
+    /**
+     * @param int $articleID
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy(int $articleID)
     {
         $article = $this->getArticles->findOrFail($articleID);
@@ -83,6 +100,10 @@ class ArticleController extends Controller
         return redirect()->route('articles.index');
     }
 
+    /**
+     * @param int $articleID
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit(int $articleID)
     {
         $article = $this->getArticles->findOrFail($articleID);
@@ -90,6 +111,11 @@ class ArticleController extends Controller
         return view('articles.edit', compact('article'));
     }
 
+    /**
+     * @param int $articleID
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function update(int $articleID)
     {
         $article = $this->getArticles->findOrFail($articleID);
@@ -105,6 +131,10 @@ class ArticleController extends Controller
         return redirect()->route('articles.show', ['id' => $article->id]);
     }
 
+    /**
+     * @param GetArticleClicks $getArticleClicks
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function report(GetArticleClicks $getArticleClicks)
     {
         $articleClicks = $getArticleClicks->paginate();
@@ -112,6 +142,10 @@ class ArticleController extends Controller
         return view('articles.report', compact('articleClicks'));
     }
 
+    /**
+     * @param GetArticleClicks $getArticleClicks
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getClicks(GetArticleClicks $getArticleClicks)
     {
         $articleClicks = $getArticleClicks->getChartData();

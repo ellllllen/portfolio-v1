@@ -2,6 +2,10 @@
 
 namespace Ellllllen\Http;
 
+use Ellllllen\Http\Middleware\EncryptCookies;
+use Ellllllen\Http\Middleware\TrimStrings;
+use Ellllllen\Http\Middleware\TrustProxies;
+use Ellllllen\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -16,9 +20,9 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \Ellllllen\Http\Middleware\TrimStrings::class,
+        TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \Ellllllen\Http\Middleware\TrustProxies::class,
+        TrustProxies::class,
     ];
 
     /**
@@ -28,12 +32,12 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \Ellllllen\Http\Middleware\EncryptCookies::class,
+            EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \Ellllllen\Http\Middleware\VerifyCsrfToken::class,
+            VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 

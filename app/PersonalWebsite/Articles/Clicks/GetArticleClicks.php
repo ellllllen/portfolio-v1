@@ -24,6 +24,9 @@ class GetArticleClicks
         $this->articleClicks = $articleClicks;
     }
 
+    /**
+     * @return array
+     */
     public function getChartData()
     {
         $clicks = [];
@@ -49,6 +52,7 @@ class GetArticleClicks
 
     /**
      * @param int $perPage
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function paginate(int $perPage = 20)
     {

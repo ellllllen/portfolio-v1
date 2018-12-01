@@ -17,7 +17,7 @@ $factory->define(\Ellllllen\PersonalWebsite\Articles\Article::class, function (F
     return [
         'title' => $faker->text(190),
         'section' => $faker->paragraph,
-        'image' => $faker->image('public/storage/images',400,300, null, false) ,
+        'image' => $faker->image('public/storage/images',400,300, null, false),
         'created_by' => function () {
             return factory(\Ellllllen\User::class)->create()->id;
         },

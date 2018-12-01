@@ -7,6 +7,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 class ArticleClicks
 {
     /**
+     * @param int $perPage
      * @return LengthAwarePaginator
      */
     public function paginate(int $perPage)

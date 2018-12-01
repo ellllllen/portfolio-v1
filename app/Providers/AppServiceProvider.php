@@ -61,6 +61,9 @@ class AppServiceProvider extends ServiceProvider
         $this->composerActiveNavigation();
     }
 
+    /**
+     * @param Collection $navigation
+     */
     private function composerNavigation(Collection $navigation)
     {
         view()->composer('partials._navigation', function ($view) use ($navigation) {

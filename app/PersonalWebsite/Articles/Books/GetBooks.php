@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellllllen\PersonalWebsite\Books;
+namespace Ellllllen\PersonalWebsite\Articles\Books;
 
 use Illuminate\Support\Collection;
 

@@ -57,7 +57,7 @@ class GetArticles
         $articles = $this->get($limit);
 
         //filter out articles that don't have valid images to display
-        return $articles->filter(function (Article $value, $key) {
+        return $articles->filter(function (Article $value) {
             if ($this->filesystemManager->exists($value->getImageFullPath())) {
                 return true;
             }

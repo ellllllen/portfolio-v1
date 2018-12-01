@@ -2,7 +2,6 @@
 
 namespace Ellllllen\PersonalWebsite\Activities;
 
-use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 class Activities implements ActivitiesInterface

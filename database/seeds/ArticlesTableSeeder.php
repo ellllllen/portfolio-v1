@@ -13,7 +13,7 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Article::class, 50)->create()
+        factory(Article::class, 20)->create()
             ->each(function ($article) {
                 $article->tags()->attach(factory(Tag::class)->make(), [
                         'tag_id' => array_random(Tag::DEFAULT_TAGS)
