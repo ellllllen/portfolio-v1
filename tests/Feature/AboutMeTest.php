@@ -28,7 +28,8 @@ class AboutMeTest extends TestCase
     {
         $response = $this->get('/about-me');
 
-        $response->assertSeeTextInOrder(['Home', 'About Me']);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(['Home', 'About Me']);
     }
 
     /**
@@ -40,7 +41,8 @@ class AboutMeTest extends TestCase
 
         $developerTime = \Carbon\Carbon::now()->diffInYears(config('ellen.developerTime'));
 
-        $response->assertSeeTextInOrder(["Hi, I'm Ellen", $developerTime]);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(["Hi, I'm Ellen", $developerTime]);
     }
 
     /**
@@ -56,7 +58,8 @@ class AboutMeTest extends TestCase
 
         $response = $this->get('/about-me');
 
-        $response->assertSee('Test About Me Article');
+        $response->assertStatus(200)
+            ->assertSee('Test About Me Article');
     }
 
     /**
@@ -72,7 +75,8 @@ class AboutMeTest extends TestCase
 
         $response = $this->get('/about-me');
 
-        $response->assertDontSee('Test Notes Article');
+        $response->assertStatus(200)
+            ->assertDontSee('Test Notes Article');
     }
 
     /**
@@ -88,6 +92,7 @@ class AboutMeTest extends TestCase
         });
 
         $response = $this->get('/');
-        $response->assertDontSee('Test Article Without Image');
+        $response->assertStatus(200)
+            ->assertDontSee('Test Article Without Image');
     }
 }

@@ -16,7 +16,8 @@ class LoginTest extends TestCase
     {
         $response = $this->get('/login');
 
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+            ->assertStatus(200);
     }
 
     /**
@@ -26,7 +27,8 @@ class LoginTest extends TestCase
     {
         $response = $this->get('/login');
 
-        $response->assertSeeTextInOrder(['Home', 'Login']);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(['Home', 'Login']);
     }
 
     /**
@@ -36,6 +38,7 @@ class LoginTest extends TestCase
     {
         $response = $this->get('/login');
 
-        $response->assertSeeTextInOrder(['E-Mail Address', 'Password', 'Remember Me', 'Login']);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(['E-Mail Address', 'Password', 'Remember Me', 'Login']);
     }
 }

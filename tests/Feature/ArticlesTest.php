@@ -28,7 +28,8 @@ class ArticlesTest extends TestCase
     {
         $response = $this->get('/articles');
 
-        $response->assertSeeTextInOrder(['Home', 'Articles']);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(['Home', 'Articles']);
     }
 
     /**
@@ -42,7 +43,8 @@ class ArticlesTest extends TestCase
 
         $response = $this->get('/articles');
 
-        $response->assertSee('Test Article');
+        $response->assertStatus(200)
+            ->assertSee('Test Article');
     }
 
     /**
@@ -63,7 +65,8 @@ class ArticlesTest extends TestCase
         for ($count = 9; $count <= 1; $count--) {
             $expected[] = "Test Article {$count}";
         }
-        $response->assertSeeTextInOrder($expected);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($expected);
     }
 
     /**
@@ -86,16 +89,57 @@ class ArticlesTest extends TestCase
             $response->assertDontSee('Test Article ' . $count);
         }
 
-        $response->assertSee('/articles?page=2');
+        $response->assertStatus(200)
+            ->assertSee('/articles?page=2');
     }
 
     /**
      * @test
      */
-    public function testHavingNoArticlesDisplaysAMessage()
+    public function testJavaScriptArticleLoads()
     {
-        $response = $this->get('/articles');
+        $response = $this->get('/articles/1');
 
-        $response->assertSee(trans('articles.no_results'));
+        $response->assertStatus(200)
+            ->assertSee('JavaScript');
     }
+
+    /**
+     * @test
+     */
+    public function testChildrensBookArticleLoads()
+    {
+        $response = $this->get('/articles/4');
+
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder([
+            "Children&#039;s Books",
+            "Evie&#039;s Book of Unusual Animals",
+            "Pandy Goes Home"
+        ]);
+    }
+
+    /**
+     * @test
+     */
+    public function testLearnVueTwoArticleLoads()
+    {
+        $response = $this->get('/articles/5');
+
+        $response->assertStatus(200)
+            ->assertSee('Learn Vue 2: Step By Step (Laracasts)');
+    }
+
+    /**
+     * @test
+     */
+//    public function testHavingNoArticlesDisplaysAMessage()
+//    {
+//        $this->emptyArticles();
+//
+//        $response = $this->get('/articles');
+//
+//        $response->assertStatus(200)
+//            ->assertSee(trans('articles.no_results'));
+//    }
 }

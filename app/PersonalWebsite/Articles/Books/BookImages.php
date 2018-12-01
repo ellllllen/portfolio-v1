@@ -12,11 +12,13 @@ trait BookImages
      */
     public function getAllImages()
     {
-        if (file_exists($this->getImageFullDirectory())) {
-            return scandir($this->getImageFullDirectory());
+        $directory = $this->getImageFullDirectory();
+
+        if (file_exists($directory)) {
+            return scandir($directory);
         }
 
-        throw new Exception("Book image folder does not exist");
+        throw new Exception("Book image folder does not exist: " . $directory);
     }
 
     public function getImagePath($image)

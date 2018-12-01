@@ -6,11 +6,20 @@ class Book
 {
     use BookImages;
 
-    const BOOK_IMAGE_DIRECTORY = "images/books/";
-
+    /**
+     * @var string
+     */
     private $title;
+    /**
+     * @var string
+     */
     private $directory;
 
+    /**
+     * Book constructor.
+     * @param string $title
+     * @param string $directory
+     */
     public function __construct(string $title, string $directory)
     {
         $this->title = $title;
@@ -33,8 +42,11 @@ class Book
         return $this->directory;
     }
 
+    /**
+     * @return string
+     */
     public function getImageFullDirectory(): string
     {
-        return static::BOOK_IMAGE_DIRECTORY . $this->getDirectory();
+        return public_path("images/books/" . $this->getDirectory());
     }
 }

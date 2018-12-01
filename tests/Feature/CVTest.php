@@ -23,7 +23,8 @@ class CVTest extends TestCase
     {
         $response = $this->get('/cv');
 
-        $response->assertSeeTextInOrder(['Home', 'Curriculum Vitae']);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder(['Home', 'Curriculum Vitae']);
     }
 
     /**
@@ -33,7 +34,8 @@ class CVTest extends TestCase
     {
         $response = $this->get('/cv');
 
-        $response->assertSeeTextInOrder([
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder([
             trans('cv.content.personal-statement.title'),
             trans('cv.content.specialist-skills.title'),
             trans('cv.content.employment.title'),
@@ -51,7 +53,8 @@ class CVTest extends TestCase
 
         $content = $this->getPersonalStatementContent();
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**
@@ -63,7 +66,8 @@ class CVTest extends TestCase
 
         $content = $this->getSpecialistSkillsContent();
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**
@@ -75,7 +79,8 @@ class CVTest extends TestCase
 
         $content = $this->getEmploymentContent();
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**
@@ -87,7 +92,8 @@ class CVTest extends TestCase
 
         $content = $this->getEducationContent();
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**
@@ -99,7 +105,8 @@ class CVTest extends TestCase
 
         $content = $this->getReferencesContent();
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**
@@ -117,7 +124,8 @@ class CVTest extends TestCase
             $this->getReferencesContent()
         );
 
-        $response->assertSeeTextInOrder($content);
+        $response->assertStatus(200)
+            ->assertSeeTextInOrder($content);
     }
 
     /**

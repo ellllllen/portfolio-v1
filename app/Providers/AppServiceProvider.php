@@ -4,8 +4,8 @@ namespace Ellllllen\Providers;
 
 use Ellllllen\PersonalWebsite\Activities\Activities;
 use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
-use Ellllllen\PersonalWebsite\Books\Books;
-use Ellllllen\PersonalWebsite\Books\BooksInterface;
+use Ellllllen\PersonalWebsite\Articles\Books\Books;
+use Ellllllen\PersonalWebsite\Articles\Books\BooksInterface;
 use Ellllllen\PersonalWebsite\Resources\Resources;
 use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
 use Illuminate\Support\Facades\Route;
