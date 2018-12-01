@@ -36,6 +36,7 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit(new LoginPage)
+                ->dump()
                 ->type('email', 'wrong@email.com')
                 ->type('password', static::TEST_PASSWORD)
                 ->press('Login')
@@ -55,6 +56,7 @@ class LoginTest extends DuskTestCase
         $this->browse(function (Browser $browser) use ($user) {
             /** @var $user User */
             $browser->visit(new LoginPage)
+                ->dump()
                 ->type('email', $user->email)
                 ->type('password', 'wrong password')
                 ->press('Login')
@@ -74,6 +76,7 @@ class LoginTest extends DuskTestCase
         $this->browse(function (Browser $browser) use ($user) {
             /** @var $user User */
             $browser->visit(new LoginPage)
+                ->dump()
                 ->type('email', $user->email)
                 ->type('password', static::TEST_PASSWORD)
                 ->press('Login')
