@@ -2,6 +2,8 @@
 
 namespace Ellllllen\Providers;
 
+use Ellllllen\ChatBot\BotMan\InitiateBotman;
+use Ellllllen\ChatBot\Contracts\InitiateChatbotInterface;
 use Ellllllen\PersonalWebsite\Activities\Activities;
 use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
 use Ellllllen\PersonalWebsite\Articles\Books\Books;
@@ -24,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->createNavigation();
+        $this->defineUrl();
 
         /**
          * https://laravel-news.com/laravel-5-4-key-too-long-error
@@ -45,6 +48,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ResourcesInterface::class, Resources::class);
         $this->app->bind(BooksInterface::class, Books::class);
         $this->app->bind(ActivitiesInterface::class, Activities::class);
+        $this->app->bind(InitiateChatbotInterface::class, InitiateBotman::class);
     }
 
     private function createNavigation()
@@ -75,6 +79,13 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('partials._navigation', function ($view) {
             $view->with('activeNav', Route::currentRouteName());
+        });
+    }
+
+    private function defineUrl()
+    {
+        view()->composer('layouts.app', function ($view) {
+            $view->with('chatUrl', env('APP_URL') . '/botman');
         });
     }
 }

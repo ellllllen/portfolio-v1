@@ -40,16 +40,16 @@ class CreateArticlesTable extends Migration
             'title' => 'Children\'s Books',
             'section' => $faker->paragraph,
             'image' => $faker->image('public/storage/images', 400, 300, null, false),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()->addSecond(),
+            'updated_at' => Carbon::now()->addSecond(),
         ]);
         DB::table('articles')->insert([
             'id' => 5,
             'title' => 'Learn Vue 2: Step By Step (Laracasts)',
             'section' => $faker->paragraph,
             'image' => $faker->image('public/storage/images', 400, 300, null, false),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()->addSeconds(2),
+            'updated_at' => Carbon::now()->addSeconds(2),
         ]);
     }
 
