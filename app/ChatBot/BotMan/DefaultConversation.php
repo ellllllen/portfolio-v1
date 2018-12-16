@@ -45,39 +45,17 @@ class DefaultConversation extends Conversation
             if ($answer->isInteractiveMessageReply()) {
                 switch ($answer->getValue()) {
                     case 'yes':
-                        $joke = json_decode(file_get_contents('http://api.icndb.com/jokes/random'));
-                        $this->say($joke->value->joke);
+                        $joke = json_decode(file_get_contents('https://official-joke-api.herokuapp.com/random_joke'));
+                        $this->say($joke->setup);
+                        $this->say($joke->punchline);
                         break;
                     case 'no':
                         $this->say('OK, I didn\'t feel like being funny anyways');
                         break;
                 }
             }
+
+            $this->say("Well good to see you {$this->name}, I hope you come back soon... If you want to restart this riveting conversation just type 'Hi' again");
         });
-
-        $this->quote();
-    }
-
-    private function quote()
-    {
-        $question = Question::create("Do you want me to inspire you with a nice quote?")->addButtons([
-            Button::create('Yeppers!')->value('yes'),
-            Button::create('No thanks!')->value('no'),
-        ]);
-
-        $this->ask($question, function (Answer $answer) {
-            if ($answer->isInteractiveMessageReply()) {
-                switch ($answer->getValue()) {
-                    case 'yes':
-                        $this->say(Inspiring::quote());
-                        break;
-                    case 'no':
-                        $this->say('OK');
-                        break;
-                }
-            }
-        });
-
-        $this->tellJoke();
     }
 }

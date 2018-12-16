@@ -15582,6 +15582,10 @@ body {
   cursor: pointer;
 }
 
+.ellen-theme #botmanWidgetRoot div div div {
+  color: white !important;
+}
+
 .ellen-theme div.cv-section {
   margin-bottom: 40px;
   text-align: justify;

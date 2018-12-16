@@ -13,4 +13,5 @@ let mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/chat-window.scss', 'public/css/chat-window.css')
     .scripts('resources/js/editor.js', 'public/js/editor.js');
