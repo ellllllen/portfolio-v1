@@ -9,11 +9,15 @@
   "type": "project",
   "require": {
     "php": "^7.1.3",
+    "botman/botman": "^2.4",
+    "botman/driver-web": "^1.5",
     "davejamesmiller/laravel-breadcrumbs": "^5.0",
     "ellllllen/api-wrapper": "^1.0",
     "fideloper/proxy": "^4.0",
     "laravel/framework": "5.7.*",
-    "laravel/tinker": "^1.0"
+    "laravel/tinker": "^1.0",
+    "symfony/translation": "4.1.*",
+    "ext-json": "*"
   },
   "require-dev": {
     "laravel/dusk": "^4.0",
