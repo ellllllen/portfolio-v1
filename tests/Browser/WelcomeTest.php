@@ -88,12 +88,10 @@ class WelcomeTest extends DuskTestCase
      */
     public function testArticleImageLinkWorks()
     {
-        $article = factory(Article::class)->create();
-
-        $this->browse(function (Browser $browser) use ($article) {
+        $this->browse(function (Browser $browser) {
             $browser->visit(new WelcomePage())
                 ->click('.articles img')
-                ->assertUrlIs(env('APP_URL') . '/articles/' . $article->id);
+                ->assertUrlIs(env('APP_URL') . '/articles/5');
         });
     }
 
