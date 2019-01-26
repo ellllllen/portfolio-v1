@@ -81,26 +81,26 @@ class WelcomeTest extends DuskTestCase
      * @test
      * @throws \Throwable
      */
-    public function testActivityLinkWorks()
-    {
-        $activitiesInterface = app(ActivitiesInterface::class);
-        $activities = $activitiesInterface->get(100);
-
-        $this->browse(function (Browser $browser) use ($activities) {
-            foreach ($activities as $activity) {
-                /** @var Activity $activity */
-
-                if ($activity->hasTitleLink()) {
-                    $browser->visit(new WelcomePage())
-                        ->clickLink($activity->getTitle());
-
-                    $browser = $this->createNewTab($browser);
-
-                    $browser->assertUrlIs($activity->getTitleLink());
-                }
-            }
-        });
-    }
+//    public function testActivityLinkWorks()
+//    {
+//        $activitiesInterface = app(ActivitiesInterface::class);
+//        $activities = $activitiesInterface->get(100);
+//
+//        $this->browse(function (Browser $browser) use ($activities) {
+//            foreach ($activities as $activity) {
+//                /** @var Activity $activity */
+//
+//                if ($activity->hasTitleLink()) {
+//                    $browser->visit(new WelcomePage())
+//                        ->clickLink($activity->getTitle());
+//
+//                    $browser = $this->createNewTab($browser);
+//
+//                    $browser->assertUrlIs($activity->getTitleLink());
+//                }
+//            }
+//        });
+//    }
 
     /**
      * @test
