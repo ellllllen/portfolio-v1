@@ -4,7 +4,6 @@ namespace Tests\Browser;
 
 use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
 use Ellllllen\PersonalWebsite\Activities\Activity;
-use Ellllllen\PersonalWebsite\Articles\Article;
 use Tests\Browser\Pages\WelcomePage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
@@ -22,7 +21,7 @@ class WelcomeTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new WelcomePage())
-                ->assertSee('Latest Articles');
+                ->assertSee('My Activity Feed');
         });
     }
 
@@ -69,44 +68,12 @@ class WelcomeTest extends DuskTestCase
      * @test
      * @throws \Throwable
      */
-    public function testArticleTitleLinkWorks()
-    {
-        $article = factory(Article::class)->create([
-            'title' => 'Test Article',
-        ]);
-
-        $this->browse(function (Browser $browser) use ($article) {
-            $browser->visit(new WelcomePage())
-                ->clickLink($article->title)
-                ->assertUrlIs(env('APP_URL') . '/articles/' . $article->id);
-        });
-    }
-
-    /**
-     * @test
-     * @throws \Throwable
-     */
-    public function testArticleImageLinkWorks()
+    public function testArticlesImageLinkWorks()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(new WelcomePage())
-                ->click('.articles img')
-                ->assertUrlIs(env('APP_URL') . '/articles/5');
-        });
-    }
-
-    /**
-     * @test
-     * @throws \Throwable
-     */
-    public function testAllArticlesLinkWorks()
-    {
-        factory(Article::class)->create();
-
-        $this->browse(function (Browser $browser) {
-            $browser->visit(new WelcomePage())
-                ->clickLink('View all my Articles')
-                ->assertUrlIs(env('APP_URL') . '/articles');
+                ->mouseover('.articles a')
+                ->assertSeeIn('.articles a', 'Articles');
         });
     }
 

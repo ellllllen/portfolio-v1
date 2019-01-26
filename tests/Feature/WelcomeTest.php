@@ -2,8 +2,7 @@
 
 namespace Tests\Feature;
 
-use Carbon\Carbon;
-use Ellllllen\PersonalWebsite\Articles\Article;
+use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -23,15 +22,18 @@ class WelcomeTest extends TestCase
     /**
      * @test
      */
-    public function testItDisplaysOneArticles()
+    public function testItDisplayAnActivity()
     {
-        factory(Article::class, 1)->create(['title' => 'Test Article']);
+        /**
+         * @var $activitiesInterface ActivitiesInterface
+         */
+        $activitiesInterface = app(ActivitiesInterface::class);
+        $activities = $activitiesInterface->get(1);
 
         $response = $this->get('/');
 
         $response->assertStatus(200)
-            ->assertSee('Test Article')
-            ->assertDontSee(trans('articles.no_results'));
+            ->assertSee($activities[0]->getTitle());
     }
 
     /**
@@ -39,47 +41,20 @@ class WelcomeTest extends TestCase
      */
     public function testOnlyShowsLatestArticles()
     {
-        for ($count = 1; $count <= 9; $count++) {
-            factory(Article::class, 1)->create([
-                'title' => "Test Article {$count}",
-                'updated_at' => Carbon::now()->addSecond($count),
-            ]);
-        }
+        /**
+         * @var $activitiesInterface ActivitiesInterface
+         */
+        $activitiesInterface = app(ActivitiesInterface::class);
+        $activities = $activitiesInterface->get(10);
 
         $response = $this->get('/');
 
         $response->assertStatus(200);
-        for ($count = 1; $count <= 4; $count++) {
-            $response->assertDontSee('Test Article ' . $count);
+        for ($count = 0; $count <= 4; $count++) {
+            $response->assertSee($activities[$count]->getTitle());
         }
-        for ($count = 5; $count <= 9; $count++) {
-            $response->assertSee('Test Article ' . $count);
+        for ($count = 4; $count <= 9; $count++) {
+            $response->assertSee($activities[$count]->getTitle());
         }
     }
-
-    /**
-     * @test
-     */
-//    public function testNoArticlesDisplaysMessage()
-//    {
-//        $response = $this->get('/');
-//        $response->assertStatus(200)
-//            ->assertSee(trans('articles.no_results'));
-//    }
-
-    /**
-     * @test
-     */
-//    public function testItDoesNotDisplayArticlesWithoutImageFile()
-//    {
-//        factory(Article::class, 1)->create([
-//            'title' => 'Test Article',
-//            'image' => 'this_file_does_not_exist.jpg',
-//        ]);
-//
-//        $response = $this->get('/');
-//        $response->assertStatus(200)
-//            ->assertDontSee('Test Article')
-//            ->assertSee(trans('articles.no_results'));
-//    }
 }

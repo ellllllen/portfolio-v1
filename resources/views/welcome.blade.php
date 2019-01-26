@@ -2,68 +2,61 @@
 
 @section('content')
     <div class="container welcome">
-        <div class="row mb-4">
-            <div class="col col-4 p-0 about-me">
+        <div class="row justify-content-md-center mb-3">
+            <div class="col col-4 p-0 about-me welcome-image">
                 <a href="{{ route('about-me') }}">
                     <span>@lang('about_me.title')</span>
                 </a>
             </div>
-            <div class="col col-4 p-0 cv">
+            <div class="col col-6 p-0 cv welcome-image">
                 <a href="{{ route('cv') }}">
                     <span>Curriculum Vitae</span>
                 </a>
             </div>
-            <div class="col col-4 p-0 resources">
+            <div class="col col-5 p-0 resources welcome-image">
                 <a href="{{ route('resources') }}">
                     <span>Resources</span>
                 </a>
             </div>
-        </div>
-    </div>
-    <div>
-        <div class="row mb-4">
-            <div class="col articles">
-                <h3>Latest Articles</h3>
-                @if($articles->count() > 0)
-                    @foreach($articles as $article)
-                        @include('articles._article', ['length' => 200])
-                    @endforeach
-                    <div class="text-right">
-                        <a class="text-secondary" href="{{ route('articles.index') }}">
-                            View all my Articles
-                            <i class="fas fa-arrow-circle-right pl-1"></i>
-                        </a>
-                    </div>
-                @else
-                    @lang('articles.no_results')
-                @endif
+            <div class="col col-5 p-0 articles welcome-image">
+                <a href="{{ route('articles.index') }}">
+                    <span>Articles</span>
+                </a>
             </div>
-            <div class="col-4">
+        </div>
+        <div class="row mb-4 justify-content-md-center">
+            <div class="col col-10 pb-3">
                 @if($activities->count() > 0)
-                    <h3>My Activities</h3>
+                    <h3 class="text-primary">My Activity Feed</h3>
+                    <div class="mb-3">
+                        These are my latest activities/randoms, I like to keep a track of what I'm doing/have done so I
+                        can refer back to them.
+                    </div>
                     @foreach($activities as $activity)
                         <div class="row mb-5">
                             <div class="col">
-                                <h4>
-                                    @if($activity->hasTitleLink())
-                                        <a class="text-secondary" href="{{ $activity->getTitleLink() }}"
-                                           target="_blank">
-                                            {{ $activity->getTitle() }}
-                                        </a>
-                                    @else
-                                        <span class="text-secondary">
-                                        {{ $activity->getTitle() }}
-                                    </span>
-                                    @endif
-                                </h4>
                                 <div class="d-flex">
-                                    <div class="calendar mr-2 align-self-start">
+                                    <div class="calendar mr-3 align-self-start">
                                         <span class="day">{{ $activity->getStartDate()->format('d') }}</span>
                                         <span class="month">{{ $activity->getStartDate()->format('M') }}</span>
                                     </div>
-                                    <p class="card-text text-justify">
-                                        {!! $activity->getDescription() !!}
-                                    </p>
+                                    <div>
+                                        <h4>
+                                            @if($activity->hasTitleLink())
+                                                <a class="text-secondary" href="{{ $activity->getTitleLink() }}"
+                                                   target="_blank">
+                                                    {{ $activity->getTitle() }}
+                                                </a>
+                                            @else
+                                                <span class="text-secondary">
+                                                    {{ $activity->getTitle() }}
+                                                </span>
+                                            @endif
+                                        </h4>
+                                        <p class="card-text text-justify">
+                                            {!! $activity->getDescription() !!}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -32,7 +32,7 @@ return [
                     ]
                 ],
                 [
-                    'name' => 'Current Employer',
+                    'name' => 'Mainstream Digital',
                     'location' => 'Cirencester, Gloucestershire',
                     'roles' => [
                         ['title' => 'Developer', 'date' => 'June 2010 to March 2018'],

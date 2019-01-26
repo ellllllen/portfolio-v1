@@ -1,5 +1,5 @@
 .welcome {
-  .col {
+  .welcome-image {
     height: 200px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -28,7 +28,7 @@
     }
   }
 
-  .col:hover {
+  .welcome-image:hover {
     opacity: 0.8;
   }
 
@@ -46,6 +46,11 @@
     background-image: url('/images/resources.png');
     background-position: bottom left;
   }
+
+  .articles {
+    background-image: url('/images/articles.jpg');
+    background-position: top left;
+  }
 }
 
 .calendar {
@@ -56,6 +61,7 @@
   -webkit-border-radius: 10px;
   border: 1px solid #d2d2d2;
   font-size: 1.1rem;
+  width: 70px;
   .day {
     padding: 0 15px;
     display: block;

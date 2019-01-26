@@ -2,6 +2,34 @@
 
 return [
     [
+        'title' => 'React Bootcamp',
+        'description' => 'Following Tyler McGinnis React Bootcamp.',
+        'startDate' => \Carbon\Carbon::createFromDate(2019, 1, 26),
+        'titleLink' => 'http://ellenm.me/articles/11',
+        'display' => 1
+    ],
+    [
+        'title' => 'Added Chatbot to Personal Website',
+        'description' => '',
+        'startDate' => \Carbon\Carbon::createFromDate(2018, 12, 16),
+        'titleLink' => 'http://ellenm.me/articles/12',
+        'display' => 1
+    ],
+    [
+        'title' => 'Travis CI (Part 2)',
+        'description' => 'Managed to implement Browser tests using Travis CI on my personal website. Also added Travis CI to my other repositories.',
+        'startDate' => \Carbon\Carbon::createFromDate(2018, 12, 01),
+        'titleLink' => 'https://travis-ci.com/ellllllen',
+        'display' => 1
+    ],
+    [
+        'title' => 'Travis CI (Part 1)',
+        'description' => 'Implemented Travis CI on my personal website.',
+        'startDate' => \Carbon\Carbon::createFromDate(2018, 11, 11),
+        'titleLink' => 'https://travis-ci.com/ellllllen/personal-website',
+        'display' => 1
+    ],
+    [
         'title' => 'Continuous Integration',
         'description' => 'Now I\'ve lots of automated tests I am now researching and implementing continuous integration and deployment (CI and CD).',
         'startDate' => \Carbon\Carbon::createFromDate(2018, 9, 01),
