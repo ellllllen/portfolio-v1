@@ -1,6 +1,7 @@
 This is my personal website. http://ellenm.me
 
 [![Build Status](https://travis-ci.com/ellllllen/personal-website.svg?branch=master)](https://travis-ci.com/ellllllen/personal-website)
+[![codecov](https://codecov.io/gh/ellllllen/personal-website/branch/master/graph/badge.svg)](https://codecov.io/gh/ellllllen/personal-website)
 
 ## Usage
 
