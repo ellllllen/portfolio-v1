@@ -15,7 +15,7 @@ class GetActivitiesTest extends TestCase
     private $testClass;
     private $mockActivities;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

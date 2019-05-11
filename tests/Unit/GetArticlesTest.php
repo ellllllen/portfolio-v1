@@ -14,7 +14,7 @@ class GetArticlesTest extends TestCase
     private $mockActivities;
     private $testClass;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockActivities = Mockery::mock(Articles::class);
 
