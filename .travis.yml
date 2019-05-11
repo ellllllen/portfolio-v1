@@ -18,7 +18,7 @@ install:
 - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 - php artisan key:generate
 before_script:
-- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+#- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 - php artisan serve &
 - mkdir -p storage/app/public/images
 - php artisan storage:link
@@ -27,7 +27,7 @@ before_script:
 - npm install
 - npm run production
 script:
-- php artisan dusk
+#- php artisan dusk
 - phpdbg -qrr vendor/bin/phpunit --coverage-clover=coverage.xml
 services:
 - mysql
