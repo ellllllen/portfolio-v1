@@ -9,12 +9,4 @@ class CVController extends Controller
     {
         return view('cv');
     }
-
-    /**
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
-    public function downloadPdfVersion()
-    {
-        return response()->download('storage/cv.pdf');
-    }
-} 
+}

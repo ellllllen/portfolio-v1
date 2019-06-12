@@ -149,7 +149,7 @@ class ArticleController extends Controller
     public function getClicks(GetArticleClicks $getArticleClicks)
     {
         $articleClicks = $getArticleClicks->getChartData();
-        
+
         return response()->json($articleClicks);
     }
 }

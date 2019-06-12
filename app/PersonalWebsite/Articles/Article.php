@@ -26,14 +26,4 @@ class Article extends Model implements PresenterInterface
     {
         return $this->belongsToMany(Tag::class);
     }
-
-    public function getPublicImage(): string
-    {
-        return "/storage/images/{$this->image}";
-    }
-
-    public function getImageFullPath(): string
-    {
-        return "/public/images/{$this->image}";
-    }
 }

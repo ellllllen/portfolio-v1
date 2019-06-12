@@ -9,30 +9,28 @@ class ManageArticles
 {
     public function store(array $fields)
     {
-        $path = $fields['image']->store('public/images');
+        $imageType = pathinfo($fields['image'], PATHINFO_EXTENSION);
+        $image = file_get_contents($fields['image']);
 
         $article = new Article();
         $article->title = $fields['title'];
         $article->section = $fields['section'];
-        $article->image = str_replace('public/images/', '', $path);
+        $article->image = 'data:image/' . $imageType . ';base64,' . base64_encode($image);
         $article->created_by = Auth::id();
         $article->save();
     }
 
     public function destroy(Article $article)
     {
-        try {
-            $article->delete();
-        } catch (\Exception $e) {
-            Log::error('Article not deleted');
-        }
+        $article->delete();
     }
 
     public function update(array $fields, Article $article)
     {
         if (isset($fields['image'])) {
-            $path = $fields['image']->store('public/images');
-            $article->image = str_replace('public/images/', '', $path);
+            $imageType = pathinfo($fields['image'], PATHINFO_EXTENSION);
+            $image = file_get_contents($fields['image']);
+            $article->image = 'data:image/' . $imageType . ';base64,' . base64_encode($image);
         }
 
         $article->title = $fields['title'];
