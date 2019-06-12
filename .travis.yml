@@ -23,6 +23,7 @@ before_script:
 - php artisan migrate
 - npm install
 - npm run production
+- php artisan dusk:chrome-driver
 script:
 - php artisan dusk
 - phpdbg -qrr vendor/bin/phpunit --coverage-clover=coverage.xml
