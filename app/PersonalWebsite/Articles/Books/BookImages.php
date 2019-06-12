@@ -34,4 +34,9 @@ trait BookImages
 
         return false;
     }
+
+    public function displayImage($image)
+    {
+        return '/images/books/' . $this->getDirectory() . '/'. $image;
+    }
 }

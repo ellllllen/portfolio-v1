@@ -47,6 +47,6 @@ class Book
      */
     public function getImageFullDirectory(): string
     {
-        return "images/books/" . $this->getDirectory();
+        return public_path("/images/books/" . $this->getDirectory());
     }
 }

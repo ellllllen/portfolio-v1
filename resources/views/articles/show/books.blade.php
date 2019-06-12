@@ -8,7 +8,7 @@
             @foreach($book->getAllImages() as $image)
                 @if($book->doesImageExist($image))
                     <div class="m-2">
-                        <img class="img-thumbnail" src="/{{ $book->getImagePath($image) }}"
+                        <img class="img-thumbnail" src="{{ $book->displayImage($image) }}"
                              data-toggle="modal" data-target="#bookImageModal"
                              data-source="/{{ $book->getImagePath($image) }}">
                     </div>

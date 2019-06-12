@@ -113,10 +113,10 @@ class ArticlesTest extends TestCase
 
         $response->assertStatus(200)
             ->assertSeeTextInOrder([
-            "Children&#039;s Books",
-            "Evie&#039;s Book of Unusual Animals",
-            "Pandy Goes Home"
-        ]);
+                "Children&#039;s Books",
+                "Evie&#039;s Book of Unusual Animals",
+                "Pandy Goes Home"
+            ]);
     }
 
     /**
@@ -129,17 +129,4 @@ class ArticlesTest extends TestCase
         $response->assertStatus(200)
             ->assertSee('Learn Vue 2: Step By Step (Laracasts)');
     }
-
-    /**
-     * @test
-     */
-//    public function testHavingNoArticlesDisplaysAMessage()
-//    {
-//        $this->emptyArticles();
-//
-//        $response = $this->get('/articles');
-//
-//        $response->assertStatus(200)
-//            ->assertSee(trans('articles.no_results'));
-//    }
 }
