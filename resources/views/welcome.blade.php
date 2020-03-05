@@ -5,7 +5,7 @@
         <div class="row justify-content-md-center mb-3">
             <div class="col col-4 p-0 about-me welcome-image">
                 <a href="{{ route('about-me') }}">
-                    <span>@lang('about_me.title')</span>
+                    <span>trans('about_me.title')</span>
                 </a>
             </div>
             <div class="col col-6 p-0 cv welcome-image">

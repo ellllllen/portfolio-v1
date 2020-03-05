@@ -58,3 +58,21 @@ return [
     ]
 ];
 ```
+
+# Development
+## Prerequisites
+* Docker
+
+## Set Up Instructions
+In your terminal run commands:
+
+```docker-compose up --build -d```
+
+```docker exec --tty portfolio-v1_php_1 php artisan key:generate```
+
+```docker exec --tty portfolio-v1_php_1 composer update```
+
+## Run Tests
+```docker exec --tty portfolio-v1_php_1 php artisan migrate```
+
+```docker exec --tty portfolio-v1_php_1 vendor/bin/phpunit tests```
