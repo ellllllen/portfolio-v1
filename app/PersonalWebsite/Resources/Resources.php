@@ -18,7 +18,7 @@ class Resources implements ResourcesInterface
             new Resource('Codecademy', 'https://www.codecademy.com/', 'Where I can learn to code interactively, for
                 free.'),
 
-            new Resource('Udacity', 'https://eu.udacity.com/',
+            new Resource('Udacity', 'https://www.udacity.com/',
                 'This website offers loads of different programming courses. It\'s very professional and is
                 used by lots of big companies.'),
 
