@@ -5,8 +5,6 @@ namespace Ellllllen\Http\Controllers;
 use Illuminate\Http\Request;
 use Ellllllen\PersonalWebsite\Articles\GetArticles;
 use Ellllllen\PersonalWebsite\Articles\ManageArticles;
-use Ellllllen\PersonalWebsite\Articles\Clicks\GetArticleClicks;
-use Ellllllen\PersonalWebsite\Articles\Clicks\LogArticleClick;
 
 class ArticleController extends Controller
 {
@@ -46,14 +44,11 @@ class ArticleController extends Controller
 
     /**
      * @param int $articleID
-     * @param LogArticleClick $logArticleClick
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(int $articleID, LogArticleClick $logArticleClick)
+    public function show(int $articleID)
     {
         $article = $this->getArticles->findOrFail($articleID);
-
-        $logArticleClick->storeLog($article, $this->request->ip());
 
         if ($article->hasSeparateController()) {
             return $article->loadSeparateController();
@@ -129,27 +124,5 @@ class ArticleController extends Controller
         $this->manageArticles->update($this->request->all(), $article);
 
         return redirect()->route('articles.show', ['id' => $article->id]);
-    }
-
-    /**
-     * @param GetArticleClicks $getArticleClicks
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function report(GetArticleClicks $getArticleClicks)
-    {
-        $articleClicks = $getArticleClicks->paginate();
-
-        return view('articles.report', compact('articleClicks'));
-    }
-
-    /**
-     * @param GetArticleClicks $getArticleClicks
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getClicks(GetArticleClicks $getArticleClicks)
-    {
-        $articleClicks = $getArticleClicks->getChartData();
-
-        return response()->json($articleClicks);
     }
 }

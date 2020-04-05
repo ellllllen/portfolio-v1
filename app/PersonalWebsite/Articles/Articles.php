@@ -35,18 +35,6 @@ class Articles
     }
 
     /**
-     * @return Collection|null
-     */
-    public function getWithClicks()
-    {
-        return Article::with([
-            'articleClicks' => function ($query) {
-                $query->where('ip', '!=', env("MY_IP"));
-            }
-        ])->get();
-    }
-
-    /**
      * @param int $limit
      * @return Collection|null
      */
