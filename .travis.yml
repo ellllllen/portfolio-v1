@@ -21,7 +21,7 @@ install:
 - php artisan key:generate
 before_script:
 - git clone https://github.com/ellllllen/portfolio-migrations.git
-- cd portfolio-migrations && git checkout master && cp .env.travis .env && npm install --production && npm run migrate-travis
+- cd portfolio-migrations && git checkout master && cp .env.travis .env && npm install --production && npm run migrate-travis && cd ../ && rm -rf portfolio-migrations
 - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 - php artisan serve &
 - npm install
