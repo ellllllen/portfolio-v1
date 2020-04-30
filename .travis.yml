@@ -10,8 +10,6 @@ php:
 - 7.4
 services:
 - postgresql
-addons:
-  chrome: stable
 before_install:
 - composer self-update
 - npm i npm@latest -g
@@ -19,16 +17,12 @@ install:
 - cp .env.travis .env
 - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 - php artisan key:generate
-- php artisan dusk:chrome-driver
 - git clone https://github.com/ellllllen/portfolio-migrations.git
 - cd portfolio-migrations && git checkout master && cp .env.travis .env && npm install --production && npm run migrate-travis && cd ../ && rm -rf portfolio-migrations
 - npm install --production
 - npm run production
-before_script:
-- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-- php artisan serve &
 script:
-- phpdbg -qrr vendor/bin/phpunit --coverage-clover=coverage.xml
+- php -qrr vendor/bin/phpunit --coverage-clover=coverage.xml
 cache:
   directories:
   - node_modules
