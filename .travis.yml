@@ -20,7 +20,6 @@ install:
 - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 - php artisan key:generate
 before_script:
-- psql -c 'create database travis_ci_test;' -U postgres
 - git clone https://github.com/ellllllen/portfolio-migrations.git
 - cd portfolio-migrations && git checkout master && cp .env.travis .env && npm install --production && npm run migrate-travis && cd ../ && rm -rf portfolio-migrations
 - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
