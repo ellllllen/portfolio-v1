@@ -12,13 +12,6 @@ abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        session()->flush();
-    }
-
     /**
      * Prepare for Dusk test execution.
      *
@@ -42,7 +35,9 @@ abstract class DuskTestCase extends BaseTestCase
             '--headless',
             '--window-size=1920,1080',
             '--allow-insecure-localhost',
-            '--ignore-certificate-errors'
+            '--ignore-certificate-errors',
+            '--disable-dev-shm-usage',
+            '--no-sandbox'
         ]);
 
         return RemoteWebDriver::create(
