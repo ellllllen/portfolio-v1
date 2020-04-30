@@ -2,21 +2,22 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Ellllllen\PersonalWebsite\Activities\GetActivities;
-use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\Portfolio\Activities\GetActivities;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class WelcomeController extends Controller
 {
     /**
      * Show the application dashboard.
      *
-     * @param GetArticles $getArticles
      * @param GetActivities $getActivities
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
-    public function index(GetArticles $getArticles, GetActivities $getActivities)
+    public function index(GetActivities $getActivities)
     {
-        return view('welcome')->with('articles', $getArticles->getWithImages(5))
+        return view('welcome')
             ->with('activities', $getActivities->get(5));
     }
 }

@@ -2,26 +2,20 @@
 
 namespace Tests\Feature;
 
-use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
+use Ellllllen\Portfolio\Activities\ActivitiesInterface;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class WelcomeTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
-    /**
-     * @test
-     */
     public function testPageLoads()
     {
         $response = $this->get('/');
         $response->assertStatus(200);
     }
 
-    /**
-     * @test
-     */
     public function testItDisplayAnActivity()
     {
         /**
@@ -36,9 +30,6 @@ class WelcomeTest extends TestCase
             ->assertSee($activities[0]->getTitle());
     }
 
-    /**
-     * @test
-     */
 //    public function testOnlyShowsLatestArticles()
 //    {
 //        /**

@@ -2,16 +2,14 @@
 
 namespace Tests\Browser;
 
-use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
-use Ellllllen\PersonalWebsite\Activities\Activity;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\Browser\Pages\WelcomePage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class WelcomeTest extends DuskTestCase
 {
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     /**
      * @test
@@ -48,19 +46,6 @@ class WelcomeTest extends DuskTestCase
             $browser->visit(new WelcomePage())
                 ->mouseover('.cv a')
                 ->assertSeeIn('.cv a', 'Curriculum Vitae');
-        });
-    }
-
-    /**
-     * @test
-     * @throws \Throwable
-     */
-    public function testResourcesImageLinkWorks()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit(new WelcomePage())
-                ->mouseover('.resources a')
-                ->assertSeeIn('.resources a', 'Resources');
         });
     }
 

@@ -1,7 +1,7 @@
 <?php
 
-use Ellllllen\PersonalWebsite\Articles\Article;
-use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
+use Ellllllen\Portfolio\Articles\Article;
+use Ellllllen\Portfolio\Articles\Tags\Tag;
 use Illuminate\Database\Seeder;
 
 class ArticlesTableSeeder extends Seeder

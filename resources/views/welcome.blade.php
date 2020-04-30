@@ -13,11 +13,6 @@
                     <span>Curriculum Vitae</span>
                 </a>
             </div>
-            <div class="col col-5 p-0 resources welcome-image">
-                <a href="{{ route('resources') }}">
-                    <span>Resources</span>
-                </a>
-            </div>
             <div class="col col-5 p-0 articles welcome-image">
                 <a href="{{ route('articles.index') }}">
                     <span>Articles</span>

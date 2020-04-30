@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Ellllllen\PersonalWebsite\Articles\Articles;
-use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\Portfolio\Articles\Articles;
+use Ellllllen\Portfolio\Articles\GetArticles;
 use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Mockery;

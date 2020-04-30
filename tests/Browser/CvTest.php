@@ -2,14 +2,14 @@
 
 namespace Tests\Browser;
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\CvPage;
 use Tests\DuskTestCase;
 
 class CvTest extends DuskTestCase
 {
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     /**
      * @test

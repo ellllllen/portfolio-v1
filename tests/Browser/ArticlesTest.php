@@ -2,15 +2,15 @@
 
 namespace Tests\Browser;
 
-use Ellllllen\PersonalWebsite\Articles\Article;
+use Ellllllen\Portfolio\Articles\Article;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\Browser\Pages\ArticlesPage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ArticlesTest extends DuskTestCase
 {
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     /**
      * @test
@@ -44,9 +44,7 @@ class ArticlesTest extends DuskTestCase
      */
     public function testArticleTitleLinkWorks()
     {
-        $article = factory(Article::class)->create([
-            'title' => 'Test Article',
-        ]);
+        $article = Article::latest()->first();
 
         $this->browse(function (Browser $browser) use ($article) {
             $browser->visit(new ArticlesPage())
@@ -61,10 +59,12 @@ class ArticlesTest extends DuskTestCase
      */
     public function testArticleImageLinkWorks()
     {
-        $this->browse(function (Browser $browser) {
+        $article = Article::latest()->first();
+
+        $this->browse(function (Browser $browser) use ($article) {
             $browser->visit(new ArticlesPage())
                 ->click('.articles img')
-                ->assertUrlIs(env('APP_URL') . '/articles/5');
+                ->assertUrlIs(env('APP_URL') . '/articles/' . $article->id);
         });
     }
 
@@ -108,7 +108,7 @@ class ArticlesTest extends DuskTestCase
      */
     public function testBreadcrumbOnShowPage()
     {
-        $article = factory(Article::class)->create();
+        $article = Article::latest()->first();
 
         $this->browse(function (Browser $browser) use ($article) {
             $browser->visit('/articles/' . $article->id)

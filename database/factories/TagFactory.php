@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\Ellllllen\PersonalWebsite\Articles\Tags\Tag::class, function (Faker $faker) {
+$factory->define(\Ellllllen\Portfolio\Articles\Tags\Tag::class, function (Faker $faker) {
     return [
         'tag' => $faker->text(10),
     ];

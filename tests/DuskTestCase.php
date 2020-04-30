@@ -12,6 +12,13 @@ abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        session()->flush();
+    }
+
     /**
      * Prepare for Dusk test execution.
      *
@@ -40,7 +47,7 @@ abstract class DuskTestCase extends BaseTestCase
 
         return RemoteWebDriver::create(
             env('SELENIUM_URL'), DesiredCapabilities::chrome()->setCapability(
-            ChromeOptions::CAPABILITY, $options
+            ChromeOptions::CAPABILITY_W3C, $options
         ));
     }
 

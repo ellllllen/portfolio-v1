@@ -10,26 +10,15 @@ services:
         restart: always
         depends_on:
             - php
-            - db
     php:
         build: .
         restart: always
         volumes:
             - .:/var/www/html
-    db:
-        image: mysql:5.7
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_USER: ${DB_USERNAME}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-        ports:
-            - 3306:3306
+            - ./../portfolio-migrations/databases:/var/www/html/sqlite
     selenium:
         image: selenium/standalone-chrome
         depends_on:
             - php
-            - db
             - web
         restart: always

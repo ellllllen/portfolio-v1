@@ -3,27 +3,21 @@
 namespace Tests\Feature;
 
 use Carbon\Carbon;
-use Ellllllen\PersonalWebsite\Articles\Article;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Ellllllen\Portfolio\Articles\Article;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class ArticlesTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
-    /**
-     * @test
-     */
     public function testPageLoads()
     {
-        $response = $this->get('/articles');
+        $response = $this->get('/articles')->dump();
 
         $response->assertStatus(200);
     }
 
-    /**
-     * @test
-     */
     public function testBreadcrumb()
     {
         $response = $this->get('/articles');
@@ -32,9 +26,6 @@ class ArticlesTest extends TestCase
             ->assertSeeTextInOrder(['Home', 'Articles']);
     }
 
-    /**
-     * @test
-     */
     public function testItDisplaysOneArticle()
     {
         factory(Article::class, 1)->create([
@@ -47,9 +38,6 @@ class ArticlesTest extends TestCase
             ->assertSee('Test Article');
     }
 
-    /**
-     * @test
-     */
     public function testItDisplaysArticlesInOrder()
     {
         for ($count = 1; $count <= 9; $count++) {
@@ -69,9 +57,6 @@ class ArticlesTest extends TestCase
             ->assertSeeTextInOrder($expected);
     }
 
-    /**
-     * @test
-     */
     public function testPaginatesArticles()
     {
         for ($count = 1; $count <= 20; $count++) {
@@ -93,9 +78,6 @@ class ArticlesTest extends TestCase
             ->assertSee('/articles?page=2');
     }
 
-    /**
-     * @test
-     */
     public function testJavaScriptArticleLoads()
     {
         $response = $this->get('/articles/1');
@@ -104,29 +86,14 @@ class ArticlesTest extends TestCase
             ->assertSee('JavaScript');
     }
 
-    /**
-     * @test
-     */
     public function testChildrensBookArticleLoads()
     {
         $response = $this->get('/articles/4');
 
         $response->assertStatus(200)
             ->assertSeeTextInOrder([
-                "Children&#039;s Books",
-                "Evie&#039;s Book of Unusual Animals",
+                "Book of Unusual Animals",
                 "Pandy Goes Home"
             ]);
-    }
-
-    /**
-     * @test
-     */
-    public function testLearnVueTwoArticleLoads()
-    {
-        $response = $this->get('/articles/5');
-
-        $response->assertStatus(200)
-            ->assertSee('Learn Vue 2: Step By Step (Laracasts)');
     }
 }

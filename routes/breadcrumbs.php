@@ -13,18 +13,13 @@ Breadcrumbs::register('cv', function ($breadcrumbs) {
     $breadcrumbs->push(trans('cv.title'), route('cv'));
 });
 
-Breadcrumbs::register('resources', function ($breadcrumbs) {
-    $breadcrumbs->parent('welcome');
-    $breadcrumbs->push(trans('resources.title'), route('resources'));
-});
-
 Breadcrumbs::register('articles.index', function ($breadcrumbs) {
     $breadcrumbs->parent('welcome');
     $breadcrumbs->push(trans('articles.index.title'), route('articles.index'));
 });
 
 Breadcrumbs::register('articles.show', function ($breadcrumbs, $articleID) {
-    $getArticles = app(\Ellllllen\PersonalWebsite\Articles\GetArticles::class);
+    $getArticles = app(\Ellllllen\Portfolio\Articles\GetArticles::class);
     $article = $getArticles->findOrFail($articleID);
     $breadcrumbs->parent('articles.index');
     $breadcrumbs->push($article->title, route('articles.show', ['article' => $articleID]));

@@ -14,18 +14,13 @@
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/about-me', 'AboutMeController@index')->name('about-me');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('/cv')->group(function () {
     Route::get('/', ['as' => 'cv', 'uses' => 'CVController@index']);
-    Route::get('/pdf', ['as' => 'cv.pdf', 'uses' => 'CVController@downloadPdfVersion']);
 });
 
-Route::get('/resources', 'ResourcesController@index')->name('resources');
-
-Route::resource('/articles', 'ArticleController');
-
-Route::get('/botman', 'ChatController@loadChatWindow');
-Route::post('/botman', 'ChatController@chat');
+Route::prefix('/articles')->group(function () {
+    Route::get('/', ['uses' => 'ArticleController@index', 'as' => 'articles.index']);
+    Route::get('/{article}', ['uses' => 'ArticleController@show', 'as' => 'articles.show']);
+});

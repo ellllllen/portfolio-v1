@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class CVTest extends TestCase
 {
-    /**
-     * @test
-     */
+    use DatabaseTransactions;
+
     public function testPageLoads()
     {
         $response = $this->get('/cv');
@@ -16,9 +16,6 @@ class CVTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /**
-     * @test
-     */
     public function testBreadcrumb()
     {
         $response = $this->get('/cv');
@@ -27,9 +24,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder(['Home', 'Curriculum Vitae']);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeCVTitles()
     {
         $response = $this->get('/cv');
@@ -44,9 +38,6 @@ class CVTest extends TestCase
         ]);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeePersonalStatement()
     {
         $response = $this->get('/cv');
@@ -57,9 +48,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder($content);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeSpecialistSkills()
     {
         $response = $this->get('/cv');
@@ -70,9 +58,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder($content);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeEmployment()
     {
         $response = $this->get('/cv');
@@ -83,9 +68,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder($content);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeEducation()
     {
         $response = $this->get('/cv');
@@ -96,9 +78,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder($content);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeReferences()
     {
         $response = $this->get('/cv');
@@ -109,9 +88,6 @@ class CVTest extends TestCase
             ->assertSeeTextInOrder($content);
     }
 
-    /**
-     * @test
-     */
     public function testCanSeeAllSections()
     {
         $response = $this->get('/cv');

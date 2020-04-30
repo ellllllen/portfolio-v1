@@ -2,7 +2,7 @@
 
 namespace Ellllllen\Http\Controllers\Articles;
 
-use Ellllllen\PersonalWebsite\Articles\Article;
+use Ellllllen\Portfolio\Articles\Article;
 use Illuminate\View\View;
 
 class JavaScriptController extends ShowArticle

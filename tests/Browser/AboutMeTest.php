@@ -2,16 +2,16 @@
 
 namespace Tests\Browser;
 
-use Ellllllen\PersonalWebsite\Articles\Article;
-use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Ellllllen\Portfolio\Articles\Article;
+use Ellllllen\Portfolio\Articles\Tags\Tag;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\Dusk\Browser;
 use Tests\Browser\Pages\AboutMePage;
 use Tests\DuskTestCase;
 
 class AboutMeTest extends DuskTestCase
 {
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     /**
      * @test
@@ -61,10 +61,10 @@ class AboutMeTest extends DuskTestCase
      */
     public function testArticleTitleLinkWorks()
     {
-        $article = factory(Article::class)->create();
-        $article->tags()->attach(factory(Tag::class)->make(), [
-            'tag_id' => Tag::ABOUT_ME
-        ]);
+        $article = Article::whereHas('tags', function ($q) {
+            $q->where('tag_id', Tag::ABOUT_ME);
+        })->latest()
+            ->first();
 
         $this->browse(function (Browser $browser) use ($article) {
             $browser->visit(new AboutMePage())
@@ -79,10 +79,10 @@ class AboutMeTest extends DuskTestCase
      */
     public function testArticleImageLinkWorks()
     {
-        $article = factory(Article::class)->create();
-        $article->tags()->attach(factory(Tag::class)->make(), [
-            'tag_id' => Tag::ABOUT_ME
-        ]);
+        $article = Article::whereHas('tags', function ($q) {
+            $q->where('tag_id', Tag::ABOUT_ME);
+        })->latest()
+            ->first();
 
         $this->browse(function (Browser $browser) use ($article) {
             $browser->visit(new AboutMePage())

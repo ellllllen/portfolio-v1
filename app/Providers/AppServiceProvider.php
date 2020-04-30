@@ -2,14 +2,10 @@
 
 namespace Ellllllen\Providers;
 
-use Ellllllen\ChatBot\BotMan\InitiateBotman;
-use Ellllllen\ChatBot\Contracts\InitiateChatbotInterface;
-use Ellllllen\PersonalWebsite\Activities\Activities;
-use Ellllllen\PersonalWebsite\Activities\ActivitiesInterface;
-use Ellllllen\PersonalWebsite\Articles\Books\Books;
-use Ellllllen\PersonalWebsite\Articles\Books\BooksInterface;
-use Ellllllen\PersonalWebsite\Resources\Resources;
-use Ellllllen\PersonalWebsite\Resources\ResourcesInterface;
+use Ellllllen\Portfolio\Activities\Activities;
+use Ellllllen\Portfolio\Activities\ActivitiesInterface;
+use Ellllllen\Portfolio\Articles\Books\Books;
+use Ellllllen\Portfolio\Articles\Books\BooksInterface;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
@@ -22,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
+     * @param UrlGenerator $url
      * @return void
      */
     public function boot(UrlGenerator $url)
@@ -31,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->createNavigation();
-        $this->defineUrl();
 
         /**
          * https://laravel-news.com/laravel-5-4-key-too-long-error
@@ -50,10 +46,8 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(DuskServiceProvider::class);
         }
 
-        $this->app->bind(ResourcesInterface::class, Resources::class);
         $this->app->bind(BooksInterface::class, Books::class);
         $this->app->bind(ActivitiesInterface::class, Activities::class);
-        $this->app->bind(InitiateChatbotInterface::class, InitiateBotman::class);
     }
 
     private function createNavigation()
@@ -62,7 +56,6 @@ class AppServiceProvider extends ServiceProvider
             'welcome' => trans('home.title'),
             'about-me' => trans('about_me.title'),
             'cv' => trans('cv.title'),
-            'resources' => trans('resources.title'),
             'articles.index' => trans('articles.index.title'),
         ]);
 
@@ -84,13 +77,6 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('partials._navigation', function ($view) {
             $view->with('activeNav', Route::currentRouteName());
-        });
-    }
-
-    private function defineUrl()
-    {
-        view()->composer('layouts.app', function ($view) {
-            $view->with('chatUrl', env('APP_URL') . '/botman');
         });
     }
 }

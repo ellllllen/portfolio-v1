@@ -2,19 +2,21 @@
 
 namespace Ellllllen\Http\Controllers;
 
-use Ellllllen\PersonalWebsite\Articles\Tags\Tag;
-use Ellllllen\PersonalWebsite\Articles\GetArticles;
+use Ellllllen\Portfolio\Articles\Tags\Tag;
+use Ellllllen\Portfolio\Articles\GetArticles;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class AboutMeController extends Controller
 {
     /**
      * @param GetArticles $getArticles
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index(GetArticles $getArticles)
     {
         $tag = Tag::findOrFail(Tag::ABOUT_ME);
-        
+
         return view('about-me')->with('articles', $getArticles->paginate($tag));
     }
 }

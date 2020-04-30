@@ -2,8 +2,8 @@
 
 namespace Ellllllen\Http\Controllers\Articles;
 
-use Ellllllen\PersonalWebsite\Articles\Article;
-use Ellllllen\PersonalWebsite\Articles\Books\GetBooks;
+use Ellllllen\Portfolio\Articles\Article;
+use Ellllllen\Portfolio\Articles\Books\GetBooks;
 use Illuminate\View\View;
 
 class BooksController extends ShowArticle

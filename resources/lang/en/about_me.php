@@ -2,7 +2,7 @@
 
 return [
     'title' => 'About Me',
-    'desc' => 'Hi, I\'m Ellen and I currently live in Cirencester, Gloucestershire working as a full time
+    'desc' => 'Hi, I\'m Ellen and I currently live in Bristol working as a full time
         Developer.
         I graduated from Bournemouth University in 2010, gaining a 2:1 BSc (Hons) in Computing.
         I specialise in PHP, MySQL, HTML, CSS and JavaScript and have experience in developing using the
