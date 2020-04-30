@@ -15,6 +15,7 @@ use Faker\Generator as Faker;
 
 $factory->define(\Ellllllen\Portfolio\Articles\Tags\Tag::class, function (Faker $faker) {
     return [
+        'id' => random_int(999999, 99999999),
         'tag' => $faker->text(10),
     ];
 });

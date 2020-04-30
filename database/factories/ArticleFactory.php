@@ -15,6 +15,7 @@ use Faker\Generator as Faker;
 
 $factory->define(\Ellllllen\Portfolio\Articles\Article::class, function (Faker $faker) {
     return [
+        'id' => random_int(999999, 99999999),
         'title' => $faker->text(190),
         'section' => $faker->paragraph,
         'created_at' => \Carbon\Carbon::now(),

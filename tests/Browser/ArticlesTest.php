@@ -74,9 +74,9 @@ class ArticlesTest extends DuskTestCase
      */
     public function testArticlePaginationNumberLinksWork()
     {
-        $articles = factory(Article::class, 20)->create();
+        factory(Article::class, 20)->create();
 
-        $this->browse(function (Browser $browser) use ($articles) {
+        $this->browse(function (Browser $browser) {
             $browser->visit(new ArticlesPage())
                 ->click('.page-item a')
                 ->assertQueryStringHas('page', 2)
@@ -91,9 +91,9 @@ class ArticlesTest extends DuskTestCase
      */
     public function testArticlePaginationArrowLinksWork()
     {
-        $articles = factory(Article::class, 20)->create();
+        factory(Article::class, 20)->create();
 
-        $this->browse(function (Browser $browser) use ($articles) {
+        $this->browse(function (Browser $browser) {
             $browser->visit(new ArticlesPage())
                 ->click('.page-item:last-of-type .page-link')
                 ->assertQueryStringHas('page', 2)
