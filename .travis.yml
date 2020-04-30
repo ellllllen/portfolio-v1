@@ -28,7 +28,6 @@ before_script:
 - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 - php artisan serve &
 script:
-- php artisan dusk
 - phpdbg -qrr vendor/bin/phpunit --coverage-clover=coverage.xml
 cache:
   directories:
